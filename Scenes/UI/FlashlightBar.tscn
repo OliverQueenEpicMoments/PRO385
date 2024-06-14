@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dujqw7a2q56df"]
+
+[ext_resource type="Texture2D" uid="uid://inlcgrwodcmp" path="res://Assets/UI/BarV1_Bar.png" id="1_1jrj4"]
+[ext_resource type="Texture2D" uid="uid://fy6wevyv3te1" path="res://Assets/UI/BarV1_ProgressBarBorder.png" id="2_wvlx2"]
+[ext_resource type="Texture2D" uid="uid://lq4h8vkxxg4" path="res://Assets/UI/BarV2_ProgressBar.png" id="3_3geeo"]
+
+[node name="FlashlightBar" type="TextureProgressBar"]
+anchors_preset = -1
+anchor_left = 0.260526
+anchor_top = 0.771429
+anchor_right = 0.981579
+anchor_bottom = 0.95
+offset_left = -300.126
+offset_top = -499.886
+offset_right = -300.779
+offset_bottom = -500.6
+grow_horizontal = 2
+grow_vertical = 0
+texture_under = ExtResource("1_1jrj4")
+texture_over = ExtResource("2_wvlx2")
+texture_progress = ExtResource("3_3geeo")
+texture_progress_offset = Vector2(1, 2)
+metadata/_edit_use_anchors_ = true
