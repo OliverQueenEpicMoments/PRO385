@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://c1cjsqwl3m85g"]
+[gd_scene load_steps=10 format=3 uid="uid://c1cjsqwl3m85g"]
 
 [ext_resource type="Script" path="res://Scripts/PrototypePlayer.gd" id="1_n4y3h"]
 [ext_resource type="Texture2D" uid="uid://ca0mifwptf0hu" path="res://Assets/Characters/AshDown-Sheet.png" id="1_ngmrn"]
+[ext_resource type="PackedScene" uid="uid://bqjqy0crkq6sj" path="res://Scenes/flashlight.tscn" id="3_l6e1e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0xby2"]
 radius = 5.0
@@ -57,3 +58,11 @@ sprite_frames = SubResource("SpriteFrames_xuphn")
 animation = &"Down"
 autoplay = "Down"
 frame_progress = 0.408415
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Flashlight" parent="." instance=ExtResource("3_l6e1e")]
+position = Vector2(0, -18)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

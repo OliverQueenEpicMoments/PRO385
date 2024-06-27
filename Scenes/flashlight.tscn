@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqjqy0crkq6sj"]
+
+[ext_resource type="Texture2D" uid="uid://citfwnv63u1us" path="res://Assets/Flashlight.png" id="1_68gqf"]
+[ext_resource type="Script" path="res://Scripts/Flashlight.gd" id="1_hpsfe"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_l1qyw"]
+
+[node name="Flashlight" type="Node2D"]
+script = ExtResource("1_hpsfe")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(16, 0)
+scale = Vector2(16, 4)
+texture = SubResource("PlaceholderTexture2D_l1qyw")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, -2)
+color = Color(0.541723, 0.690847, 1, 1)
+energy = 0.75
+shadow_enabled = true
+shadow_filter = 2
+texture = ExtResource("1_68gqf")
+texture_scale = 0.5

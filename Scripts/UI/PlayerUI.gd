@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-#@export var player: Player
+
 @onready var player = %PrototypePlayer
 @onready var StaminaBar = $PlayerInfoBox/StaminaBar
 @onready var FlashlightBar = $PlayerInfoBox/FlashlightBar

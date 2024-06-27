@@ -16,6 +16,7 @@ offset_right = -300.779
 offset_bottom = -500.6
 grow_horizontal = 2
 grow_vertical = 0
+value = 100.0
 texture_under = ExtResource("1_1jrj4")
 texture_over = ExtResource("2_wvlx2")
 texture_progress = ExtResource("3_3geeo")
