@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://b02cy4adfnyc0"]
+[gd_scene load_steps=28 format=3 uid="uid://b02cy4adfnyc0"]
 
 [ext_resource type="PackedScene" uid="uid://c1cjsqwl3m85g" path="res://Scenes/Characters/PrototypePlayer.tscn" id="1_egmum"]
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_urfrn"]
@@ -7,9 +7,10 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="3_gf27a"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_n3wj6"]
 [ext_resource type="Texture2D" uid="uid://bon50n52nq6tj" path="res://Assets/Tilesets/OutsideTileMap.png" id="5_at84v"]
-[ext_resource type="PackedScene" uid="uid://dxintreql7la3" path="res://Scenes/Characters/EnemyPrototype.tscn" id="7_ish1k"]
+[ext_resource type="PackedScene" uid="uid://dxintreql7la3" path="res://Scenes/Characters/Enemies/EnemyPrototype.tscn" id="7_ish1k"]
 [ext_resource type="PackedScene" uid="uid://i1gupv31llvp" path="res://Scenes/UI/PlayerUI.tscn" id="8_pev8b"]
 [ext_resource type="Script" path="res://Scripts/UI/PlayerUI.gd" id="9_v1g8q"]
+[ext_resource type="PackedScene" uid="uid://05ta1y5cxfdw" path="res://Scenes/Characters/Enemies/IdolOfChaos.tscn" id="11_ua5ls"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_niy50"]
 polygon = PackedVector2Array(8, -8, 8, 8, -8, 8, -8, -8)
@@ -843,5 +844,8 @@ script = ExtResource("9_v1g8q")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.473976, 0.473976, 0.473976, 1)
+
+[node name="IdolOfChaos" parent="." instance=ExtResource("11_ua5ls")]
+position = Vector2(125, -30)
 
 [connection signal="StaminaChanged" from="PrototypePlayer" to="PrototypePlayer" method="_on_stamina_changed"]

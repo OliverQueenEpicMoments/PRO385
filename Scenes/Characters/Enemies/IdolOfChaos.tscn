@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://05ta1y5cxfdw"]
+
+[ext_resource type="Script" path="res://Scripts/Characters/Enemies/IdolOfChaos.gd" id="1_777jt"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_720p6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oeelv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_elpiq"]
+radius = 130.062
+
+[node name="IdolOfChaos" type="CharacterBody2D"]
+script = ExtResource("1_777jt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4.76837e-07, -18.75)
+scale = Vector2(18, 38.5)
+texture = SubResource("PlaceholderTexture2D_720p6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -9)
+shape = SubResource("CircleShape2D_oeelv")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="AOECollision" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_elpiq")
+debug_color = Color(0.996078, 0, 0, 0.419608)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

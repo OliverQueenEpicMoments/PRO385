@@ -1,6 +1,5 @@
 extends CanvasLayer
 
-
 @onready var player = %PrototypePlayer
 @onready var Flashlight = %PrototypePlayer/Flashlight
 @onready var StaminaBar = $PlayerInfoBox/StaminaBar

@@ -1,4 +1,4 @@
-[gd_scene load_steps=376 format=3 uid="uid://dxintreql7la3"]
+[gd_scene load_steps=379 format=3 uid="uid://dxintreql7la3"]
 
 [ext_resource type="Texture2D" uid="uid://mnfxcooha47g" path="res://Assets/Characters/GangnamStyle.png" id="1_0pg5t"]
 [ext_resource type="PackedScene" uid="uid://ksf7hc3asdek" path="res://Scenes/killzone.tscn" id="2_wba0v"]
@@ -2611,6 +2611,13 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_xdst0"]
 radius = 17.0
 
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_28wm4"]
+
+[sub_resource type="BehaviorTree" id="BehaviorTree_pekf1"]
+blackboard_plan = SubResource("BlackboardPlan_28wm4")
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_afc5m"]
+
 [node name="EnemyPrototype" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -2623,3 +2630,8 @@ frame_progress = 0.727499
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Killzone"]
 position = Vector2(0, 38)
 shape = SubResource("CircleShape2D_xdst0")
+
+[node name="BTPlayer" type="BTPlayer" parent="."]
+behavior_tree = SubResource("BehaviorTree_pekf1")
+active = false
+blackboard_plan = SubResource("BlackboardPlan_afc5m")

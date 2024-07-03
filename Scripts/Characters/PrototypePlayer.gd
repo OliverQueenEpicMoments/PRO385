@@ -21,13 +21,15 @@ func SetStamina(value):
 	var OldValue = StaminaCurrent
 	StaminaCurrent = value
 	StaminaChanged.emit()
+	
+	
+func InflictChaos():
+	Sanity += 1
 
 
 func	_physics_process(delta: float) -> void:
 	var Direction: Vector2 = Input.get_vector("Left", "Right", "Up", "Down")
 	var CurrentSpeed = Speed
-	
-	#look_at(get_global_mouse_position())
 	
 	if Input.is_action_pressed("Sprint") and StaminaCurrent > 0:
 		StaminaRegenReady = false
