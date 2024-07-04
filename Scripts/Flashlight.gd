@@ -4,6 +4,7 @@ extends Node2D
 var BatteryCurrent = 100.0: set = SetBattery
 @export var BatteryDrainRate = 5.0
 @onready var FlashlightLight = $PointLight2D
+@onready var ShadowLight = $ShadowLight
 
 var IsActive = false
 
@@ -13,6 +14,7 @@ signal BatteryChanged()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	FlashlightLight.enabled = false
+	ShadowLight.enabled = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -27,8 +29,10 @@ func _process(delta):
 	if (IsActive and BatteryCurrent > 0):
 		BatteryCurrent -= BatteryDrainRate * delta
 		FlashlightLight.enabled = true
+		ShadowLight.enabled = true
 	else:
 		FlashlightLight.enabled = false
+		ShadowLight.enabled = false
 
 
 func	_physics_process(_delta: float) -> void:

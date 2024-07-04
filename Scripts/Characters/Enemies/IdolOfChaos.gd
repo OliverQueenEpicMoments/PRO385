@@ -1,6 +1,9 @@
 extends Node2D
 
-@onready var Player = %PrototypePlayer
+@onready var MainPlayer = %PrototypePlayer
+
+signal FearPlayer()
+signal StopFearing()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,6 +17,16 @@ func _process(delta):
 
 # For inflicting insanity to the player
 func _on_area_2d_body_entered(body):
-	if (body.name == "PrototypePlayer"):
-		#Player
-		print("Player entered AOE")
+	if (body.has_method("Player")):
+		FearPlayer.emit()
+		#print("Player entered AOE")
+
+
+func _on_area_2d_body_exited(body):
+	if (body.has_method("Player")):
+		StopFearing.emit()
+		#print("Player exited AOE")
+
+
+func InflictFear():
+	pass

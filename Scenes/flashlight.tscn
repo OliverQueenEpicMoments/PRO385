@@ -13,11 +13,19 @@ position = Vector2(16, 0)
 scale = Vector2(16, 4)
 texture = SubResource("PlaceholderTexture2D_l1qyw")
 
+[node name="ShadowLight" type="PointLight2D" parent="."]
+position = Vector2(0, -2)
+color = Color(0.541723, 0.690847, 1, 1)
+energy = 0.5
+shadow_enabled = true
+shadow_filter = 2
+texture = ExtResource("1_68gqf")
+texture_scale = 0.5
+
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(0, -2)
 color = Color(0.541723, 0.690847, 1, 1)
 energy = 0.75
-shadow_enabled = true
 shadow_filter = 2
 texture = ExtResource("1_68gqf")
 texture_scale = 0.5

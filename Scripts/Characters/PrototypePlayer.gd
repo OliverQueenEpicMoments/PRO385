@@ -11,7 +11,9 @@ var StaminaCurrent = 100.0: set = SetStamina
 var StaminaRegenReady = false
 var IsRunning = false
 
-@export var Sanity = 0
+@export var MaxSanity = 100
+var CurrentSanity = 0
+var LosingSanity = false
 
 @onready var timer = $Timer
 
@@ -22,10 +24,9 @@ func SetStamina(value):
 	StaminaCurrent = value
 	StaminaChanged.emit()
 	
-	
-func InflictChaos():
-	Sanity += 1
 
+func _process(_delta):
+	LoseSanity()
 
 func	_physics_process(delta: float) -> void:
 	var Direction: Vector2 = Input.get_vector("Left", "Right", "Up", "Down")
@@ -54,3 +55,25 @@ func	_physics_process(delta: float) -> void:
 func _on_timer_timeout():
 	if (!IsRunning):
 		StaminaRegenReady = true
+		
+
+
+func _on_area_2d_body_entered(body):
+	if (body.has_method("InflictFear")):
+		LosingSanity = true
+	
+
+
+func _on_area_2d_body_exited(body):
+	if (body.has_method("InflictFear")):
+		LosingSanity = false
+
+
+func LoseSanity():
+	if (LosingSanity):
+		CurrentSanity += 0.1
+		print("Player sanity - ", CurrentSanity)
+
+
+func Player():
+	pass
