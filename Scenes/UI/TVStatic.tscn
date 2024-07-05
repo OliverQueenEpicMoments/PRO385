@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://daxxtipygubui"]
+
+[ext_resource type="Shader" path="res://Shaders/TVStatic.gdshader" id="1_gn6r2"]
+[ext_resource type="Texture2D" uid="uid://bptwwfi1tghpc" path="res://Assets/light.png" id="2_2bmvl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0rspl"]
+shader = ExtResource("1_gn6r2")
+shader_parameter/Amount = 40.0
+
+[node name="TVStatic" type="Node2D"]
+light_mask = 524288
+scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 0
+material = SubResource("ShaderMaterial_0rspl")
+position = Vector2(-1, 0)
+texture = ExtResource("2_2bmvl")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://b02cy4adfnyc0"]
+[gd_scene load_steps=29 format=3 uid="uid://b02cy4adfnyc0"]
 
 [ext_resource type="PackedScene" uid="uid://c1cjsqwl3m85g" path="res://Scenes/Characters/PrototypePlayer.tscn" id="1_egmum"]
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_urfrn"]
@@ -804,6 +804,10 @@ duration = 1.0
 transition = 0
 ease = 2
 
+[sub_resource type="Environment" id="Environment_2ey2d"]
+background_mode = 3
+glow_enabled = true
+
 [node name="Game" type="Node2D"]
 
 [node name="GameManager" type="Node" parent="."]
@@ -847,5 +851,8 @@ color = Color(0, 0, 0, 1)
 
 [node name="IdolOfChaos" parent="." instance=ExtResource("11_ua5ls")]
 position = Vector2(125, -30)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_2ey2d")
 
 [connection signal="StaminaChanged" from="PrototypePlayer" to="PrototypePlayer" method="_on_stamina_changed"]

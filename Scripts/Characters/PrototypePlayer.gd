@@ -12,6 +12,7 @@ var StaminaRegenReady = false
 var IsRunning = false
 
 @export var MaxSanity = 100
+@export var InsanityMultiplier = 1.5
 var CurrentSanity = 0
 var LosingSanity = false
 
@@ -25,8 +26,8 @@ func SetStamina(value):
 	StaminaChanged.emit()
 	
 
-func _process(_delta):
-	LoseSanity()
+func _process(delta):
+	LoseSanity(delta)
 
 func	_physics_process(delta: float) -> void:
 	var Direction: Vector2 = Input.get_vector("Left", "Right", "Up", "Down")
@@ -69,9 +70,10 @@ func _on_area_2d_body_exited(body):
 		LosingSanity = false
 
 
-func LoseSanity():
+func LoseSanity(time):
 	if (LosingSanity):
-		CurrentSanity += 0.1
+		#CurrentSanity += 0.1
+		CurrentSanity = clamp(CurrentSanity + InsanityMultiplier * time, 0, MaxSanity)
 		print("Player sanity - ", CurrentSanity)
 
 
