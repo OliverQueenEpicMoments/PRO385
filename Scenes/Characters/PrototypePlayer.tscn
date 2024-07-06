@@ -49,6 +49,7 @@ animations = [{
 radius = 171.012
 
 [node name="PrototypePlayer" type="CharacterBody2D"]
+y_sort_enabled = true
 collision_layer = 2
 script = ExtResource("1_n4y3h")
 
@@ -91,6 +92,16 @@ energy = 0.5
 shadow_enabled = true
 texture = ExtResource("4_qmu0e")
 texture_scale = 0.25
+
+[node name="LOSLight" type="PointLight2D" parent="."]
+position = Vector2(0, -18)
+color = Color(0.666667, 0.776471, 1, 1)
+blend_mode = 2
+range_item_cull_mask = 2
+shadow_enabled = true
+shadow_item_cull_mask = 2
+texture = ExtResource("4_qmu0e")
+texture_scale = 0.28
 
 [node name="TVStatic" parent="." instance=ExtResource("5_gjy5p")]
 visible = false

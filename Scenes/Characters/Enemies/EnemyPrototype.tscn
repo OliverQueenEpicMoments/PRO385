@@ -1,7 +1,10 @@
-[gd_scene load_steps=379 format=3 uid="uid://dxintreql7la3"]
+[gd_scene load_steps=380 format=3 uid="uid://dxintreql7la3"]
 
 [ext_resource type="Texture2D" uid="uid://mnfxcooha47g" path="res://Assets/Characters/GangnamStyle.png" id="1_0pg5t"]
 [ext_resource type="PackedScene" uid="uid://ksf7hc3asdek" path="res://Scenes/killzone.tscn" id="2_wba0v"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_i3hpq"]
+light_mode = 2
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tocfs"]
 atlas = ExtResource("1_0pg5t")
@@ -2619,8 +2622,14 @@ blackboard_plan = SubResource("BlackboardPlan_28wm4")
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_afc5m"]
 
 [node name="EnemyPrototype" type="Node2D"]
+y_sort_enabled = true
+position = Vector2(0, -55)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+z_index = 1
+material = SubResource("CanvasItemMaterial_i3hpq")
 sprite_frames = SubResource("SpriteFrames_sj02i")
 autoplay = "default"
 frame_progress = 0.727499

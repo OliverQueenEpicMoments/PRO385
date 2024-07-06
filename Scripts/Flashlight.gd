@@ -5,6 +5,7 @@ var BatteryCurrent = 100.0: set = SetBattery
 @export var BatteryDrainRate = 5.0
 @onready var FlashlightLight = $PointLight2D
 @onready var ShadowLight = $ShadowLight
+@onready var LOSLight = $LOSLight
 
 var IsActive = false
 
@@ -15,6 +16,7 @@ signal BatteryChanged()
 func _ready():
 	FlashlightLight.enabled = false
 	ShadowLight.enabled = false
+	LOSLight.enabled = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -30,9 +32,11 @@ func _process(delta):
 		BatteryCurrent -= BatteryDrainRate * delta
 		FlashlightLight.enabled = true
 		ShadowLight.enabled = true
+		LOSLight.enabled = true
 	else:
 		FlashlightLight.enabled = false
 		ShadowLight.enabled = false
+		LOSLight.enabled = false
 
 
 func	_physics_process(_delta: float) -> void:

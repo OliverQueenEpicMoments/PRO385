@@ -1,6 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://05ta1y5cxfdw"]
+[gd_scene load_steps=6 format=3 uid="uid://05ta1y5cxfdw"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/Enemies/IdolOfChaos.gd" id="1_777jt"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_cjq31"]
+light_mode = 2
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_720p6"]
 
@@ -10,11 +13,16 @@
 radius = 130.062
 
 [node name="IdolOfChaos" type="CharacterBody2D"]
+y_sort_enabled = true
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_777jt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+z_index = 1
+material = SubResource("CanvasItemMaterial_cjq31")
 position = Vector2(4.76837e-07, -18.75)
 scale = Vector2(18, 38.5)
 texture = SubResource("PlaceholderTexture2D_720p6")
