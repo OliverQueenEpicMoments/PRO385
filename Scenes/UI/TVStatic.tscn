@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://daxxtipygubui"]
 
 [ext_resource type="Shader" path="res://Shaders/TVStatic.gdshader" id="1_gn6r2"]
-[ext_resource type="Texture2D" uid="uid://bptwwfi1tghpc" path="res://Assets/light.png" id="2_2bmvl"]
+[ext_resource type="Texture2D" uid="uid://bptwwfi1tghpc" path="res://Assets/Light.png" id="2_jbvtb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0rspl"]
 shader = ExtResource("1_gn6r2")
@@ -15,4 +15,4 @@ scale = Vector2(2, 2)
 light_mask = 0
 material = SubResource("ShaderMaterial_0rspl")
 position = Vector2(-1, 0)
-texture = ExtResource("2_2bmvl")
+texture = ExtResource("2_jbvtb")

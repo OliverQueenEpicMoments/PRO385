@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Characters/PrototypePlayer.gd" id="1_n4y3h"]
 [ext_resource type="Texture2D" uid="uid://ca0mifwptf0hu" path="res://Assets/Characters/AshDown-Sheet.png" id="1_ngmrn"]
 [ext_resource type="PackedScene" uid="uid://bqjqy0crkq6sj" path="res://Scenes/flashlight.tscn" id="3_l6e1e"]
-[ext_resource type="Texture2D" uid="uid://bptwwfi1tghpc" path="res://Assets/light.png" id="4_qmu0e"]
+[ext_resource type="Texture2D" uid="uid://bptwwfi1tghpc" path="res://Assets/Light.png" id="4_qmu0e"]
 [ext_resource type="PackedScene" uid="uid://daxxtipygubui" path="res://Scenes/UI/TVStatic.tscn" id="5_gjy5p"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0xby2"]
@@ -104,7 +104,8 @@ texture = ExtResource("4_qmu0e")
 texture_scale = 0.28
 
 [node name="TVStatic" parent="." instance=ExtResource("5_gjy5p")]
-visible = false
+modulate = Color(0.3, 0.3, 0.3, 1)
+z_index = 2
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

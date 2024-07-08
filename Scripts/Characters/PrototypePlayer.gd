@@ -1,5 +1,9 @@
 extends CharacterBody2D
 
+@onready var Static = $TVStatic
+var PlayerLocation = Vector2(0, 0)
+var EnemyLocation = Vector2(0, 0)
+
 @export var Speed = 100.0
 @export var SprintSpeed = 200.0
 @export var Acceleration = 10.0
@@ -28,6 +32,10 @@ func SetStamina(value):
 
 func _process(delta):
 	LoseSanity(delta)
+	PlayerLocation = global_position
+	#print(PlayerLocation)
+	if (CurrentSanity >= 25):
+		pass
 
 func	_physics_process(delta: float) -> void:
 	var Direction: Vector2 = Input.get_vector("Left", "Right", "Up", "Down")
@@ -62,19 +70,30 @@ func _on_timer_timeout():
 func _on_area_2d_body_entered(body):
 	if (body.has_method("InflictFear")):
 		LosingSanity = true
+		EnemyLocation = body.global_position
+		#print(EnemyLocation)
 	
 
 
 func _on_area_2d_body_exited(body):
 	if (body.has_method("InflictFear")):
 		LosingSanity = false
+		Static.visible = false
 
 
 func LoseSanity(time):
 	if (LosingSanity):
-		#CurrentSanity += 0.1
 		CurrentSanity = clamp(CurrentSanity + InsanityMultiplier * time, 0, MaxSanity)
-		print("Player sanity - ", CurrentSanity)
+		Static.visible = true
+		var Distance = PlayerLocation.distance_to(EnemyLocation)
+		#Static.modulate = StaticIntensity(Color(0.3, 0.3, 0.3), Color(1, 1, 1), CurrentSanity / 100)
+		Static.modulate = StaticIntensity(Color(1, 1, 1), Color(0.25, 0.25, 0.25), Distance / 180)
+		
+		print("Player Sanity - ", CurrentSanity)
+
+
+func StaticIntensity(color1: Color, color2: Color, weight: float) -> Color:
+	return color1.lerp(color2, weight)
 
 
 func Player():

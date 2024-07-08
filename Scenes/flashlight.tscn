@@ -6,6 +6,8 @@
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_l1qyw"]
 
 [node name="Flashlight" type="Node2D"]
+z_index = 1
+y_sort_enabled = true
 script = ExtResource("1_hpsfe")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
