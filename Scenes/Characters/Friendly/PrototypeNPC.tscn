@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://cxi1iancqgwjd"]
+
+[ext_resource type="Script" path="res://Scripts/Characters/Friendly/PrototypeNPC.gd" id="1_wfq16"]
+[ext_resource type="Texture2D" uid="uid://ca0mifwptf0hu" path="res://Assets/Characters/AshDown-Sheet.png" id="1_yv8pj"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gmjoh"]
+light_mode = 2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2imje"]
+atlas = ExtResource("1_yv8pj")
+region = Rect2(0, 0, 21, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vlap"]
+atlas = ExtResource("1_yv8pj")
+region = Rect2(21, 0, 21, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojcmj"]
+atlas = ExtResource("1_yv8pj")
+region = Rect2(42, 0, 21, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ia131"]
+atlas = ExtResource("1_yv8pj")
+region = Rect2(63, 0, 21, 38)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wttuq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2imje")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8vlap")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojcmj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ia131")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vcyca"]
+
+[node name="PrototypeNPC" type="CharacterBody2D"]
+y_sort_enabled = true
+script = ExtResource("1_wfq16")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(0, 1, 1, 1)
+light_mask = 2
+visibility_layer = 2
+z_index = 1
+y_sort_enabled = true
+material = SubResource("CanvasItemMaterial_gmjoh")
+position = Vector2(-2.38419e-07, -17.5)
+sprite_frames = SubResource("SpriteFrames_wttuq")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_vcyca")

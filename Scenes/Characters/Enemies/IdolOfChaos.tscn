@@ -15,8 +15,8 @@ radius = 130.062
 
 [node name="IdolOfChaos" type="CharacterBody2D"]
 y_sort_enabled = true
-collision_layer = 3
-collision_mask = 3
+collision_layer = 7
+collision_mask = 7
 script = ExtResource("1_777jt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

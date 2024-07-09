@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://b02cy4adfnyc0"]
+[gd_scene load_steps=30 format=3 uid="uid://b02cy4adfnyc0"]
 
 [ext_resource type="PackedScene" uid="uid://c1cjsqwl3m85g" path="res://Scenes/Characters/PrototypePlayer.tscn" id="1_egmum"]
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_urfrn"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://i1gupv31llvp" path="res://Scenes/UI/PlayerUI.tscn" id="8_pev8b"]
 [ext_resource type="Script" path="res://Scripts/UI/PlayerUI.gd" id="9_v1g8q"]
 [ext_resource type="PackedScene" uid="uid://05ta1y5cxfdw" path="res://Scenes/Characters/Enemies/IdolOfChaos.tscn" id="11_ua5ls"]
+[ext_resource type="PackedScene" uid="uid://cxi1iancqgwjd" path="res://Scenes/Characters/Friendly/PrototypeNPC.tscn" id="12_fndu5"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_niy50"]
 polygon = PackedVector2Array(8, -8, 8, 8, -8, 8, -8, -8)
@@ -851,18 +852,21 @@ zoom = Vector2(2, 2)
 tween_resource = SubResource("Resource_4g3rl")
 
 [node name="EnemyPrototype" parent="." instance=ExtResource("7_ish1k")]
-position = Vector2(-140, -27)
+position = Vector2(-206, -53)
 
 [node name="PlayerUI" parent="." instance=ExtResource("8_pev8b")]
 script = ExtResource("9_v1g8q")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.481789, 0.481789, 0.481789, 1)
+color = Color(0, 0, 0, 1)
 
 [node name="IdolOfChaos" parent="." instance=ExtResource("11_ua5ls")]
-position = Vector2(125, -30)
+position = Vector2(183, -1)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_2ey2d")
+
+[node name="PrototypeNPC" parent="." instance=ExtResource("12_fndu5")]
+position = Vector2(82, -127)
 
 [connection signal="StaminaChanged" from="PrototypePlayer" to="PrototypePlayer" method="_on_stamina_changed"]

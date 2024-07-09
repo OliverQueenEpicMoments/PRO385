@@ -1,0 +1,40 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"_translation_id": "",
+"color": Color(1, 1, 1, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "PrototypeStyle"
+},
+"default_portrait": "Jonkler",
+"description": "Carl, stay back, this is gonna get bad
+I'm 'bout show this lab rat how to be a real dad
+A grade-A MC who will ruin your A1 day
+Cause Sheriff Grimes rhymes dirty like my armpit stains
+I'm a post-apocalyptic cop who's got a lot of issues
+Pop a cap in you and splatter the brain you misuse
+Cooking up Blue Sky and bigger lies for Skyler
+Hatching little schemes like a dying MacGyver
+You tore your family apart, sin by sin
+Where I live, it happens literally, limb from limb
+So write this down in your pancakes so you won't forget it
+I kill zombies that are better men than you before breakfast",
+"display_name": "Rick Grimes",
+"mirror": false,
+"nicknames": ["Rick"],
+"offset": Vector2(0, 0),
+"portraits": {
+"Jonkler": {
+"export_overrides": {
+"image": "\"res://Assets/UI/Jonkler2.jpeg\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+"scale": 1.0
+}

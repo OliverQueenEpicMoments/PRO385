@@ -16,7 +16,7 @@ var StaminaRegenReady = false
 var IsRunning = false
 
 @export var MaxSanity = 100
-@export var InsanityMultiplier = 1.5
+@export var InsanityMultiplier = 1.75
 var CurrentSanity = 0
 var LosingSanity = false
 
@@ -72,7 +72,6 @@ func _on_area_2d_body_entered(body):
 		LosingSanity = true
 		EnemyLocation = body.global_position
 		#print(EnemyLocation)
-	
 
 
 func _on_area_2d_body_exited(body):
@@ -82,12 +81,13 @@ func _on_area_2d_body_exited(body):
 
 
 func LoseSanity(time):
+	var MaxDistance = 185
+	var Distance = PlayerLocation.distance_to(EnemyLocation)
+	var AdjustedMultiplier = InsanityMultiplier * (MaxDistance - Distance) / MaxDistance # Scales the multiplier inversely with distance
 	if (LosingSanity):
-		CurrentSanity = clamp(CurrentSanity + InsanityMultiplier * time, 0, MaxSanity)
+		CurrentSanity = clamp(CurrentSanity + AdjustedMultiplier * InsanityMultiplier * time, 0, MaxSanity)
 		Static.visible = true
-		var Distance = PlayerLocation.distance_to(EnemyLocation)
-		#Static.modulate = StaticIntensity(Color(0.3, 0.3, 0.3), Color(1, 1, 1), CurrentSanity / 100)
-		Static.modulate = StaticIntensity(Color(1, 1, 1), Color(0.25, 0.25, 0.25), Distance / 180)
+		Static.modulate = StaticIntensity(Color(1, 1, 1), Color(0.275, 0.275, 0.275), Distance / 180)
 		
 		print("Player Sanity - ", CurrentSanity)
 

@@ -51,6 +51,7 @@ radius = 171.012
 [node name="PrototypePlayer" type="CharacterBody2D"]
 y_sort_enabled = true
 collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_n4y3h")
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
@@ -72,6 +73,8 @@ one_shot = true
 position = Vector2(0, -18)
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
 
 [node name="FearHitbox" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -8)
@@ -104,6 +107,7 @@ texture = ExtResource("4_qmu0e")
 texture_scale = 0.28
 
 [node name="TVStatic" parent="." instance=ExtResource("5_gjy5p")]
+visible = false
 modulate = Color(0.3, 0.3, 0.3, 1)
 z_index = 2
 
