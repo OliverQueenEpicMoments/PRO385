@@ -49,7 +49,6 @@ func	_physics_process(delta: float) -> void:
 	else:
 		IsRunning = false
 		if Input.is_action_just_released("Sprint") and StaminaCurrent < 100:
-			#print("Start Timer")
 			timer.start()
 			
 		if (StaminaRegenReady):

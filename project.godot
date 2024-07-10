@@ -22,6 +22,7 @@ SceneManager="*res://addons/scene_manager/SceneManager.tscn"
 Signal_Debugger="*res://addons/SignalVisualizer/Debugger/SignalDebugger.gd"
 SoundManager="*res://addons/sound_manager/sound_manager.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+InteractionManager="*res://Scenes/Interaction/InteractionManager.tscn"
 
 [dialogic]
 

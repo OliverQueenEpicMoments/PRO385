@@ -48,7 +48,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_1x02x"]
 radius = 171.012
 
-[node name="PrototypePlayer" type="CharacterBody2D"]
+[node name="PrototypePlayer" type="CharacterBody2D" groups=["Player"]]
 y_sort_enabled = true
 collision_layer = 2
 collision_mask = 5

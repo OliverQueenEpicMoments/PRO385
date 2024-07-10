@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://cxi1iancqgwjd"]
+[gd_scene load_steps=12 format=3 uid="uid://cxi1iancqgwjd"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/Friendly/PrototypeNPC.gd" id="1_wfq16"]
 [ext_resource type="Texture2D" uid="uid://ca0mifwptf0hu" path="res://Assets/Characters/AshDown-Sheet.png" id="1_yv8pj"]
+[ext_resource type="PackedScene" uid="uid://deo66nfs8pl5n" path="res://Scenes/Interaction/InteractionArea/InteractionArea.tscn" id="3_8uvme"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gmjoh"]
 light_mode = 2
@@ -44,6 +45,8 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vcyca"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iv57p"]
+
 [node name="PrototypeNPC" type="CharacterBody2D"]
 y_sort_enabled = true
 script = ExtResource("1_wfq16")
@@ -62,3 +65,11 @@ autoplay = "default"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -10)
 shape = SubResource("CircleShape2D_vcyca")
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_8uvme")]
+ActionName = "talk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, -10)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_iv57p")

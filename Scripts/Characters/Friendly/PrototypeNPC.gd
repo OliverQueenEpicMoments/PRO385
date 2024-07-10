@@ -1,8 +1,13 @@
 extends CharacterBody2D
 
+@onready var InteractionArea = $InteractionArea
+
 
 func _ready():
-	Dialogic.start("Prototype")
+	InteractionArea.Interact = Callable(self, "OnInteract")
 
 func _physics_process(delta):
 	pass
+
+func OnInteract():
+	Dialogic.start("Prototype")

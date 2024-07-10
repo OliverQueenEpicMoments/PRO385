@@ -19,15 +19,15 @@ func _ready():
 	LOSLight.enabled = false
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _input(event):
 	if (Input.is_action_just_released("Flashlight")):
 		if (IsActive):
 			IsActive = false
 		else: 
 			IsActive = true
 
-			
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
 	if (IsActive and BatteryCurrent > 0):
 		BatteryCurrent -= BatteryDrainRate * delta
 		FlashlightLight.enabled = true
