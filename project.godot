@@ -21,8 +21,9 @@ PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_came
 SceneManager="*res://addons/scene_manager/SceneManager.tscn"
 Signal_Debugger="*res://addons/SignalVisualizer/Debugger/SignalDebugger.gd"
 SoundManager="*res://addons/sound_manager/sound_manager.gd"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 InteractionManager="*res://Scenes/Interaction/InteractionManager.tscn"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+PostProcessManager="*res://Scripts/Managers/PostProcessManager.gd"
 
 [dialogic]
 
@@ -37,7 +38,7 @@ layout/default_style="res://DialogicStuff/Styles/PrototypeStyle.tres"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/SignalVisualizer/plugin.cfg", "res://addons/Todo_Manager/plugin.cfg", "res://addons/anim_player_refactor/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/godot-box2d/plugin.cfg", "res://addons/goutte.animated_shape_2d/plugin.cfg", "res://addons/inventory-system/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/ridiculous_coding/plugin.cfg", "res://addons/scene_manager/plugin.cfg", "res://addons/sound_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/SignalVisualizer/plugin.cfg", "res://addons/Todo_Manager/plugin.cfg", "res://addons/anim_player_refactor/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/godot-box2d/plugin.cfg", "res://addons/goutte.animated_shape_2d/plugin.cfg", "res://addons/inventory-system/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/post_processing/plugin.cfg", "res://addons/ridiculous_coding/plugin.cfg", "res://addons/scene_manager/plugin.cfg", "res://addons/sound_manager/plugin.cfg")
 
 [input]
 

@@ -29,7 +29,7 @@ func _process(delta):
 		ActiveAreas.sort_custom(SortByDistanceToPlayer)
 		label.text = BaseText + ActiveAreas[0].ActionName
 		label.global_position = ActiveAreas[0].global_position
-		label.global_position.y -= 36
+		label.global_position.y -= 64
 		label.global_position.x -= label.size.x / 2
 		label.show()
 	else:

@@ -71,5 +71,5 @@ ActionName = "talk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 position = Vector2(0, -10)
-scale = Vector2(3, 3)
+scale = Vector2(5, 5)
 shape = SubResource("RectangleShape2D_iv57p")
