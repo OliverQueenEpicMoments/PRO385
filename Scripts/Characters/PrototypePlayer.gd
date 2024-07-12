@@ -33,9 +33,7 @@ func SetStamina(value):
 func _process(delta):
 	LoseSanity(delta)
 	PlayerLocation = global_position
-	#print(PlayerLocation)
-	if (CurrentSanity >= 25):
-		pass
+	PostProcessManager.EffectsLogic(CurrentSanity)
 
 func	_physics_process(delta: float) -> void:
 	var Direction: Vector2 = Input.get_vector("Left", "Right", "Up", "Down")
@@ -93,6 +91,7 @@ func LoseSanity(time):
 
 func StaticIntensity(color1: Color, color2: Color, weight: float) -> Color:
 	return color1.lerp(color2, weight)
+	
 
 
 func Player():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://b02cy4adfnyc0"]
+[gd_scene load_steps=32 format=3 uid="uid://b02cy4adfnyc0"]
 
 [ext_resource type="PackedScene" uid="uid://c1cjsqwl3m85g" path="res://Scenes/Characters/PrototypePlayer.tscn" id="1_egmum"]
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_urfrn"]
@@ -12,7 +12,8 @@
 [ext_resource type="Script" path="res://Scripts/UI/PlayerUI.gd" id="9_v1g8q"]
 [ext_resource type="PackedScene" uid="uid://05ta1y5cxfdw" path="res://Scenes/Characters/Enemies/IdolOfChaos.tscn" id="11_ua5ls"]
 [ext_resource type="PackedScene" uid="uid://cxi1iancqgwjd" path="res://Scenes/Characters/Friendly/PrototypeNPC.tscn" id="12_fndu5"]
-[ext_resource type="PackedScene" uid="uid://nu4cdnk5a6ov" path="res://Scenes/Managers/PostProcessManager.tscn" id="13_virew"]
+[ext_resource type="Script" path="res://addons/post_processing/node/post_process.gd" id="13_84yio"]
+[ext_resource type="Resource" uid="uid://5ajcpiaxw8a" path="res://Scenes/Effects/PostProcessInfo.tres" id="14_sd8id"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_niy50"]
 polygon = PackedVector2Array(8, -8, 8, 8, -8, 8, -8, -8)
@@ -870,6 +871,8 @@ environment = SubResource("Environment_2ey2d")
 [node name="PrototypeNPC" parent="." instance=ExtResource("12_fndu5")]
 position = Vector2(82, -127)
 
-[node name="PostProcessManager" parent="." instance=ExtResource("13_virew")]
+[node name="PostProcess" type="CanvasLayer" parent="." groups=["PostProcessing"]]
+script = ExtResource("13_84yio")
+configuration = ExtResource("14_sd8id")
 
 [connection signal="StaminaChanged" from="PrototypePlayer" to="PrototypePlayer" method="_on_stamina_changed"]
