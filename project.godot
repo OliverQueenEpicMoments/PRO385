@@ -35,6 +35,10 @@ directories/dtl_directory={
 }
 layout/style_list=["res://DialogicStuff/Styles/PrototypeStyle.tres"]
 layout/default_style="res://DialogicStuff/Styles/PrototypeStyle.tres"
+variables={
+"DialogueDone": false,
+"PlayerSanity": 0.0
+}
 
 [editor_plugins]
 

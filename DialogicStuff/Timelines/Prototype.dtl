@@ -1,6 +1,17 @@
-character (Jonkler): Please help me I have an 8AM class and get 5 hours of sleep 👹
-character: Do you hear them too?
-- Yes
-	character: I can still hear her voice...
-- Seek professional help IMMEDIATELY!
-	character: Go to hell
+if {PlayerSanity} < 25:
+	character (Jonkler): You are unattuned, begone.
+	character: Or else...
+	[signal arg="DialogueOver"]
+elif {PlayerSanity} >= 25 and {PlayerSanity} < 100:
+	character (Jonkler): Ah so you finally listened to it.
+	character: She sings a beautifully intoxicating tone doesn't she?
+	- Yes, she really does
+		character: I can still hear her voice...
+		[signal arg="DialogueOver"]
+	- I won't let her drive me insane
+		character: You have no choice.
+		[signal arg="DialogueOver"]
+elif {PlayerSanity} >= 100:
+	character (Jonkler): Now you see things for how they really are...
+	character: Go to the old house with the red door to know the truth.
+	[signal arg="DialogueOver"]

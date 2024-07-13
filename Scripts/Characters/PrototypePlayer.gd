@@ -33,6 +33,7 @@ func SetStamina(value):
 func _process(delta):
 	LoseSanity(delta)
 	PlayerLocation = global_position
+	Dialogic.VAR.PlayerSanity = CurrentSanity
 	PostProcessManager.EffectsLogic(CurrentSanity)
 
 func	_physics_process(delta: float) -> void:
