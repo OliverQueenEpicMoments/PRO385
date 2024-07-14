@@ -23,6 +23,7 @@ Signal_Debugger="*res://addons/SignalVisualizer/Debugger/SignalDebugger.gd"
 SoundManager="*res://addons/sound_manager/sound_manager.gd"
 InteractionManager="*res://Scenes/Interaction/InteractionManager.tscn"
 PostProcessManager="*res://Scripts/Managers/PostProcessManager.gd"
+Global="*res://Scripts/Global.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]

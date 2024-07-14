@@ -1,7 +1,7 @@
-[gd_scene load_steps=32 format=3 uid="uid://b02cy4adfnyc0"]
+[gd_scene load_steps=33 format=3 uid="uid://b02cy4adfnyc0"]
 
 [ext_resource type="PackedScene" uid="uid://c1cjsqwl3m85g" path="res://Scenes/Characters/PrototypePlayer.tscn" id="1_egmum"]
-[ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_urfrn"]
+[ext_resource type="PackedScene" uid="uid://cgj3kj314s52s" path="res://Scenes/Managers/GameManager.tscn" id="1_kag8r"]
 [ext_resource type="Texture2D" uid="uid://cnkh5ntxva260" path="res://Assets/Tilesets/interior free.png" id="2_hnx2o"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_unjjx"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="3_gf27a"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cxi1iancqgwjd" path="res://Scenes/Characters/Friendly/PrototypeNPC.tscn" id="12_fndu5"]
 [ext_resource type="Script" path="res://addons/post_processing/node/post_process.gd" id="13_84yio"]
 [ext_resource type="Resource" uid="uid://5ajcpiaxw8a" path="res://Scenes/Effects/PostProcessInfo.tres" id="14_sd8id"]
+[ext_resource type="AudioStream" uid="uid://cqptup67gyc6k" path="res://Assets/Audio/Music/ScaryAmbience.mp3" id="15_frq7g"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_niy50"]
 polygon = PackedVector2Array(8, -8, 8, 8, -8, 8, -8, -8)
@@ -820,8 +821,7 @@ glow_enabled = true
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
 
-[node name="GameManager" type="Node" parent="."]
-script = ExtResource("1_urfrn")
+[node name="GameManager" parent="." instance=ExtResource("1_kag8r")]
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -874,5 +874,10 @@ position = Vector2(82, -127)
 [node name="PostProcess" type="CanvasLayer" parent="." groups=["PostProcessing"]]
 script = ExtResource("13_84yio")
 configuration = ExtResource("14_sd8id")
+
+[node name="BackgoundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_frq7g")
+autoplay = true
+bus = &"Music"
 
 [connection signal="StaminaChanged" from="PrototypePlayer" to="PrototypePlayer" method="_on_stamina_changed"]

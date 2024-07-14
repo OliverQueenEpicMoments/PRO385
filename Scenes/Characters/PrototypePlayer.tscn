@@ -1,13 +1,19 @@
-[gd_scene load_steps=13 format=3 uid="uid://c1cjsqwl3m85g"]
+[gd_scene load_steps=16 format=3 uid="uid://c1cjsqwl3m85g"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/PrototypePlayer.gd" id="1_n4y3h"]
 [ext_resource type="Texture2D" uid="uid://ca0mifwptf0hu" path="res://Assets/Characters/AshDown-Sheet.png" id="1_ngmrn"]
 [ext_resource type="PackedScene" uid="uid://bqjqy0crkq6sj" path="res://Scenes/flashlight.tscn" id="3_l6e1e"]
 [ext_resource type="Texture2D" uid="uid://bptwwfi1tghpc" path="res://Assets/Light.png" id="4_qmu0e"]
 [ext_resource type="PackedScene" uid="uid://daxxtipygubui" path="res://Scenes/UI/TVStatic.tscn" id="5_gjy5p"]
+[ext_resource type="AudioStream" uid="uid://cd0hlimyafa6d" path="res://Assets/Audio/Player/RealisticKnocking.mp3" id="6_q16lp"]
+[ext_resource type="AudioStream" uid="uid://4qb63xo5keph" path="res://Assets/Audio/Player/Alarm.mp3" id="7_uhbrc"]
+[ext_resource type="AudioStream" uid="uid://cfqfrjgnam8oi" path="res://Assets/Audio/Music/InsanityAmbiance.mp3" id="7_v8khx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0xby2"]
 radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1x02x"]
+radius = 171.012
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nvjec"]
 atlas = ExtResource("1_ngmrn")
@@ -45,9 +51,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_1x02x"]
-radius = 171.012
-
 [node name="PrototypePlayer" type="CharacterBody2D" groups=["Player"]]
 y_sort_enabled = true
 collision_layer = 2
@@ -58,20 +61,6 @@ script = ExtResource("1_n4y3h")
 position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_0xby2")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-z_index = 1
-position = Vector2(2, -19)
-sprite_frames = SubResource("SpriteFrames_xuphn")
-animation = &"Down"
-autoplay = "Down"
-frame_progress = 0.408415
-
-[node name="Timer" type="Timer" parent="."]
-one_shot = true
-
-[node name="Flashlight" parent="." instance=ExtResource("3_l6e1e")]
-position = Vector2(0, -18)
-
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 4
@@ -80,6 +69,17 @@ collision_mask = 4
 position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_1x02x")
 debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(2, -19)
+sprite_frames = SubResource("SpriteFrames_xuphn")
+animation = &"Down"
+autoplay = "Down"
+frame_progress = 0.408415
+
+[node name="Flashlight" parent="." instance=ExtResource("3_l6e1e")]
+position = Vector2(0, -18)
 
 [node name="PlayerLight" type="PointLight2D" parent="."]
 position = Vector2(0, -18)
@@ -106,11 +106,35 @@ shadow_item_cull_mask = 2
 texture = ExtResource("4_qmu0e")
 texture_scale = 0.28
 
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="SoundTimer" type="Timer" parent="."]
+wait_time = 10.0
+
 [node name="TVStatic" parent="." instance=ExtResource("5_gjy5p")]
 visible = false
 modulate = Color(0.3, 0.3, 0.3, 1)
 z_index = 2
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="Knocking" type="AudioStreamPlayer" parent="."]
+editor_description = "I am the one who knocks!"
+stream = ExtResource("6_q16lp")
+bus = &"SFX"
+
+[node name="Footsteps" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+
+[node name="InsanityBackground" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_v8khx")
+volume_db = -10.0
+bus = &"Music"
+
+[node name="Alarm" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_uhbrc")
+bus = &"SFX"
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="SoundTimer" to="." method="_on_sound_timer_timeout"]

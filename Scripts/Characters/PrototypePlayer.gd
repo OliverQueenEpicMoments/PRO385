@@ -21,20 +21,29 @@ var CurrentSanity = 0
 var LosingSanity = false
 
 @onready var timer = $Timer
+@onready var SoundsTimer = $SoundTimer
+var TimerStarted = false
+
+@onready var Alarm = $Alarm
+@onready var Knocking = $Knocking
+@onready var Footsteps = $Footsteps
+@onready var InsanityBackground = $InsanityBackground
+
+var SoundProbability = [true, false]
 
 signal StaminaChanged()
 
 func SetStamina(value):
 	var OldValue = StaminaCurrent
 	StaminaCurrent = value
-	StaminaChanged.emit()
-	
+	StaminaChanged.emit()	
 
 func _process(delta):
 	LoseSanity(delta)
-	PlayerLocation = global_position
 	Dialogic.VAR.PlayerSanity = CurrentSanity
 	PostProcessManager.EffectsLogic(CurrentSanity)
+	InsanitySounds()
+	PlayerLocation = global_position
 
 func	_physics_process(delta: float) -> void:
 	var Direction: Vector2 = Input.get_vector("Left", "Right", "Up", "Down")
@@ -58,12 +67,9 @@ func	_physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-
 func _on_timer_timeout():
 	if (!IsRunning):
 		StaminaRegenReady = true
-		
-
 
 func _on_area_2d_body_entered(body):
 	if (body.has_method("InflictFear")):
@@ -71,12 +77,10 @@ func _on_area_2d_body_entered(body):
 		EnemyLocation = body.global_position
 		#print(EnemyLocation)
 
-
 func _on_area_2d_body_exited(body):
 	if (body.has_method("InflictFear")):
 		LosingSanity = false
 		Static.visible = false
-
 
 func LoseSanity(time):
 	var MaxDistance = 185
@@ -86,14 +90,29 @@ func LoseSanity(time):
 		CurrentSanity = clamp(CurrentSanity + AdjustedMultiplier * InsanityMultiplier * time, 0, MaxSanity)
 		Static.visible = true
 		Static.modulate = StaticIntensity(Color(1, 1, 1), Color(0.275, 0.275, 0.275), Distance / 180)
+		Global.SetSanity(CurrentSanity)
 		
 		print("Player Sanity - ", CurrentSanity)
 
-
 func StaticIntensity(color1: Color, color2: Color, weight: float) -> Color:
 	return color1.lerp(color2, weight)
-	
 
+func InsanitySounds():
+	if (CurrentSanity >= 100 and !InsanityBackground.playing):
+		InsanityBackground.play()
+		if (!TimerStarted):
+			SoundsTimer.start()
+			TimerStarted = true
+	elif (CurrentSanity < 100):
+		InsanityBackground.stop()
 
 func Player():
 	pass
+
+func _on_sound_timer_timeout():
+	var Rand = randf()
+	print("Timer proced - ", Rand)
+	if (Rand < 0.1 and Rand >= 0.05):
+		Knocking.play()
+	elif (Rand < 0.05):
+		Alarm.play()

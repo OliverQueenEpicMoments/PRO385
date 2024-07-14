@@ -10,7 +10,7 @@ func _ready():
 
 func _physics_process(delta):
 	pass
-	
+
 func DialogueDone(argument: String):
 	if (argument == "DialogueOver"):
 		timer.start()
@@ -19,7 +19,6 @@ func OnInteract():
 	if (!IsTalking):
 		Dialogic.start("Prototype")
 		IsTalking = true
-
 
 func _on_timer_timeout():
 	IsTalking = false # Replace with function body.

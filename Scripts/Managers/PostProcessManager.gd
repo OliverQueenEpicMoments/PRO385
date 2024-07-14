@@ -1,6 +1,6 @@
 extends Node
 
-@onready var PostProcess = get_tree().get_first_node_in_group("PostProcessing")
+@onready var PostProcess
 
 var MinVignetteIntensity = 0.8
 var MaxVignetteIntensity = 1.5
@@ -35,6 +35,3 @@ func EffectsLogic(sanity):
 func _ready():
 	PostProcess = get_tree().get_first_node_in_group("PostProcessing")
 	
-
-func _process(_delta):
-	pass
