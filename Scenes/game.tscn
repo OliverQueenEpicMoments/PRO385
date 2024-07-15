@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://b02cy4adfnyc0"]
+[gd_scene load_steps=34 format=3 uid="uid://b02cy4adfnyc0"]
 
 [ext_resource type="PackedScene" uid="uid://c1cjsqwl3m85g" path="res://Scenes/Characters/PrototypePlayer.tscn" id="1_egmum"]
 [ext_resource type="PackedScene" uid="uid://cgj3kj314s52s" path="res://Scenes/Managers/GameManager.tscn" id="1_kag8r"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" path="res://addons/post_processing/node/post_process.gd" id="13_84yio"]
 [ext_resource type="Resource" uid="uid://5ajcpiaxw8a" path="res://Scenes/Effects/PostProcessInfo.tres" id="14_sd8id"]
 [ext_resource type="AudioStream" uid="uid://cqptup67gyc6k" path="res://Assets/Audio/Music/ScaryAmbience.mp3" id="15_frq7g"]
+[ext_resource type="PackedScene" uid="uid://dkb1llqkp41em" path="res://Scenes/UI/PauseMenu.tscn" id="16_wxjt0"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_niy50"]
 polygon = PackedVector2Array(8, -8, 8, 8, -8, 8, -8, -8)
@@ -858,6 +859,8 @@ position = Vector2(-206, -53)
 
 [node name="PlayerUI" parent="." instance=ExtResource("8_pev8b")]
 script = ExtResource("9_v1g8q")
+
+[node name="PauseMenu" parent="PlayerUI" instance=ExtResource("16_wxjt0")]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0, 0, 0, 1)

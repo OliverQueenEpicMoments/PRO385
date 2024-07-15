@@ -14,10 +14,14 @@ var MinGrainPower = 25.0
 var MaxGrainPower = 75.0
 
 func EffectsLogic(sanity):
-	PostProcess.configuration.VignetteIntensity = lerp(MinVignetteIntensity, MaxVignetteIntensity, sanity / 100)
-	PostProcess.configuration.VignetteOpacity = lerp(MinVignetteOpacity, MaxVignetteOpacity, sanity / 100)
-	PostProcess.configuration.GrainPower = lerp(MinGrainPower, MaxGrainPower, sanity / 100)
-	PostProcess.configuration.StrenghtCA = lerp(MinCAStrength, MaxCAStrength, sanity / 100)
+	# Checks to see if a PostProecessing nide exists before changing its variables
+	if (is_instance_valid(PostProcess)):
+		PostProcess.configuration.VignetteIntensity = lerp(MinVignetteIntensity, MaxVignetteIntensity, sanity / 100)
+		PostProcess.configuration.VignetteOpacity = lerp(MinVignetteOpacity, MaxVignetteOpacity, sanity / 100)
+		PostProcess.configuration.GrainPower = lerp(MinGrainPower, MaxGrainPower, sanity / 100)
+		PostProcess.configuration.StrenghtCA = lerp(MinCAStrength, MaxCAStrength, sanity / 100)
+	else: 
+		PostProcess = get_tree().get_first_node_in_group("PostProcessing")
 	
 	if (sanity < 25):
 		PostProcess.configuration.ScreenShake = false

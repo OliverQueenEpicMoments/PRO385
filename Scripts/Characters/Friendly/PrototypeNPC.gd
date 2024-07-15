@@ -21,4 +21,4 @@ func OnInteract():
 		IsTalking = true
 
 func _on_timer_timeout():
-	IsTalking = false # Replace with function body.
+	IsTalking = false 

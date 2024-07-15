@@ -11,16 +11,15 @@ var IsActive = false
 
 signal BatteryChanged()
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	FlashlightLight.enabled = false
 	ShadowLight.enabled = false
 	LOSLight.enabled = false
 
-
-func _input(event):
+func _unhandled_input(_event):
 	if (Input.is_action_just_released("Flashlight")):
+		$AudioStreamPlayer2D.play()
 		if (IsActive):
 			IsActive = false
 		else: 
@@ -38,10 +37,8 @@ func _process(delta):
 		ShadowLight.enabled = false
 		LOSLight.enabled = false
 
-
 func	_physics_process(_delta: float) -> void:
 	look_at(get_global_mouse_position())
-
 
 func SetBattery(value):
 	var OldValue = BatteryCurrent
