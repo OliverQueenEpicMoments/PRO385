@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Characters/PrototypePlayer.gd" id="1_n4y3h"]
 [ext_resource type="Texture2D" uid="uid://ca0mifwptf0hu" path="res://Assets/Characters/AshDown-Sheet.png" id="1_ngmrn"]
 [ext_resource type="PackedScene" uid="uid://bqjqy0crkq6sj" path="res://Scenes/flashlight.tscn" id="3_l6e1e"]
-[ext_resource type="Texture2D" uid="uid://bptwwfi1tghpc" path="res://Assets/Light.png" id="4_qmu0e"]
+[ext_resource type="Texture2D" uid="uid://7raffwhs8sua" path="res://Assets/Lights/Light2.png" id="4_8sikl"]
 [ext_resource type="PackedScene" uid="uid://daxxtipygubui" path="res://Scenes/UI/TVStatic.tscn" id="5_gjy5p"]
 [ext_resource type="AudioStream" uid="uid://cd0hlimyafa6d" path="res://Assets/Audio/Player/RealisticKnocking.mp3" id="6_q16lp"]
 [ext_resource type="AudioStream" uid="uid://4qb63xo5keph" path="res://Assets/Audio/Player/Alarm.mp3" id="7_uhbrc"]
@@ -85,7 +85,7 @@ position = Vector2(0, -18)
 position = Vector2(0, -18)
 color = Color(0.664769, 0.775798, 0.999999, 1)
 energy = 0.75
-texture = ExtResource("4_qmu0e")
+texture = ExtResource("4_8sikl")
 texture_scale = 0.2
 
 [node name="ShadowLight" type="PointLight2D" parent="."]
@@ -93,7 +93,7 @@ position = Vector2(0, -18)
 color = Color(0.666667, 0.776471, 1, 1)
 energy = 0.5
 shadow_enabled = true
-texture = ExtResource("4_qmu0e")
+texture = ExtResource("4_8sikl")
 texture_scale = 0.25
 
 [node name="LOSLight" type="PointLight2D" parent="."]
@@ -103,7 +103,7 @@ blend_mode = 2
 range_item_cull_mask = 2
 shadow_enabled = true
 shadow_item_cull_mask = 2
-texture = ExtResource("4_qmu0e")
+texture = ExtResource("4_8sikl")
 texture_scale = 0.28
 
 [node name="Timer" type="Timer" parent="."]

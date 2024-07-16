@@ -2,8 +2,8 @@ extends Control
 
 @onready var AnimPlayer = $AnimationPlayer
 
-
 func Pause():
+	#Global
 	get_tree().paused = true
 	AnimPlayer.play("Blur")
 	
@@ -29,7 +29,7 @@ func _on_restart_button_pressed():
 	get_tree().reload_current_scene() 
 
 func _on_settings_button_pressed():
-	pass #TODO Implement settings and settings menu
+	pass # TODO Implement settings and settings menu
 
 func _on_quit_button_pressed():
 	get_tree().quit()

@@ -3,6 +3,7 @@ extends Node
 @onready var Player
 var PlayerSanity = 0
 var MaxInsanity = false
+var IsPaused = false
 
 func _ready():
 	Player = get_tree().get_first_node_in_group("Player")

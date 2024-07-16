@@ -7,6 +7,7 @@ var EnemyLocation = Vector2(0, 0)
 @export var Speed = 100.0
 @export var SprintSpeed = 200.0
 @export var Acceleration = 10.0
+@export var IsRooted = false
 
 @export var StaminaMax = 100.0
 var StaminaCurrent = 100.0: set = SetStamina
