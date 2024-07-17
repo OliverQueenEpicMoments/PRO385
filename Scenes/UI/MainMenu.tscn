@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cdyv73wtnpr2p"]
+[gd_scene load_steps=8 format=3 uid="uid://cdyv73wtnpr2p"]
 
 [ext_resource type="Script" path="res://Scripts/UI/MainMenu.gd" id="1_4hove"]
 [ext_resource type="FontFile" uid="uid://cdh4f8j6uv54l" path="res://Assets/Fonts/HelpMe.ttf" id="2_bbvfp"]
 [ext_resource type="Texture2D" uid="uid://bwg4qqtg3583f" path="res://Assets/UI/Society.jpg" id="2_r22ik"]
+[ext_resource type="PackedScene" uid="uid://4efi72m083dt" path="res://Scenes/UI/SettingsMenu.tscn" id="4_ieydk"]
 
 [sub_resource type="Animation" id="Animation_a4j5a"]
 resource_name = "Fade"
@@ -128,6 +129,14 @@ one_shot = true
 [node name="FadeOutTimer" type="Timer" parent="ColorRect"]
 wait_time = 1.25
 one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SettingsMenu" parent="CanvasLayer" instance=ExtResource("4_ieydk")]
+visible = false
+
+[node name="MainMenuMusic" type="AudioStreamPlayer2D" parent="."]
+bus = &"Music"
 
 [connection signal="pressed" from="ButtonManager/PanelContainer/VBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="ButtonManager/PanelContainer/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]

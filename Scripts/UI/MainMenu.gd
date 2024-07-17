@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var MenuUI = $ButtonManager
 @onready var FadeAnim = $ColorRect
 var NewGame = true
 
