@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://i1gupv31llvp"]
+[gd_scene load_steps=4 format=3 uid="uid://i1gupv31llvp"]
 
 [ext_resource type="PackedScene" uid="uid://dujqw7a2q56df" path="res://Scenes/UI/FlashlightBar.tscn" id="1_1mlce"]
 [ext_resource type="PackedScene" uid="uid://d3hbha2k7gx1n" path="res://Scenes/UI/StaminaBar.tscn" id="2_o0irv"]
+[ext_resource type="Texture2D" uid="uid://bapvgvtttu7j" path="res://Assets/UI/Jonkler2.jpeg" id="3_q6d16"]
 
 [node name="PlayerUI" type="CanvasLayer"]
 
@@ -11,35 +12,40 @@ anchor_left = 0.0208333
 anchor_top = 0.037037
 anchor_right = 0.350694
 anchor_bottom = 0.152778
+offset_right = -183.333
+offset_bottom = -0.000274658
 metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect" type="TextureRect" parent="PlayerInfoBox"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="FlashlightBar" parent="PlayerInfoBox" instance=ExtResource("1_1mlce")]
 layout_mode = 1
-anchor_left = 0.252632
-anchor_top = 0.546667
-anchor_right = 0.968421
-anchor_bottom = 0.826667
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 0.0
-offset_bottom = 0.0
+anchor_left = 0.298643
+anchor_top = 0.610667
+anchor_right = 1.01443
+anchor_bottom = 0.890667
+offset_left = 21.6105
+offset_top = 0.000160217
+offset_right = 21.6106
+offset_bottom = 0.000152588
 grow_horizontal = 0
 value = 50.0
 
 [node name="StaminaBar" parent="PlayerInfoBox" instance=ExtResource("2_o0irv")]
 layout_mode = 1
-anchor_left = 0.252632
-anchor_top = 0.12
-anchor_right = 0.971966
-anchor_bottom = 0.4
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 0.0
-offset_bottom = 0.0
+anchor_left = 0.298643
+anchor_top = 0.184
+anchor_right = 1.01798
+anchor_bottom = 0.464
+offset_left = 21.6105
+offset_top = 3.71933e-05
+offset_right = 21.6107
+offset_bottom = 5.34058e-05
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="TextureRect" type="TextureRect" parent="PlayerInfoBox"]
+offset_left = 13.0001
+offset_top = 25.0
+offset_right = 653.0
+offset_bottom = 384.0
+scale = Vector2(0.208423, 0.208423)
+texture = ExtResource("3_q6d16")

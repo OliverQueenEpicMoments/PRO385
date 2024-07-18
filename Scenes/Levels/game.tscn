@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://b02cy4adfnyc0"]
+[gd_scene load_steps=35 format=3 uid="uid://b02cy4adfnyc0"]
 
 [ext_resource type="PackedScene" uid="uid://c1cjsqwl3m85g" path="res://Scenes/Characters/PrototypePlayer.tscn" id="1_egmum"]
 [ext_resource type="PackedScene" uid="uid://cgj3kj314s52s" path="res://Scenes/Managers/GameManager.tscn" id="1_kag8r"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://Scripts/UI/PlayerUI.gd" id="9_v1g8q"]
 [ext_resource type="PackedScene" uid="uid://05ta1y5cxfdw" path="res://Scenes/Characters/Enemies/IdolOfChaos.tscn" id="11_ua5ls"]
 [ext_resource type="PackedScene" uid="uid://cxi1iancqgwjd" path="res://Scenes/Characters/Friendly/PrototypeNPC.tscn" id="12_fndu5"]
+[ext_resource type="PackedScene" uid="uid://4efi72m083dt" path="res://Scenes/UI/SettingsMenu.tscn" id="12_hphax"]
 [ext_resource type="Script" path="res://addons/post_processing/node/post_process.gd" id="13_84yio"]
 [ext_resource type="Resource" uid="uid://5ajcpiaxw8a" path="res://Scenes/Effects/PostProcessInfo.tres" id="14_sd8id"]
 [ext_resource type="AudioStream" uid="uid://cqptup67gyc6k" path="res://Assets/Audio/Music/ScaryAmbience.mp3" id="15_frq7g"]
@@ -859,6 +860,8 @@ position = Vector2(-206, -53)
 
 [node name="PlayerUI" parent="." instance=ExtResource("8_pev8b")]
 script = ExtResource("9_v1g8q")
+
+[node name="SettingsMenu" parent="PlayerUI" instance=ExtResource("12_hphax")]
 
 [node name="PauseMenu" parent="PlayerUI" instance=ExtResource("16_wxjt0")]
 

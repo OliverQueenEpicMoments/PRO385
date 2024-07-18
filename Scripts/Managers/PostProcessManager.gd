@@ -8,7 +8,7 @@ var MinVignetteOpacity = 0.75
 var MaxVignetteOpacity = 1.0
 
 var MinCAStrength = 0.0
-var MaxCAStrength = 2.0
+var MaxCAStrength = 3.0
 
 var MinGrainPower = 25.0
 var MaxGrainPower = 75.0

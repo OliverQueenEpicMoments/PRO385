@@ -9,7 +9,7 @@ shader_parameter/Amount = 40.0
 
 [node name="TVStatic" type="Node2D"]
 light_mask = 524288
-scale = Vector2(2, 2)
+scale = Vector2(4, 4)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 light_mask = 0
