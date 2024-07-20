@@ -2,6 +2,7 @@ extends Control
 
 @onready var MenuUI: = get_tree().get_first_node_in_group("MainMenu")
 @onready var PauseUI: = get_tree().get_first_node_in_group("PauseMenu")
+@onready var PauseMusic: = get_tree().get_first_node_in_group("PauseMusic")
 @onready var AnimPlayer = $AnimationPlayer
 
 @onready var DropDown = $PanelContainer/VBoxContainer/OptionButton
@@ -52,6 +53,11 @@ func _ready():
 	if (!PauseUI):
 		$PanelContainer/VBoxContainer/GameButton.hide()
 	
+func CenterWindow():
+	var ScreenCenter = DisplayServer.screen_get_position() + DisplayServer.screen_get_size() / 2
+	var WindowSize = get_window().get_size_with_decorations()
+	get_window().set_position(ScreenCenter - WindowSize / 2)
+	
 func Initialize():
 	if (PauseUI):
 		get_tree().paused = true
@@ -83,12 +89,14 @@ func _on_timer_timeout():
 
 func _on_game_button_pressed():
 	AnimPlayer.play_backwards("Fade")
+	PauseMusic.stop()
 	get_tree().paused = false
 
 func _on_option_button_item_selected(index):
 	SelectedResolution = DropDown.get_item_text(index)
 	#get_window().set_size(Resolutions[SelectedResolution])
 	DisplayServer.window_set_size(Resolutions[SelectedResolution])
+	CenterWindow()
 	print(Resolutions[SelectedResolution])
 
 func _on_fullscreen_modes_item_selected(index):
@@ -108,7 +116,6 @@ func _on_fullscreen_modes_item_selected(index):
 		_:
 			print("Uhhhh...")
 	#get_window().set_size(Resolutions[SelectedResolution])
-
 
 func _on_check_button_toggled(toggled_on):
 	if (toggled_on):

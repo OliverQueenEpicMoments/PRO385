@@ -9,6 +9,7 @@ func Pause():
 	AnimPlayer.play("Blur")
 	
 func Resume():
+	$PauseMusic.stop()
 	if (SettingsUI.is_visible()):
 		SettingsUI.Uninitialize()
 		show()
@@ -18,6 +19,7 @@ func Resume():
 
 func _unhandled_input(_event):
 	if (Input.is_action_just_pressed("Pause") and !get_tree().paused):
+		$PauseMusic.play()
 		if (SettingsUI.is_visible()):
 			SettingsUI.Uninitialize()
 			$SettingsTimer.start()

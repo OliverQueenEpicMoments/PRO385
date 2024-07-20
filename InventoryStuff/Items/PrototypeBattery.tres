@@ -1,0 +1,6 @@
+[gd_resource type="ItemDefinition" format=3 uid="uid://curkxpvp22mlc"]
+
+[resource]
+max_stack = 3
+name = "PrototypeBattery"
+weight = 1.0

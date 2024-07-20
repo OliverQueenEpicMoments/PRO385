@@ -73,4 +73,4 @@ vignette_opacity = 0.5
 AnalogMonitor = false
 AnalogMonitorResolution = Vector2(256, 256)
 ScreenShake = false
-ScreenShakePower = 0.1
+ScreenShakePower = 0.075

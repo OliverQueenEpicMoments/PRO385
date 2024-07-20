@@ -1,0 +1,6 @@
+[gd_resource type="InventoryDatabase" load_steps=2 format=3 uid="uid://x0g67mbgdc47"]
+
+[ext_resource type="ItemDefinition" uid="uid://curkxpvp22mlc" path="res://InventoryStuff/Items/PrototypeBattery.tres" id="1_puxaf"]
+
+[resource]
+items = Array[ItemDefinition]([ExtResource("1_puxaf")])
