@@ -8,9 +8,6 @@ func _ready():
 	Dialogic.signal_event.connect(DialogueDone)
 	InteractionArea.Interact = Callable(self, "OnInteract")
 
-func _physics_process(delta):
-	pass
-
 func DialogueDone(argument: String):
 	if (argument == "DialogueOver"):
 		# TODO Set off signal or function here to resume player movement by unrooting the player

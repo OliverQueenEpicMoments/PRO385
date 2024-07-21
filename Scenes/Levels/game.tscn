@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://b02cy4adfnyc0"]
+[gd_scene load_steps=38 format=3 uid="uid://b02cy4adfnyc0"]
 
 [ext_resource type="PackedScene" uid="uid://c1cjsqwl3m85g" path="res://Scenes/Characters/PrototypePlayer.tscn" id="1_egmum"]
 [ext_resource type="PackedScene" uid="uid://cgj3kj314s52s" path="res://Scenes/Managers/GameManager.tscn" id="1_kag8r"]
@@ -14,9 +14,12 @@
 [ext_resource type="PackedScene" uid="uid://cxi1iancqgwjd" path="res://Scenes/Characters/Friendly/PrototypeNPC.tscn" id="12_fndu5"]
 [ext_resource type="PackedScene" uid="uid://4efi72m083dt" path="res://Scenes/UI/SettingsMenu.tscn" id="12_hphax"]
 [ext_resource type="Script" path="res://addons/post_processing/node/post_process.gd" id="13_84yio"]
+[ext_resource type="PackedScene" uid="uid://cbj88k8k1nf0a" path="res://Scenes/UI/InventoryUI.tscn" id="13_gn66t"]
 [ext_resource type="Resource" uid="uid://5ajcpiaxw8a" path="res://Scenes/Effects/PostProcessInfo.tres" id="14_sd8id"]
 [ext_resource type="AudioStream" uid="uid://cqptup67gyc6k" path="res://Assets/Audio/Music/ScaryAmbience.mp3" id="15_frq7g"]
 [ext_resource type="PackedScene" uid="uid://dkb1llqkp41em" path="res://Scenes/UI/PauseMenu.tscn" id="16_wxjt0"]
+[ext_resource type="PackedScene" uid="uid://bq1cmqhvaak2o" path="res://Scenes/Inventory/InventoryItem.tscn" id="18_4tmi5"]
+[ext_resource type="Texture2D" uid="uid://w4qdlupoyjpj" path="res://Assets/Items/Battery.png" id="19_ijvoe"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_niy50"]
 polygon = PackedVector2Array(8, -8, 8, 8, -8, 8, -8, -8)
@@ -861,6 +864,8 @@ position = Vector2(-206, -53)
 [node name="PlayerUI" parent="." instance=ExtResource("8_pev8b")]
 script = ExtResource("9_v1g8q")
 
+[node name="InventoryUi" parent="PlayerUI" instance=ExtResource("13_gn66t")]
+
 [node name="SettingsMenu" parent="PlayerUI" instance=ExtResource("12_hphax")]
 
 [node name="PauseMenu" parent="PlayerUI" instance=ExtResource("16_wxjt0")]
@@ -885,5 +890,13 @@ configuration = ExtResource("14_sd8id")
 stream = ExtResource("15_frq7g")
 autoplay = true
 bus = &"Music"
+
+[node name="InventoryItem" parent="." instance=ExtResource("18_4tmi5")]
+position = Vector2(93, -29)
+scale = Vector2(0.05, 0.05)
+ItemType = "Consumable"
+ItemName = "Battery"
+ItemTexture = ExtResource("19_ijvoe")
+ItemEffect = "RIzz"
 
 [connection signal="StaminaChanged" from="PrototypePlayer" to="PrototypePlayer" method="_on_stamina_changed"]

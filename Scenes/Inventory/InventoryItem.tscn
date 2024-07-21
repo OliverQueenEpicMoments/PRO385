@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://bq1cmqhvaak2o"]
+
+[ext_resource type="Script" path="res://Scripts/Inventory/InventoryItem.gd" id="1_4sbgy"]
+[ext_resource type="PackedScene" uid="uid://deo66nfs8pl5n" path="res://Scenes/Interaction/InteractionArea/InteractionArea.tscn" id="2_a7ir3"]
+[ext_resource type="Shader" path="res://Shaders/ItemHighlight.gdshader" id="2_akx6d"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_awqtp"]
+shader = ExtResource("2_akx6d")
+shader_parameter/highlight_color = Color(1, 1, 1, 1)
+shader_parameter/frequency = 0.4
+shader_parameter/highlight_speed = 6.0
+shader_parameter/highlight_width = 15.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nv77c"]
+
+[node name="InventoryItem" type="Node2D" groups=["Items"]]
+script = ExtResource("1_4sbgy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+z_index = 1
+y_sort_enabled = true
+material = SubResource("ShaderMaterial_awqtp")
+position = Vector2(0, 10)
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_a7ir3")]
+ActionName = "Rizz"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, -10)
+scale = Vector2(125, 125)
+shape = SubResource("RectangleShape2D_nv77c")

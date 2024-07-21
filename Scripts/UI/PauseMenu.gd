@@ -1,6 +1,7 @@
 extends Control
 
 @onready var SettingsUI: = get_tree().get_first_node_in_group("SettingsMenu")
+@onready var PlayerInventoryUI: = get_tree().get_first_node_in_group("InventoryUI")
 @onready var AnimPlayer = $AnimationPlayer
 
 func Pause():
@@ -22,6 +23,9 @@ func _unhandled_input(_event):
 		$PauseMusic.play()
 		if (SettingsUI.is_visible()):
 			SettingsUI.Uninitialize()
+			$SettingsTimer.start()
+		elif (PlayerInventoryUI.is_visible()):
+			PlayerInventoryUI.Uninitialize()
 			$SettingsTimer.start()
 		else:
 			Pause()
