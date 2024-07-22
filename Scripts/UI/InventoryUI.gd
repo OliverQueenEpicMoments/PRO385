@@ -22,6 +22,14 @@ func Uninitialize():
 
 func OnInventoryUpdated():
 	ClearGridContainer()
+	for item in Global.PlayerInventory:
+		var InvSlot = Global.InvSlotScene.instantiate()
+		ItemContainer.add_child(InvSlot)
+		
+		if (item != null):
+			InvSlot.SetItem(item)
+		else:
+			InvSlot.SetEmpty()
 	
 func ClearGridContainer():
 	while (ItemContainer.get_child_count() > 0):

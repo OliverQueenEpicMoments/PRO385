@@ -8,6 +8,7 @@ var MaxInsanity: = false
 # Inventory
 var PlayerInventory: = []
 signal InventoryUpdated
+@onready var InvSlotScene = preload("res://Scenes/Inventory/InventorySlot.tscn")
 
 # Settings
 var IsPaused: = false
@@ -38,7 +39,7 @@ func AddItem(item):
 			InventoryUpdated.emit()
 			print("Item added ", PlayerInventory)
 			return true
-		return false
+	return false
 
 func RemoveItem():
 	InventoryUpdated.emit()

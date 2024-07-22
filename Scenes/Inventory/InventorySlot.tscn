@@ -1,0 +1,179 @@
+[gd_scene load_steps=5 format=3 uid="uid://btwx23ivyiqjm"]
+
+[ext_resource type="Script" path="res://Scripts/Inventory/InventorySlot.gd" id="1_p4dp1"]
+[ext_resource type="Texture2D" uid="uid://w4qdlupoyjpj" path="res://Assets/Items/Battery.png" id="2_2op0u"]
+[ext_resource type="FontFile" uid="uid://cdh4f8j6uv54l" path="res://Assets/Fonts/HelpMe.ttf" id="3_yvn1c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_shqfd"]
+
+[node name="InventorySlot" type="Control"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -1760.0
+offset_bottom = -920.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p4dp1")
+
+[node name="Border" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Border"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="Border/VBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+mouse_filter = 2
+
+[node name="Title" type="MarginContainer" parent="Border/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_right = 4
+
+[node name="QuantityLabel" type="Label" parent="Border/VBoxContainer/Panel/Title"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_yvn1c")
+theme_override_font_sizes/font_size = 32
+text = "1"
+
+[node name="ItemIcon" type="Sprite2D" parent="Border"]
+position = Vector2(75, 75)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_2op0u")
+
+[node name="ItemButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_shqfd")
+metadata/_edit_use_anchors_ = true
+
+[node name="MainPanel" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_top = -145.0
+offset_right = 240.0
+offset_bottom = -5.0
+
+[node name="Details" type="VBoxContainer" parent="MainPanel"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="MainPanel/Details"]
+custom_minimum_size = Vector2(230, 40)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ItemName" type="Label" parent="MainPanel/Details/Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 5.0
+offset_top = -18.5
+offset_right = 77.0
+offset_bottom = 18.5
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_yvn1c")
+theme_override_font_sizes/font_size = 32
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel2" type="Panel" parent="MainPanel/Details"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ItemType" type="Label" parent="MainPanel/Details/Panel2"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 5.0
+offset_top = -18.5
+offset_right = 77.0
+offset_bottom = 18.5
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_yvn1c")
+theme_override_font_sizes/font_size = 32
+text = "Type"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel3" type="Panel" parent="MainPanel/Details"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ItemEffect" type="Label" parent="MainPanel/Details/Panel3"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 5.0
+offset_top = -18.5
+offset_right = 77.0
+offset_bottom = 18.5
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_yvn1c")
+theme_override_font_sizes/font_size = 32
+text = "Effect"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Usage" type="VBoxContainer" parent="MainPanel"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="UseButton" type="Button" parent="MainPanel/Usage"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_yvn1c")
+theme_override_font_sizes/font_size = 32
+text = "Use"
+
+[node name="Label" type="Label" parent="MainPanel/Usage"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 4
+
+[node name="DiscardButton" type="Button" parent="MainPanel/Usage"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("3_yvn1c")
+theme_override_font_sizes/font_size = 32
+text = "Discard"
+
+[connection signal="mouse_entered" from="ItemButton" to="." method="_on_item_button_mouse_entered"]
+[connection signal="mouse_exited" from="ItemButton" to="." method="_on_item_button_mouse_exited"]
+[connection signal="pressed" from="ItemButton" to="." method="_on_item_button_pressed"]

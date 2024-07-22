@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://b02cy4adfnyc0"]
+[gd_scene load_steps=41 format=3 uid="uid://b02cy4adfnyc0"]
 
 [ext_resource type="PackedScene" uid="uid://c1cjsqwl3m85g" path="res://Scenes/Characters/PrototypePlayer.tscn" id="1_egmum"]
 [ext_resource type="PackedScene" uid="uid://cgj3kj314s52s" path="res://Scenes/Managers/GameManager.tscn" id="1_kag8r"]
@@ -20,6 +20,9 @@
 [ext_resource type="PackedScene" uid="uid://dkb1llqkp41em" path="res://Scenes/UI/PauseMenu.tscn" id="16_wxjt0"]
 [ext_resource type="PackedScene" uid="uid://bq1cmqhvaak2o" path="res://Scenes/Inventory/InventoryItem.tscn" id="18_4tmi5"]
 [ext_resource type="Texture2D" uid="uid://w4qdlupoyjpj" path="res://Assets/Items/Battery.png" id="19_ijvoe"]
+[ext_resource type="Texture2D" uid="uid://b7qpnenppupfd" path="res://Assets/UI/Placeholder.png" id="21_nyp2l"]
+[ext_resource type="Texture2D" uid="uid://bapvgvtttu7j" path="res://Assets/UI/Jonkler2.jpeg" id="22_q06ke"]
+[ext_resource type="Texture2D" uid="uid://b6fma2ba5lhch" path="res://Assets/UI/Icons/32x32/book.png" id="23_ciuvh"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_niy50"]
 polygon = PackedVector2Array(8, -8, 8, 8, -8, 8, -8, -8)
@@ -898,5 +901,37 @@ ItemType = "Consumable"
 ItemName = "Battery"
 ItemTexture = ExtResource("19_ijvoe")
 ItemEffect = "RIzz"
+
+[node name="InventoryItem2" parent="." instance=ExtResource("18_4tmi5")]
+position = Vector2(-82, 56)
+scale = Vector2(0.05, 0.05)
+ItemType = "IDK"
+ItemName = "Joe"
+ItemTexture = ExtResource("19_ijvoe")
+ItemEffect = "Joe Mama"
+
+[node name="InventoryItem3" parent="." instance=ExtResource("18_4tmi5")]
+position = Vector2(-21, -27)
+scale = Vector2(0.05, 0.05)
+ItemType = "Death"
+ItemName = "Bruh"
+ItemTexture = ExtResource("21_nyp2l")
+ItemEffect = "Dies"
+
+[node name="InventoryItem4" parent="." instance=ExtResource("18_4tmi5")]
+position = Vector2(45, -27)
+scale = Vector2(0.05, 0.05)
+ItemType = "Society"
+ItemName = "Jonkler"
+ItemTexture = ExtResource("22_q06ke")
+ItemEffect = "Police help"
+
+[node name="InventoryItem5" parent="." instance=ExtResource("18_4tmi5")]
+position = Vector2(45, 30)
+scale = Vector2(0.05, 0.05)
+ItemType = "Knowledge"
+ItemName = "Book"
+ItemTexture = ExtResource("23_ciuvh")
+ItemEffect = "Lamborghini"
 
 [connection signal="StaminaChanged" from="PrototypePlayer" to="PrototypePlayer" method="_on_stamina_changed"]
