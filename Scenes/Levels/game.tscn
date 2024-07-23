@@ -900,7 +900,8 @@ scale = Vector2(0.05, 0.05)
 ItemType = "Consumable"
 ItemName = "Battery"
 ItemTexture = ExtResource("19_ijvoe")
-ItemEffect = "RIzz"
+ItemEffect = "Charge"
+ItemDescription = "A somewhat lightweight battery, will partially fill up the flashlight."
 
 [node name="InventoryItem2" parent="." instance=ExtResource("18_4tmi5")]
 position = Vector2(-82, 56)
@@ -916,15 +917,15 @@ scale = Vector2(0.05, 0.05)
 ItemType = "Death"
 ItemName = "Bruh"
 ItemTexture = ExtResource("21_nyp2l")
-ItemEffect = "Dies"
 
 [node name="InventoryItem4" parent="." instance=ExtResource("18_4tmi5")]
 position = Vector2(45, -27)
 scale = Vector2(0.05, 0.05)
 ItemType = "Society"
-ItemName = "Jonkler"
+ItemName = "Backpack"
 ItemTexture = ExtResource("22_q06ke")
-ItemEffect = "Police help"
+ItemEffect = "Inventory Small"
+ItemDescription = "A small pouch made for holding stuff."
 
 [node name="InventoryItem5" parent="." instance=ExtResource("18_4tmi5")]
 position = Vector2(45, 30)

@@ -1,13 +1,9 @@
 extends Control
 
+@onready var InvUI: = get_tree().get_first_node_in_group("InventoryUI")
+
 @onready var ItemIcon = $Border/ItemIcon
 @onready var QuantityLabel = $Border/VBoxContainer/Panel/Title/QuantityLabel
-@onready var MainPanel = $MainPanel
-@onready var DetailsPanel = $MainPanel/Details
-@onready var UsagePanel = $MainPanel/Usage
-@onready var ItemName = $MainPanel/Details/Panel/ItemName
-@onready var ItemType = $MainPanel/Details/Panel2/ItemType
-@onready var ItemEffect = $MainPanel/Details/Panel3/ItemEffect
 
 var CurrentItem = null
 
@@ -21,19 +17,13 @@ func _process(delta):
 
 func _on_item_button_pressed():
 	if (CurrentItem != null):
-		#MainPanel.visible = !MainPanel.visible
-		UsagePanel.visible = !UsagePanel.visible
-		DetailsPanel.visible = false
+		InvUI.SetItemDetails(CurrentItem)
 
 func _on_item_button_mouse_entered():
-	if (CurrentItem != null):
-		MainPanel.visible = true
-		UsagePanel.visible = false
-		DetailsPanel.visible = true
+	pass
 
 func _on_item_button_mouse_exited():
-	#MainPanel.visible = false
-	DetailsPanel.visible = false
+	pass
 
 func SetEmpty():
 	ItemIcon.texture = null
@@ -43,10 +33,3 @@ func SetItem(item):
 	CurrentItem = item
 	ItemIcon.texture = item["Texture"]
 	QuantityLabel.text = str(item["Quantity"])
-	ItemName.text = str(item["Name"])
-	ItemType.text = str(item["Type"])
-	
-	if (CurrentItem["Effect"] != ""):
-		ItemEffect.text = str("+ ", CurrentItem["Effect"])
-	else:
-		ItemEffect.text = ""

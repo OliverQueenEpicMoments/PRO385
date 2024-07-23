@@ -44,3 +44,6 @@ func SetBattery(value):
 	var OldValue = BatteryCurrent
 	BatteryCurrent = value
 	BatteryChanged.emit()
+
+func AddCharge(chargeval):
+	BatteryCurrent = clamp(BatteryCurrent + chargeval, 0, BatteryMax)

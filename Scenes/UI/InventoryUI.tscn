@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbj88k8k1nf0a"]
+[gd_scene load_steps=10 format=3 uid="uid://cbj88k8k1nf0a"]
 
 [ext_resource type="Script" path="res://Scripts/UI/InventoryUI.gd" id="1_wnmjy"]
 [ext_resource type="FontFile" uid="uid://cdh4f8j6uv54l" path="res://Assets/Fonts/HelpMe.ttf" id="2_x0fe2"]
+[ext_resource type="Texture2D" uid="uid://w4qdlupoyjpj" path="res://Assets/Items/Battery.png" id="3_53dm4"]
 
 [sub_resource type="Animation" id="Animation_8ycnh"]
 resource_name = "Fade"
@@ -9,7 +10,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Panel:modulate")
+tracks/0/path = NodePath("InventoryPanel:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -36,7 +37,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Panel:modulate")
+tracks/0/path = NodePath("InventoryPanel:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -64,6 +65,115 @@ _data = {
 "RESET": SubResource("Animation_h882k")
 }
 
+[sub_resource type="Animation" id="Animation_8biul"]
+resource_name = "Fade"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/UseButton:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/DiscardButton:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_75wo8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/UseButton:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/DiscardButton:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wmutr"]
+_data = {
+"Fade": SubResource("Animation_8biul"),
+"RESET": SubResource("Animation_75wo8")
+}
+
 [node name="InventoryUI" type="Control" groups=["InventoryUI"]]
 visible = false
 layout_mode = 3
@@ -76,7 +186,7 @@ mouse_filter = 2
 script = ExtResource("1_wnmjy")
 metadata/_edit_use_anchors_ = true
 
-[node name="Panel" type="Panel" parent="."]
+[node name="InventoryPanel" type="Panel" parent="."]
 custom_minimum_size = Vector2(700, 700)
 layout_mode = 1
 anchors_preset = 8
@@ -92,7 +202,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="InventoryPanel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -101,12 +211,12 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Panel" type="Panel" parent="Panel/VBoxContainer"]
-custom_minimum_size = Vector2(0, 40)
+[node name="Panel" type="Panel" parent="InventoryPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 mouse_filter = 2
 
-[node name="Title" type="MarginContainer" parent="Panel/VBoxContainer/Panel"]
+[node name="Title" type="MarginContainer" parent="InventoryPanel/VBoxContainer/Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -117,14 +227,14 @@ mouse_filter = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_right = 4
 
-[node name="TitleLabel" type="Label" parent="Panel/VBoxContainer/Panel/Title"]
+[node name="TitleLabel" type="Label" parent="InventoryPanel/VBoxContainer/Panel/Title"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_x0fe2")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 40
 text = "Inventory"
 horizontal_alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="InventoryPanel/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 4
@@ -132,18 +242,147 @@ theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Panel/VBoxContainer/MarginContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="InventoryPanel/VBoxContainer/MarginContainer"]
 layout_mode = 2
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 
-[node name="GridContainer" type="GridContainer" parent="Panel/VBoxContainer/MarginContainer/ScrollContainer"]
+[node name="GridContainer" type="GridContainer" parent="InventoryPanel/VBoxContainer/MarginContainer/ScrollContainer"]
 layout_mode = 2
 theme_override_constants/h_separation = 20
 theme_override_constants/v_separation = 20
 columns = 4
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="InventoryAnimation" type="AnimationPlayer" parent="InventoryPanel"]
+root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_43bbw")
 }
+
+[node name="DescriptionPanel" type="Panel" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(400, 800)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -595.0
+offset_top = -400.0
+offset_right = -20.0
+offset_bottom = 400.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DescriptionPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="DescriptionPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Title" type="MarginContainer" parent="DescriptionPanel/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.5
+offset_bottom = 3.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_right = 4
+
+[node name="TitleLabel" type="Label" parent="DescriptionPanel/VBoxContainer/Panel/Title"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_x0fe2")
+theme_override_font_sizes/font_size = 40
+text = "Item Description
+"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="DescriptionPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="ScrollContainer" type="ScrollContainer" parent="DescriptionPanel/VBoxContainer/MarginContainer"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DescriptionPanel/VBoxContainer/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="DescriptionPanel/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="DescriptionPanel/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_53dm4")
+
+[node name="NameLabel" type="Label" parent="DescriptionPanel/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_x0fe2")
+theme_override_font_sizes/font_size = 32
+text = "Item Name"
+horizontal_alignment = 1
+
+[node name="TypeLabel" type="Label" parent="DescriptionPanel/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.691357, 0.691357, 0.691357, 1)
+theme_override_fonts/font = ExtResource("2_x0fe2")
+theme_override_font_sizes/font_size = 24
+text = "Item Type"
+
+[node name="EffectLabel" type="Label" parent="DescriptionPanel/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_x0fe2")
+theme_override_font_sizes/font_size = 24
+text = "
+Item Effect"
+
+[node name="EffectTextLabel" type="Label" parent="DescriptionPanel/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Effect description goes here"
+
+[node name="DescriptionLabel" type="Label" parent="DescriptionPanel/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "
+Overall item description/lore goes here
+
+"
+
+[node name="UseButton" type="Button" parent="DescriptionPanel/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+disabled = true
+text = "Use"
+
+[node name="DiscardButton" type="Button" parent="DescriptionPanel/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Drop
+"
+
+[node name="DetailedAnimation" type="AnimationPlayer" parent="DescriptionPanel"]
+libraries = {
+"": SubResource("AnimationLibrary_wmutr")
+}
+
+[connection signal="pressed" from="DescriptionPanel/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/UseButton" to="." method="_on_use_button_pressed"]
+[connection signal="pressed" from="DescriptionPanel/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/DiscardButton" to="." method="_on_discard_button_pressed"]

@@ -7,6 +7,7 @@ extends Node2D
 @export var ItemName: = ""
 @export var ItemTexture : Texture
 @export var ItemEffect: = ""
+@export var ItemDescription: = ""
 var ScenePath: = "res://Scenes/Inventory/InventoryItem.tscn"
 
 @onready var IconSprite = $Sprite2D
@@ -27,6 +28,7 @@ func OnInteract():
 		"Type" : ItemType,
 		"Name" : ItemName,
 		"Effect" : ItemEffect,
+		"Description" : ItemDescription,
 		"Texture" : ItemTexture,
 		"ScenePath" : ScenePath
 	}
@@ -34,3 +36,9 @@ func OnInteract():
 	if (Global.Player):
 		Global.AddItem(CurrentItem)
 		self.queue_free()
+
+func SetItemData(data):
+	ItemType = data["Type"]
+	ItemName = data["Name"]
+	ItemEffect = data["Effect"]
+	ItemTexture = data["Texture"]

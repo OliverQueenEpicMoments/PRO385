@@ -17,7 +17,7 @@ var Borderless: = false
 
 func _ready():
 	Player = get_tree().get_first_node_in_group("Player")
-	PlayerInventory.resize(18)
+	PlayerInventory.resize(16)
 
 func SetSanity(sanity):
 	PlayerSanity = sanity
@@ -41,8 +41,34 @@ func AddItem(item):
 			return true
 	return false
 
-func RemoveItem():
+func RemoveItem(itemtype, itemeffect):
+	for I in range(PlayerInventory.size()):
+		if (PlayerInventory[I] != null and PlayerInventory[I]["Type"] == itemtype and PlayerInventory[I]["Effect"] == itemeffect):
+			PlayerInventory[I]["Quantity"] -= 1
+			if (PlayerInventory[I]["Quantity"] <= 0):
+				PlayerInventory[I] = null
+			InventoryUpdated.emit()
+			return true
+	return false
+
+func IncreaseInventorySize(extraslots):
+	PlayerInventory.resize(PlayerInventory.size() + extraslots)
 	InventoryUpdated.emit()
 
-func IncreaseInventorySize():
-	InventoryUpdated.emit()
+func AdjustDropPosition(position):
+	var Radius = 100
+	var NearbyItems = get_tree().get_nodes_in_group("Items")
+	for DroppedItem in NearbyItems:
+		if (DroppedItem.global_position.distance_to(position) < Radius):
+			var RandOffset = Vector2(randf_range(-Radius, Radius), randf_range(-Radius, Radius))
+			position += RandOffset
+			break
+	return position
+	
+func DropItem(itemdata, dropposition):
+	var ItemScene = load(itemdata["ScenePath"])
+	var ItemInstance = ItemScene.instantiate()
+	ItemInstance.SetItemData(itemdata)
+	dropposition = AdjustDropPosition(dropposition)
+	ItemInstance.global_position = dropposition
+	get_tree().current_scene.add_child(ItemInstance)

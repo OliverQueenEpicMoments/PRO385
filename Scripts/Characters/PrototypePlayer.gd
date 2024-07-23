@@ -117,3 +117,14 @@ func _on_sound_timer_timeout():
 		Knocking.play()
 	elif (Rand < 0.05):
 		Alarm.play()
+		
+func ApplyItemEffect(item):
+	match item["Effect"]:
+		"Charge":
+			$Flashlight.AddCharge(25)
+		"Full Charge":
+			$Flashlight.AddCharge(100)
+		"Inventory Small":
+			Global.IncreaseInventorySize(2)
+		_:
+			print("No effect")
