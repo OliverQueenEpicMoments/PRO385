@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://b02cy4adfnyc0"]
+[gd_scene load_steps=43 format=3 uid="uid://b02cy4adfnyc0"]
 
 [ext_resource type="PackedScene" uid="uid://c1cjsqwl3m85g" path="res://Scenes/Characters/PrototypePlayer.tscn" id="1_egmum"]
 [ext_resource type="PackedScene" uid="uid://cgj3kj314s52s" path="res://Scenes/Managers/GameManager.tscn" id="1_kag8r"]
@@ -20,9 +20,11 @@
 [ext_resource type="PackedScene" uid="uid://dkb1llqkp41em" path="res://Scenes/UI/PauseMenu.tscn" id="16_wxjt0"]
 [ext_resource type="PackedScene" uid="uid://bq1cmqhvaak2o" path="res://Scenes/Inventory/InventoryItem.tscn" id="18_4tmi5"]
 [ext_resource type="Texture2D" uid="uid://w4qdlupoyjpj" path="res://Assets/Items/Battery.png" id="19_ijvoe"]
+[ext_resource type="Texture2D" uid="uid://wmgqshxoxbih" path="res://Assets/UI/MousePayHiRez.png" id="21_2djo2"]
 [ext_resource type="Texture2D" uid="uid://b7qpnenppupfd" path="res://Assets/UI/Placeholder.png" id="21_nyp2l"]
 [ext_resource type="Texture2D" uid="uid://bapvgvtttu7j" path="res://Assets/UI/Jonkler2.jpeg" id="22_q06ke"]
 [ext_resource type="Texture2D" uid="uid://b6fma2ba5lhch" path="res://Assets/UI/Icons/32x32/book.png" id="23_ciuvh"]
+[ext_resource type="PackedScene" uid="uid://dtnaxadtf2ofh" path="res://Scenes/Door.tscn" id="25_h8f3y"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_niy50"]
 polygon = PackedVector2Array(8, -8, 8, 8, -8, 8, -8, -8)
@@ -904,11 +906,11 @@ ItemEffect = "Charge"
 ItemDescription = "A somewhat lightweight battery, will partially fill up the flashlight."
 
 [node name="InventoryItem2" parent="." instance=ExtResource("18_4tmi5")]
-position = Vector2(-82, 56)
+position = Vector2(-109, 56)
 scale = Vector2(0.05, 0.05)
 ItemType = "IDK"
 ItemName = "Joe"
-ItemTexture = ExtResource("19_ijvoe")
+ItemTexture = ExtResource("21_2djo2")
 ItemEffect = "Joe Mama"
 
 [node name="InventoryItem3" parent="." instance=ExtResource("18_4tmi5")]
@@ -934,5 +936,8 @@ ItemType = "Knowledge"
 ItemName = "Book"
 ItemTexture = ExtResource("23_ciuvh")
 ItemEffect = "Lamborghini"
+
+[node name="Door" parent="." instance=ExtResource("25_h8f3y")]
+position = Vector2(-158, 103)
 
 [connection signal="StaminaChanged" from="PrototypePlayer" to="PrototypePlayer" method="_on_stamina_changed"]

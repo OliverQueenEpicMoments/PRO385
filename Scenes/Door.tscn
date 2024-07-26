@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://dtnaxadtf2ofh"]
+
+[ext_resource type="Script" path="res://Scripts/Door.gd" id="1_rvdgk"]
+[ext_resource type="Texture2D" uid="uid://d1asfcdiedta5" path="res://Assets/Door.png" id="1_s64lo"]
+[ext_resource type="PackedScene" uid="uid://deo66nfs8pl5n" path="res://Scenes/Interaction/InteractionArea/InteractionArea.tscn" id="2_xk35c"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_xjixm"]
+light_mode = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gi2lg"]
+size = Vector2(20, 12)
+
+[node name="Door" type="Node2D"]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(0, -25)
+script = ExtResource("1_rvdgk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+light_mask = 2
+visibility_layer = 2
+z_index = 1
+y_sort_enabled = true
+material = SubResource("CanvasItemMaterial_xjixm")
+texture = ExtResource("1_s64lo")
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_xk35c")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, 31)
+shape = SubResource("RectangleShape2D_gi2lg")
