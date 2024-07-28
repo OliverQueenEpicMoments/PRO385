@@ -18,7 +18,7 @@ var IsRunning = false
 
 @export var MaxSanity = 100
 @export var InsanityMultiplier = 1.75
-var CurrentSanity = 0
+var CurrentSanity: = 0.0
 var LosingSanity = false
 
 @onready var timer = $Timer
@@ -45,6 +45,9 @@ func _process(delta):
 	PostProcessManager.EffectsLogic(CurrentSanity)
 	InsanitySounds()
 	PlayerLocation = global_position
+	
+func _ready():
+	CurrentSanity = Global.PlayerSanity
 
 func	_physics_process(delta: float) -> void:
 	var Direction: Vector2 = Input.get_vector("Left", "Right", "Up", "Down")

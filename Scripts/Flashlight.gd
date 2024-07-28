@@ -6,6 +6,7 @@ var BatteryCurrent: = 100.0: set = SetBattery
 @onready var FlashlightLight = $PointLight2D
 @onready var ShadowLight = $ShadowLight
 @onready var LOSLight = $LOSLight
+@onready var LightCollider = $Area2D/CollisionPolygon2D
 
 var IsActive = false
 
@@ -16,6 +17,7 @@ func _ready():
 	FlashlightLight.enabled = false
 	ShadowLight.enabled = false
 	LOSLight.enabled = false
+	LightCollider.disabled = true
 
 func _unhandled_input(_event):
 	if (Input.is_action_just_released("Flashlight")):
@@ -32,10 +34,12 @@ func _process(delta):
 		FlashlightLight.enabled = true
 		ShadowLight.enabled = true
 		LOSLight.enabled = true
+		LightCollider.disabled = false
 	else:
 		FlashlightLight.enabled = false
 		ShadowLight.enabled = false
 		LOSLight.enabled = false
+		LightCollider.disabled = true
 
 func	_physics_process(_delta: float) -> void:
 	look_at(get_global_mouse_position())
@@ -47,3 +51,7 @@ func SetBattery(value):
 
 func AddCharge(chargeval):
 	BatteryCurrent = clamp(BatteryCurrent + chargeval, 0, BatteryMax)
+
+func _on_area_2d_body_entered(body):
+	#print(body)
+	pass

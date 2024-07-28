@@ -1,7 +1,14 @@
-[gd_scene load_steps=381 format=3 uid="uid://dxintreql7la3"]
+[gd_scene load_steps=383 format=3 uid="uid://dxintreql7la3"]
 
 [ext_resource type="Texture2D" uid="uid://mnfxcooha47g" path="res://Assets/Characters/GangnamStyle.png" id="1_0pg5t"]
+[ext_resource type="Script" path="res://Scripts/Characters/Enemies/Puppet.gd" id="1_2upr0"]
 [ext_resource type="PackedScene" uid="uid://ksf7hc3asdek" path="res://Scenes/killzone.tscn" id="2_wba0v"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ol5er"]
+height = 64.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xdst0"]
+radius = 17.0
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_i3hpq"]
 light_mode = 2
@@ -2611,8 +2618,7 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_xdst0"]
-radius = 17.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_x4ixc"]
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_28wm4"]
 
@@ -2621,13 +2627,30 @@ blackboard_plan = SubResource("BlackboardPlan_28wm4")
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_afc5m"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_x4ixc"]
-
-[node name="EnemyPrototype" type="CharacterBody2D"]
+[node name="Puppet" type="CharacterBody2D"]
 y_sort_enabled = true
 position = Vector2(0, -55)
 collision_layer = 3
 collision_mask = 3
+script = ExtResource("1_2upr0")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="LightCollision" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 23)
+shape = SubResource("CapsuleShape2D_ol5er")
+debug_color = Color(0.711931, 0.418488, 0.986161, 0.419608)
+
+[node name="Killzone" parent="." instance=ExtResource("2_wba0v")]
+collision_layer = 4
+collision_mask = 4
+
+[node name="KillCollider" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(0, 38)
+shape = SubResource("CircleShape2D_xdst0")
+debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 light_mask = 2
@@ -2638,20 +2661,19 @@ sprite_frames = SubResource("SpriteFrames_sj02i")
 autoplay = "default"
 frame_progress = 0.727499
 
-[node name="Killzone" parent="AnimatedSprite2D" instance=ExtResource("2_wba0v")]
-collision_layer = 4
-collision_mask = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Killzone"]
-position = Vector2(0, 38)
-shape = SubResource("CircleShape2D_xdst0")
-debug_color = Color(1, 0, 0, 0.419608)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 45)
+shape = SubResource("CircleShape2D_x4ixc")
 
 [node name="BTPlayer" type="BTPlayer" parent="."]
 behavior_tree = SubResource("BehaviorTree_pekf1")
 active = false
 blackboard_plan = SubResource("BlackboardPlan_afc5m")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 45)
-shape = SubResource("CircleShape2D_x4ixc")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+anim_player = NodePath("../AnimationPlayer")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

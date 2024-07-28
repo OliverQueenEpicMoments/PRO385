@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="3_gf27a"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_n3wj6"]
 [ext_resource type="Texture2D" uid="uid://bon50n52nq6tj" path="res://Assets/Tilesets/OutsideTileMap.png" id="5_at84v"]
-[ext_resource type="PackedScene" uid="uid://dxintreql7la3" path="res://Scenes/Characters/Enemies/EnemyPrototype.tscn" id="7_ish1k"]
+[ext_resource type="PackedScene" uid="uid://dxintreql7la3" path="res://Scenes/Characters/Enemies/Puppet.tscn" id="7_ish1k"]
 [ext_resource type="PackedScene" uid="uid://i1gupv31llvp" path="res://Scenes/UI/PlayerUI.tscn" id="8_pev8b"]
 [ext_resource type="Script" path="res://Scripts/UI/PlayerUI.gd" id="9_v1g8q"]
 [ext_resource type="PackedScene" uid="uid://05ta1y5cxfdw" path="res://Scenes/Characters/Enemies/IdolOfChaos.tscn" id="11_ua5ls"]
@@ -23,7 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://wmgqshxoxbih" path="res://Assets/UI/MousePayHiRez.png" id="21_2djo2"]
 [ext_resource type="Texture2D" uid="uid://b7qpnenppupfd" path="res://Assets/UI/Placeholder.png" id="21_nyp2l"]
 [ext_resource type="Texture2D" uid="uid://bapvgvtttu7j" path="res://Assets/UI/Jonkler2.jpeg" id="22_q06ke"]
-[ext_resource type="Texture2D" uid="uid://b6fma2ba5lhch" path="res://Assets/UI/Icons/32x32/book.png" id="23_ciuvh"]
+[ext_resource type="Texture2D" uid="uid://digbaiy8f0xj5" path="res://Assets/UI/WalterRodent.png" id="24_8btui"]
 [ext_resource type="PackedScene" uid="uid://dtnaxadtf2ofh" path="res://Scenes/Door.tscn" id="25_h8f3y"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_niy50"]
@@ -876,7 +876,7 @@ script = ExtResource("9_v1g8q")
 [node name="PauseMenu" parent="PlayerUI" instance=ExtResource("16_wxjt0")]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0, 0, 0, 1)
+color = Color(0.355314, 0.355314, 0.355314, 1)
 
 [node name="IdolOfChaos" parent="." instance=ExtResource("11_ua5ls")]
 position = Vector2(183, -1)
@@ -931,11 +931,12 @@ ItemDescription = "A small pouch made for holding stuff."
 
 [node name="InventoryItem5" parent="." instance=ExtResource("18_4tmi5")]
 position = Vector2(45, 30)
-scale = Vector2(0.05, 0.05)
+scale = Vector2(0.075, 0.075)
 ItemType = "Knowledge"
-ItemName = "Book"
-ItemTexture = ExtResource("23_ciuvh")
-ItemEffect = "Lamborghini"
+ItemName = "Walter Rodent"
+ItemTexture = ExtResource("24_8btui")
+ItemEffect = "IDK"
+ItemDescription = "Why he a rodent tho 😭😭😭😭"
 
 [node name="Door" parent="." instance=ExtResource("25_h8f3y")]
 position = Vector2(-158, 103)

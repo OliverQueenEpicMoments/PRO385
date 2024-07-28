@@ -18,10 +18,10 @@ func UnregisterArea(area: InteractionArea):
 		ActiveAreas.remove_at(Index)
 
 func SortByDistanceToPlayer(area1, area2):
-	# TODO Check if player exists before executing this code
-	var Area1ToPlayer = Player.global_position.distance_to(area1.global_position)
-	var Area2ToPlayer = Player.global_position.distance_to(area2.global_position)
-	return Area1ToPlayer < Area2ToPlayer
+	if (is_instance_valid(Player)):
+		var Area1ToPlayer = Player.global_position.distance_to(area1.global_position)
+		var Area2ToPlayer = Player.global_position.distance_to(area2.global_position)
+		return Area1ToPlayer < Area2ToPlayer
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

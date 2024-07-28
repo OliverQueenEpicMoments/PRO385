@@ -72,3 +72,6 @@ func DropItem(itemdata, dropposition):
 	dropposition = AdjustDropPosition(dropposition)
 	ItemInstance.global_position = dropposition
 	get_tree().current_scene.add_child(ItemInstance)
+
+func GetPlayer():
+	Player = get_tree().get_first_node_in_group("Player")

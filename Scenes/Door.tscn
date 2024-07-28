@@ -8,7 +8,7 @@
 light_mode = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gi2lg"]
-size = Vector2(20, 12)
+size = Vector2(36, 18)
 
 [node name="Door" type="Node2D"]
 modulate = Color(1, 0, 0, 1)
@@ -27,5 +27,5 @@ texture = ExtResource("1_s64lo")
 [node name="InteractionArea" parent="." instance=ExtResource("2_xk35c")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(0, 31)
+position = Vector2(0, 34)
 shape = SubResource("RectangleShape2D_gi2lg")
