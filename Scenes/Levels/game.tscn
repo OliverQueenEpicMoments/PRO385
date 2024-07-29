@@ -848,6 +848,9 @@ layer_1/tile_data = PackedInt32Array(-327687, 262144, 12, -327682, 327680, 12, -
 unique_name_in_owner = true
 position = Vector2(-1, -7)
 
+[node name="Puppet" parent="." instance=ExtResource("7_ish1k")]
+position = Vector2(-250, -55)
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-1, -7)
 zoom = Vector2(2, 2)
@@ -862,9 +865,6 @@ follow_mode = 2
 follow_target = NodePath("../PrototypePlayer")
 zoom = Vector2(2, 2)
 tween_resource = SubResource("Resource_4g3rl")
-
-[node name="EnemyPrototype" parent="." instance=ExtResource("7_ish1k")]
-position = Vector2(-206, -53)
 
 [node name="PlayerUI" parent="." instance=ExtResource("8_pev8b")]
 script = ExtResource("9_v1g8q")

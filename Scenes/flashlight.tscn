@@ -10,14 +10,6 @@ z_index = 1
 y_sort_enabled = true
 script = ExtResource("1_hpsfe")
 
-[node name="Area2D" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 8
-priority = 3
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-polygon = PackedVector2Array(23, 4, 29, 4, 187, 65, 187, -64, 29, -4, 23, -4)
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(16, 0)
 texture = ExtResource("2_0nd6i")
@@ -55,4 +47,9 @@ stream = ExtResource("3_bna1x")
 volume_db = 10.0
 bus = &"SFX"
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(23, 4, 29, 4, 187, 65, 187, -64, 29, -4, 23, -4)

@@ -5,7 +5,7 @@ var PlayerLocation = Vector2(0, 0)
 var EnemyLocation = Vector2(0, 0)
 
 @export var Speed = 100.0
-@export var SprintSpeed = 200.0
+@export var SprintSpeed = 150.0
 @export var Acceleration = 10.0
 @export var IsRooted = false
 

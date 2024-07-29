@@ -6,7 +6,7 @@ var BatteryCurrent: = 100.0: set = SetBattery
 @onready var FlashlightLight = $PointLight2D
 @onready var ShadowLight = $ShadowLight
 @onready var LOSLight = $LOSLight
-@onready var LightCollider = $Area2D/CollisionPolygon2D
+@onready var LightCollider = $StaticBody2D/CollisionPolygon2D
 
 var IsActive = false
 
@@ -53,5 +53,5 @@ func AddCharge(chargeval):
 	BatteryCurrent = clamp(BatteryCurrent + chargeval, 0, BatteryMax)
 
 func _on_area_2d_body_entered(body):
-	#print(body)
+	print("Flashlight - ", body)
 	pass

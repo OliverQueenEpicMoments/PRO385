@@ -2,7 +2,7 @@ extends Node
 
 @onready var Player: = get_tree().get_first_node_in_group("Player")
 
-var InsanityEnemy: = preload("res://Scenes/Characters/Friendly/PrototypeNPC.tscn")
+var InsanityEnemy: = preload("res://Scenes/Characters/Enemies/Mind'sBane.tscn")
 var InsanityEnemySpawned: = false
 
 func _ready():

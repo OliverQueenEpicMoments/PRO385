@@ -13,16 +13,5 @@ func _ready():
 func _process(delta):
 	pass
 
-# For inflicting insanity to the player
-func _on_area_2d_body_entered(body):
-	if (body.has_method("Player")):
-		FearPlayer.emit()
-		#print("Player entered AOE")
-
-func _on_area_2d_body_exited(body):
-	if (body.has_method("Player")):
-		StopFearing.emit()
-		#print("Player exited AOE")
-
 func InflictFear():
 	pass
