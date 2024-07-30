@@ -15,8 +15,11 @@ var IsPaused: = false
 var FullscreenIndex: = 2
 var Borderless: = false
 
+@onready var PostProcess
+
 func _ready():
 	Player = get_tree().get_first_node_in_group("Player")
+	PostProcess = get_tree().get_first_node_in_group("PostProcessing")
 	PlayerInventory.resize(16)
 
 func SetSanity(sanity):

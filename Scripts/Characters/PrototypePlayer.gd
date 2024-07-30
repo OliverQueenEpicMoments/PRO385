@@ -11,15 +11,16 @@ var EnemyLocation = Vector2(0, 0)
 
 @export var StaminaMax: = 100.0
 var StaminaCurrent: = 100.0: set = SetStamina
-@export var StaminaDrainRate = 10.0
-@export var StaminaRegenRate = 5.0
-var StaminaRegenReady = false
-var IsRunning = false
+@export var StaminaDrainRate: = 10.0
+@export var StaminaRegenRate: = 5.0
+var StaminaRegenReady: = false
+var IsRunning: = false
 
-@export var MaxSanity = 100
-@export var InsanityMultiplier = 1.75
+@export var MaxSanity: = 100.0
+@export var InsanityMultiplier: = 1.75
 var CurrentSanity: = 0.0
-var LosingSanity = false
+var LosingSanity: = false
+var BeingWatched: = false
 
 @onready var timer = $Timer
 @onready var SoundsTimer = $SoundTimer
@@ -30,7 +31,7 @@ var TimerStarted = false
 @onready var Footsteps = $Footsteps
 @onready var InsanityBackground = $InsanityBackground
 
-var SoundProbability = [true, false]
+var SoundProbability: = [true, false]
 
 signal StaminaChanged()
 
@@ -41,6 +42,7 @@ func SetStamina(value):
 
 func _process(delta):
 	LoseSanity(delta)
+	#EyeInsanity(delta, 0.2)
 	Dialogic.VAR.PlayerSanity = CurrentSanity
 	PostProcessManager.EffectsLogic(CurrentSanity)
 	InsanitySounds()
@@ -79,7 +81,6 @@ func _on_area_2d_body_entered(body):
 	if (body.has_method("InflictFear")):
 		LosingSanity = true
 		EnemyLocation = body.global_position
-		#print(EnemyLocation)
 
 func _on_area_2d_body_exited(body):
 	if (body.has_method("InflictFear")):
@@ -97,6 +98,12 @@ func LoseSanity(time):
 		Global.SetSanity(CurrentSanity)
 		
 		print("Player Sanity - ", CurrentSanity)
+		
+func EyeInsanity(insanity):
+	CurrentSanity = clamp(CurrentSanity + insanity, 0, MaxSanity)
+	Global.SetSanity(CurrentSanity)
+		
+	print("Player Sanity - ", CurrentSanity)
 
 func StaticIntensity(color1: Color, color2: Color, weight: float) -> Color:
 	return color1.lerp(color2, weight)

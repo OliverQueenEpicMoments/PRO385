@@ -825,7 +825,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ak1gh"]
-radius = 14.0
+radius = 18.0278
 
 [node name="Mind\'sBane" type="CharacterBody2D"]
 collision_layer = 0
@@ -836,7 +836,7 @@ script = ExtResource("1_as2fc")
 shape = SubResource("CircleShape2D_cbq7p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-modulate = Color(0, 0, 0, 1)
+modulate = Color(1, 0, 0, 1)
 light_mask = 2
 visibility_layer = 2
 z_index = 1

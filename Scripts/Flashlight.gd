@@ -51,7 +51,3 @@ func SetBattery(value):
 
 func AddCharge(chargeval):
 	BatteryCurrent = clamp(BatteryCurrent + chargeval, 0, BatteryMax)
-
-func _on_area_2d_body_entered(body):
-	print("Flashlight - ", body)
-	pass

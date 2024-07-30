@@ -122,10 +122,10 @@ editor_description = "I am the one who knocks!"
 stream = ExtResource("6_q16lp")
 bus = &"SFX"
 
-[node name="Footsteps" type="AudioStreamPlayer" parent="."]
+[node name="Footsteps" type="AudioStreamPlayer2D" parent="."]
 bus = &"SFX"
 
-[node name="InsanityBackground" type="AudioStreamPlayer2D" parent="."]
+[node name="InsanityBackground" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_v8khx")
 volume_db = -10.0
 bus = &"Music"

@@ -309,7 +309,7 @@ libraries = {
 "": SubResource("AnimationLibrary_srq1n")
 }
 
-[node name="PauseMusic" type="AudioStreamPlayer2D" parent="." groups=["PauseMusic"]]
+[node name="PauseMusic" type="AudioStreamPlayer" parent="." groups=["PauseMusic"]]
 process_mode = 3
 stream = ExtResource("4_cv85d")
 

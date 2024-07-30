@@ -1,7 +1,5 @@
 extends Node
 
-@onready var PostProcess
-
 var MinVignetteIntensity = 0.8
 var MaxVignetteIntensity = 1.5
 var MinVignetteOpacity = 0.75
@@ -15,27 +13,27 @@ var MaxGrainPower = 75.0
 
 func EffectsLogic(sanity):
 	# Checks to see if a PostProecessing nide exists before changing its variables
-	if (is_instance_valid(PostProcess)):
-		PostProcess.configuration.VignetteIntensity = lerp(MinVignetteIntensity, MaxVignetteIntensity, sanity / 100)
-		PostProcess.configuration.VignetteOpacity = lerp(MinVignetteOpacity, MaxVignetteOpacity, sanity / 100)
-		PostProcess.configuration.GrainPower = lerp(MinGrainPower, MaxGrainPower, sanity / 100)
-		PostProcess.configuration.StrenghtCA = lerp(MinCAStrength, MaxCAStrength, sanity / 100)
+	if (is_instance_valid(Global.PostProcess)):
+		Global.PostProcess.configuration.VignetteIntensity = lerp(MinVignetteIntensity, MaxVignetteIntensity, sanity / 100)
+		Global.PostProcess.configuration.VignetteOpacity = lerp(MinVignetteOpacity, MaxVignetteOpacity, sanity / 100)
+		Global.PostProcess.configuration.GrainPower = lerp(MinGrainPower, MaxGrainPower, sanity / 100)
+		Global.PostProcess.configuration.StrenghtCA = lerp(MinCAStrength, MaxCAStrength, sanity / 100)
 	else: 
-		PostProcess = get_tree().get_first_node_in_group("PostProcessing")
+		Global.PostProcess = get_tree().get_first_node_in_group("PostProcessing")
 	
 	if (sanity < 25):
-		PostProcess.configuration.ScreenShake = false
-		PostProcess.configuration.Grain = false
+		Global.PostProcess.configuration.ScreenShake = false
+		Global.PostProcess.configuration.Grain = false
 	elif (sanity >= 25 and sanity < 50):
-		PostProcess.configuration.Grain = true
-		PostProcess.configuration.ChromaticAberration = false
+		Global.PostProcess.configuration.Grain = true
+		Global.PostProcess.configuration.ChromaticAberration = false
 	elif (sanity >= 50 and sanity < 100):
-		PostProcess.configuration.ChromaticAberration = true
-		PostProcess.configuration.ScreenShake = false
+		Global.PostProcess.configuration.ChromaticAberration = true
+		Global.PostProcess.configuration.ScreenShake = false
 	elif (sanity >= 100):
-		PostProcess.configuration.ScreenShake = true
+		Global.PostProcess.configuration.ScreenShake = true
 
 
 func _ready():
-	PostProcess = get_tree().get_first_node_in_group("PostProcessing")
+	Global.PostProcess = get_tree().get_first_node_in_group("PostProcessing")
 	
