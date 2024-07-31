@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://b02cy4adfnyc0"]
+[gd_scene load_steps=45 format=3 uid="uid://b02cy4adfnyc0"]
 
 [ext_resource type="PackedScene" uid="uid://c1cjsqwl3m85g" path="res://Scenes/Characters/PrototypePlayer.tscn" id="1_egmum"]
 [ext_resource type="PackedScene" uid="uid://cgj3kj314s52s" path="res://Scenes/Managers/GameManager.tscn" id="1_kag8r"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://digbaiy8f0xj5" path="res://Assets/UI/WalterRodent.png" id="24_8btui"]
 [ext_resource type="PackedScene" uid="uid://dtnaxadtf2ofh" path="res://Scenes/Door.tscn" id="25_h8f3y"]
 [ext_resource type="PackedScene" uid="uid://dcua6gojo0h0t" path="res://Scenes/Managers/EyeManager.tscn" id="26_qgm5g"]
+[ext_resource type="PackedScene" uid="uid://bkwbco0dobaxw" path="res://Scenes/GenericLight.tscn" id="27_7vqt4"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_niy50"]
 polygon = PackedVector2Array(8, -8, 8, 8, -8, 8, -8, -8)
@@ -605,6 +606,7 @@ texture = ExtResource("5_at84v")
 5:11/0/physics_layer_0/angular_velocity = 0.0
 5:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:11/0 = 0
+6:11/0/y_sort_origin = 5
 6:11/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:11/0/physics_layer_0/angular_velocity = 0.0
 6:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -660,11 +662,13 @@ texture = ExtResource("5_at84v")
 3:12/0/physics_layer_0/angular_velocity = 0.0
 3:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:12/0 = 0
+4:12/0/y_sort_origin = 5
 4:12/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_7iiok")
 4:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:12/0/physics_layer_0/angular_velocity = 0.0
 4:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:12/0 = 0
+5:12/0/y_sort_origin = 5
 5:12/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_hbrue")
 5:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:12/0/physics_layer_0/angular_velocity = 0.0
@@ -852,6 +856,14 @@ position = Vector2(-1, -7)
 [node name="Puppet" parent="." instance=ExtResource("5_vum7p")]
 position = Vector2(-170, 0)
 
+[node name="EyeManager" parent="." node_paths=PackedStringArray("SpawnArea") instance=ExtResource("26_qgm5g")]
+SpawnArea = NodePath("Area2D/CollisionPolygon2D")
+
+[node name="Area2D" type="Area2D" parent="EyeManager"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="EyeManager/Area2D"]
+polygon = PackedVector2Array(-112, -79, -113, -191, -289, -177, -285, 161, -66, 158, -64, 47, 75.4159, 45.4112, 80, 159, 291, 162, 285, -174, -14, -187, -14, -78)
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-1, -7)
 zoom = Vector2(2, 2)
@@ -942,12 +954,8 @@ ItemDescription = "Why he a rodent tho 😭😭😭😭"
 [node name="Door" parent="." instance=ExtResource("25_h8f3y")]
 position = Vector2(-158, 103)
 
-[node name="EyeManager" parent="." node_paths=PackedStringArray("SpawnArea") instance=ExtResource("26_qgm5g")]
-SpawnArea = NodePath("Area2D/CollisionPolygon2D")
-
-[node name="Area2D" type="Area2D" parent="EyeManager"]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="EyeManager/Area2D"]
-polygon = PackedVector2Array(-112, -79, -113, -191, -289, -177, -285, 161, -66, 158, -64, 47, 75.4159, 45.4112, 80, 159, 291, 162, 285, -174, -14, -187, -14, -78)
+[node name="GenericLight" parent="." instance=ExtResource("27_7vqt4")]
+position = Vector2(165, -119)
+scale = Vector2(2, 2)
 
 [connection signal="StaminaChanged" from="PrototypePlayer" to="PrototypePlayer" method="_on_stamina_changed"]

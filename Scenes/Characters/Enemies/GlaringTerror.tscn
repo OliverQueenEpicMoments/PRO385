@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://ce1m58qjueml4"]
+[gd_scene load_steps=11 format=3 uid="uid://ce1m58qjueml4"]
 
-[ext_resource type="Texture2D" uid="uid://b0glro0yf08l6" path="res://Assets/Characters/Enemies/Eye.png" id="1_asrte"]
 [ext_resource type="Script" path="res://Scripts/Characters/Enemies/GlaringTerror.gd" id="1_xcayn"]
 [ext_resource type="PackedScene" uid="uid://deo66nfs8pl5n" path="res://Scenes/Interaction/InteractionArea/InteractionArea.tscn" id="3_ci7l7"]
 [ext_resource type="Texture2D" uid="uid://dbevq22f6lqqn" path="res://Assets/Lights/EnemySight.png" id="4_4gaxo"]
 [ext_resource type="Texture2D" uid="uid://cangidl6vciyv" path="res://Assets/Characters/Enemies/EyeShut.webp" id="4_uqh8j"]
+[ext_resource type="Texture2D" uid="uid://cr6gqrfmb5ird" path="res://Assets/Characters/Enemies/GlaringTerror/EyeBackground.png" id="6_hvcq5"]
+[ext_resource type="Texture2D" uid="uid://b126q4kv3srmy" path="res://Assets/Characters/Enemies/GlaringTerror/Pupil.png" id="7_ubrjb"]
+[ext_resource type="Texture2D" uid="uid://dmy72sa6rd337" path="res://Assets/Characters/Enemies/GlaringTerror/EyeForeground.png" id="8_1noko"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_62mib"]
 radius = 23.0
@@ -19,7 +21,7 @@ light_mode = 1
 z_index = 1
 y_sort_enabled = true
 script = ExtResource("1_xcayn")
-ActivatedTexture = ExtResource("1_asrte")
+ActivatedTexture = ExtResource("8_1noko")
 DeactivatedTexture = ExtResource("4_uqh8j")
 
 [node name="Collision" type="StaticBody2D" parent="."]
@@ -57,7 +59,7 @@ texture_scale = 0.5
 modulate = Color(1, 0, 0, 1)
 color = Color(1, 0.357326, 0.290208, 1)
 blend_mode = 2
-range_item_cull_mask = 2
+range_item_cull_mask = 4
 shadow_enabled = true
 shadow_filter = 2
 shadow_item_cull_mask = 2
@@ -72,14 +74,30 @@ shadow_filter = 2
 texture = ExtResource("4_4gaxo")
 texture_scale = 0.5
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="BackgroundSprite" type="Sprite2D" parent="."]
 material = SubResource("CanvasItemMaterial_4nm54")
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_uqh8j")
+texture = ExtResource("6_hvcq5")
+
+[node name="EyeSprite" type="Sprite2D" parent="."]
+z_index = 2
+material = SubResource("CanvasItemMaterial_4nm54")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_1noko")
+flip_h = true
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="PupilOffset" type="Node2D" parent="."]
+
+[node name="PupilSprite" type="Sprite2D" parent="PupilOffset"]
+z_index = 1
+material = SubResource("CanvasItemMaterial_4nm54")
+position = Vector2(4, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_ubrjb")
 
 [connection signal="body_entered" from="Collision/DeathRay" to="." method="_on_death_ray_body_entered"]
 [connection signal="body_exited" from="Collision/DeathRay" to="." method="_on_death_ray_body_exited"]

@@ -2629,8 +2629,8 @@ blackboard_plan = SubResource("BlackboardPlan_28wm4")
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_afc5m"]
 
 [node name="Puppet" type="CharacterBody2D"]
+z_index = 1
 y_sort_enabled = true
-collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_2upr0")
 

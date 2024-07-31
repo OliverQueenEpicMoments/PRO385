@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkwbco0dobaxw"]
+
+[ext_resource type="Texture2D" uid="uid://7raffwhs8sua" path="res://Assets/Lights/Light2.png" id="1_mbfcq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dvc5k"]
+radius = 75.0
+
+[node name="GenericLight" type="Node2D"]
+
+[node name="Lights" type="Node2D" parent="."]
+
+[node name="ShadowLight" type="PointLight2D" parent="Lights"]
+modulate = Color(1, 0, 0, 1)
+energy = 0.5
+shadow_enabled = true
+shadow_filter = 2
+texture = ExtResource("1_mbfcq")
+texture_scale = 0.5
+
+[node name="LOSLight" type="PointLight2D" parent="Lights"]
+modulate = Color(1, 0, 0, 1)
+blend_mode = 2
+range_item_cull_mask = 2
+shadow_enabled = true
+shadow_filter = 2
+shadow_item_cull_mask = 2
+texture = ExtResource("1_mbfcq")
+texture_scale = 0.5
+
+[node name="PointLight2D" type="PointLight2D" parent="Lights"]
+modulate = Color(1, 0, 0, 1)
+energy = 0.75
+shadow_filter = 2
+texture = ExtResource("1_mbfcq")
+texture_scale = 0.5
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_dvc5k")

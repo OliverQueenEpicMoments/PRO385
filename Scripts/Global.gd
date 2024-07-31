@@ -78,3 +78,7 @@ func DropItem(itemdata, dropposition):
 
 func GetPlayer():
 	Player = get_tree().get_first_node_in_group("Player")
+
+func PlayerDeath():
+	# TODO Reset stuff like insanity and more I think
+	pass

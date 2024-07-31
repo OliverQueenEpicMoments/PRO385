@@ -2,9 +2,14 @@ extends CharacterBody2D
 
 var Rooted: = false
 const SPEED: = 140.0
+var Stuns: = 0
 
 func _physics_process(delta):
-	# Calculate the direction towards the player
+	if Stuns > 0:
+		Rooted = true
+	else:
+		Rooted = false
+	
 	if (is_instance_valid(Global.Player) and not Rooted):
 		var direction = (Global.Player.global_position - global_position).normalized()
 		velocity = direction * SPEED
@@ -17,8 +22,8 @@ func _physics_process(delta):
 func _on_hitbox_stunned():
 	$AnimatedSprite2D.stop()
 	$AnimationPlayer.stop()
-	Rooted = true
+	Stuns += 1
 
 func _on_hitbox_unstunned():
-	Rooted = false
+	Stuns -= 1
 	#$AnimatedSprite2D.play()
