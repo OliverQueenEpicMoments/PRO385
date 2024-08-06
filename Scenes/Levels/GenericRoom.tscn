@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7bqahvtw582k"]
+
+[ext_resource type="PackedScene" uid="uid://dcua6gojo0h0t" path="res://Scenes/Managers/EyeManager.tscn" id="1_w4kad"]
+
+[node name="GenericRoom" type="Node2D"]
+
+[node name="EyeManager" parent="." instance=ExtResource("1_w4kad")]

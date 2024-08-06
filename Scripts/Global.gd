@@ -4,6 +4,7 @@ extends Node
 @onready var Player
 var PlayerSanity: = 0.0
 var MaxInsanity: = false
+var PlayerDead = false
 
 # Inventory
 var PlayerInventory: = []
@@ -16,6 +17,7 @@ var FullscreenIndex: = 2
 var Borderless: = false
 
 @onready var PostProcess
+@onready var DeathReport
 
 func _ready():
 	Player = get_tree().get_first_node_in_group("Player")
@@ -80,5 +82,13 @@ func GetPlayer():
 	Player = get_tree().get_first_node_in_group("Player")
 
 func PlayerDeath():
-	# TODO Reset stuff like insanity and more I think
-	pass
+	PlayerDead = true
+	DeathReport = get_tree().get_first_node_in_group("DeathUI")
+	MaxInsanity = false
+	PlayerSanity = 0
+	DeathReport.OnDeath()
+
+func NewGame():
+	PlayerDead = false
+	MaxInsanity = false
+	PlayerSanity = 0

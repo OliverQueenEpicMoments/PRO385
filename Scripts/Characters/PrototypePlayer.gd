@@ -4,6 +4,9 @@ extends CharacterBody2D
 var PlayerLocation = Vector2(0, 0)
 var EnemyLocation = Vector2(0, 0)
 
+@export var MaxHealth: = 3
+var CurrentHealth
+
 @export var Speed = 100.0
 @export var SprintSpeed = 150.0
 @export var Acceleration = 10.0
@@ -50,6 +53,7 @@ func _process(delta):
 	
 func _ready():
 	CurrentSanity = Global.PlayerSanity
+	CurrentHealth = MaxHealth
 
 func	_physics_process(delta: float) -> void:
 	var Direction: Vector2 = Input.get_vector("Left", "Right", "Up", "Down")
@@ -137,4 +141,19 @@ func ApplyItemEffect(item):
 		"Inventory Small":
 			Global.IncreaseInventorySize(2)
 		_:
-			print("No effect")
+			print("No item effect")
+
+func ApplyHeal(heal):
+	CurrentHealth = clamp(CurrentHealth + heal, 0, MaxHealth)
+
+func ApplyDamage(damage):
+	CurrentHealth = clamp(CurrentHealth - damage, 0, MaxHealth)
+	if CurrentHealth <= 0:
+		Death()
+
+func Death():
+	Global.PlayerDeath()
+
+func _on_damage_body_entered(body):
+	#dprint("Hit by ", body)
+	ApplyDamage(body.GetDamage())

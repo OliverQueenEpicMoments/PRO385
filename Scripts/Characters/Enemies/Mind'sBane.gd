@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@export var Damage: = 100
+
 const SPEED: = 50.0
 
 func _physics_process(delta):
@@ -10,5 +12,7 @@ func _physics_process(delta):
 	else:
 		Global.GetPlayer()
 
-	# Use move_and_slide for smooth movement and collision response
 	move_and_slide()
+
+func GetDamage():
+	return Damage

@@ -12,7 +12,7 @@ config_version=5
 
 config/name="SigmaGame"
 config/version="0.45"
-run/main_scene="res://Scenes/Levels/game.tscn"
+run/main_scene="res://Scenes/Levels/House/HouseStart.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="res://Assets/UI/PlaceholderUpscaled.png"
@@ -28,6 +28,8 @@ InteractionManager="*res://Scenes/Interaction/InteractionManager.tscn"
 PostProcessManager="*res://Scripts/Managers/PostProcessManager.gd"
 Global="*res://Scripts/Global.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+GameFlags="*res://Scripts/Managers/GameFlags.gd"
+RoomManager="*res://Scripts/Managers/RoomManager.gd"
 
 [dialogic]
 
@@ -207,6 +209,13 @@ Swap={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":2,"position":Vector2(154, 18),"global_position":Vector2(158, 59),"factor":1.0,"button_index":2,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="World Collision"
+2d_physics/layer_2="Player?"
+2d_physics/layer_5="Player Damage"
+2d_physics/layer_9="Fear"
 
 [physics]
 

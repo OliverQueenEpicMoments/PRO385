@@ -1,17 +1,13 @@
-[gd_scene load_steps=384 format=3 uid="uid://dxintreql7la3"]
+[gd_scene load_steps=382 format=3 uid="uid://dxintreql7la3"]
 
 [ext_resource type="Texture2D" uid="uid://mnfxcooha47g" path="res://Assets/Characters/GangnamStyle.png" id="1_0pg5t"]
 [ext_resource type="Script" path="res://Scripts/Characters/Enemies/Puppet.gd" id="1_2upr0"]
 [ext_resource type="PackedScene" uid="uid://ci3mu02ygiaai" path="res://Scenes/Hitbox.tscn" id="2_q4d10"]
-[ext_resource type="PackedScene" uid="uid://ksf7hc3asdek" path="res://Scenes/killzone.tscn" id="2_wba0v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x4ixc"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_xdst0"]
-radius = 17.0
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4nnew"]
-height = 80.0
+height = 92.0
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_i3hpq"]
 light_mode = 2
@@ -2631,27 +2627,18 @@ blackboard_plan = SubResource("BlackboardPlan_28wm4")
 [node name="Puppet" type="CharacterBody2D"]
 z_index = 1
 y_sort_enabled = true
-collision_mask = 3
+collision_mask = 19
 script = ExtResource("1_2upr0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_x4ixc")
 
-[node name="Killzone" parent="." instance=ExtResource("2_wba0v")]
-position = Vector2(0, -45)
-collision_layer = 4
-collision_mask = 4
-
-[node name="KillCollider" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(0, 38)
-shape = SubResource("CircleShape2D_xdst0")
-debug_color = Color(1, 0, 0, 0.419608)
-
 [node name="Hitbox" parent="." instance=ExtResource("2_q4d10")]
 position = Vector2(0, -45)
+collision_mask = 0
 
 [node name="LightCollision" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(0, 15)
+position = Vector2(0, 9)
 shape = SubResource("CapsuleShape2D_4nnew")
 debug_color = Color(0.711931, 0.418488, 0.986161, 0.419608)
 

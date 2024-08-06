@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c1cjsqwl3m85g"]
+[gd_scene load_steps=17 format=3 uid="uid://c1cjsqwl3m85g"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/PrototypePlayer.gd" id="1_n4y3h"]
 [ext_resource type="Texture2D" uid="uid://ca0mifwptf0hu" path="res://Assets/Characters/AshDown-Sheet.png" id="1_ngmrn"]
@@ -10,10 +10,14 @@
 [ext_resource type="AudioStream" uid="uid://cfqfrjgnam8oi" path="res://Assets/Audio/Music/InsanityAmbiance.mp3" id="7_v8khx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0xby2"]
-radius = 5.0
+radius = 4.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1x02x"]
 radius = 171.012
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ioude"]
+radius = 5.0
+height = 14.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nvjec"]
 atlas = ExtResource("1_ngmrn")
@@ -58,7 +62,8 @@ collision_mask = 5
 script = ExtResource("1_n4y3h")
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
-position = Vector2(0, -5)
+visible = false
+position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_0xby2")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -69,6 +74,14 @@ collision_mask = 256
 position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_1x02x")
 debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="Damage" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Damage"]
+position = Vector2(0, -7)
+shape = SubResource("CapsuleShape2D_ioude")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 1
@@ -136,5 +149,6 @@ bus = &"SFX"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Damage" to="." method="_on_damage_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="SoundTimer" to="." method="_on_sound_timer_timeout"]

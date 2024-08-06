@@ -16,10 +16,6 @@ func _ready():
 	Global.InventoryUpdated.connect(OnInventoryUpdated)
 	OnInventoryUpdated()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func _unhandled_input(_event):
 	if (Input.is_action_just_pressed("Inventory") and !self.is_visible()):
 		$InventoryPanel/InventoryAnimation.play("Fade")

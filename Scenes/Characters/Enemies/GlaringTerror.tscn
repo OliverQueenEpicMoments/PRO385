@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dmy72sa6rd337" path="res://Assets/Characters/Enemies/GlaringTerror/EyeForeground.png" id="8_1noko"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_62mib"]
-radius = 23.0
+radius = 21.0238
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_25duf"]
 radius = 36.2353

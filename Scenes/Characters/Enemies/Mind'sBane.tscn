@@ -1,9 +1,8 @@
-[gd_scene load_steps=124 format=3 uid="uid://csfvls62nro4e"]
+[gd_scene load_steps=122 format=3 uid="uid://csfvls62nro4e"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/Enemies/Mind'sBane.gd" id="1_as2fc"]
 [ext_resource type="Shader" path="res://Shaders/TVStatic.gdshader" id="2_67vmq"]
 [ext_resource type="Texture2D" uid="uid://b4ckspmwwv0g8" path="res://Assets/Characters/Enemies/Puppet/Dance.png" id="2_vkebh"]
-[ext_resource type="PackedScene" uid="uid://ksf7hc3asdek" path="res://Scenes/killzone.tscn" id="4_18bsu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cbq7p"]
 
@@ -824,12 +823,9 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ak1gh"]
-radius = 18.0278
-
 [node name="Mind\'sBane" type="CharacterBody2D"]
 collision_layer = 0
-collision_mask = 0
+collision_mask = 16
 script = ExtResource("1_as2fc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -846,13 +842,3 @@ sprite_frames = SubResource("SpriteFrames_augr4")
 animation = &"new_animation"
 autoplay = "new_animation"
 frame_progress = 0.810933
-
-[node name="Killzone" parent="." instance=ExtResource("4_18bsu")]
-collision_layer = 4
-collision_mask = 4
-priority = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(0, -4)
-shape = SubResource("CircleShape2D_ak1gh")
-debug_color = Color(1, 0, 0, 0.419608)
