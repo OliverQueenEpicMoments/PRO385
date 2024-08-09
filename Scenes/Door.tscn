@@ -12,7 +12,8 @@ size = Vector2(36, 18)
 
 [node name="Door" type="Node2D"]
 modulate = Color(1, 0, 0, 1)
-position = Vector2(0, -25)
+z_index = 1
+y_sort_enabled = true
 script = ExtResource("1_rvdgk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -22,9 +23,11 @@ visibility_layer = 2
 z_index = 1
 y_sort_enabled = true
 material = SubResource("CanvasItemMaterial_xjixm")
+position = Vector2(0, -24.5)
 texture = ExtResource("1_s64lo")
 
 [node name="InteractionArea" parent="." instance=ExtResource("2_xk35c")]
+position = Vector2(0, -24.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 position = Vector2(0, 34)

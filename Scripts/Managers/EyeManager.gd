@@ -1,29 +1,60 @@
 extends Node2D
 
-@export var EnemyScene : PackedScene # Assign the enemy scene in the Inspector
-@export var MinEnemies: = 2
-@export var MaxEnemies: = 5  # Max number of enemies to spawn at a time
+@export_category("Enemy Scenes")
+@export var EyeEnemyScene : PackedScene 
+@export var PuppetEnemyScene : PackedScene 
+@export var IdolEnemyScene : PackedScene 
 
-@export var SpawnArea : CollisionPolygon2D
+@export_category("Lights")
+@export var LightPosition: Node2D
+@export var LightScale: int
+@export var HasLight: = true
+
+@export_category("Spawn Logic")
+@export var EyeSpawnArea : CollisionPolygon2D
+@export var RoomArea : CollisionShape2D
+@export var spawn_points: Array[Node2D] = []
+
+@export_category("Enemy Logic")
+@export var MinEnemies: = 2
+@export var MaxEnemies: = 5  
 
 var Enemies: = []
 
 func _ready():
-	SpawnEnemies(randi_range(MinEnemies, MaxEnemies))
+	# Light setup
+	$GenericLight.global_position = LightPosition.global_position
+	$GenericLight.scale = Vector2(LightScale, LightScale)
+	
+	# Room hitbox setup
+	var BoxTransform = RoomArea.global_position
+	var BoxSize = RoomArea.shape.get_rect().size / 2
+	var Shape = RectangleShape2D.new()
+	
+	RoomArea = CollisionShape2D.new()
+	RoomArea.global_position = BoxTransform
+	Shape.extents = BoxSize
+	RoomArea.shape = Shape
+	$RoomArea.add_child(RoomArea)
+	
 	set_process(true)
 
 func _process(delta):
-	pass
+	if !HasLight:
+		$GenericLight.StopsPuppet = false
+		$GenericLight.hide()
+	else:
+		$GenericLight.StopsPuppet = true
+		$GenericLight.show()
 
-func SpawnEnemies(amount):
+func SpawnEyes(amount):
 	for I in range(amount):
-		var EnemyInstance = EnemyScene.instantiate()
-		var Position = GetRandomBoundsPosition(SpawnArea.polygon)
+		var EnemyInstance = EyeEnemyScene.instantiate()
+		var Position = GetRandomBoundsPosition(EyeSpawnArea.polygon)
 		EnemyInstance.position = Position
 		add_child(EnemyInstance)
 		Enemies.append(EnemyInstance)
 		EnemyInstance.connect("tree_exited", Callable(self, "OnEnemyRemoved"))
-		#EnemyInstance.connect()
 
 func GetRandomBoundsPosition(polygon):
 	while true:
@@ -59,3 +90,11 @@ func IsPointInPolygon(point, polygon):
 	
 func OnEnemyRemoved(enemy):
 	Enemies.erase(enemy)
+	print(Enemies)
+
+func _on_room_area_body_entered(body):
+	SpawnEyes(randi_range(MinEnemies, MaxEnemies))
+
+func _on_room_area_body_exited(body):
+	# TODO Logic here for deleting all enemies in the scene, probably with an enemy group assigned to all enemies
+	pass # Replace with function body.

@@ -1,25 +1,27 @@
-[gd_scene load_steps=40 format=3 uid="uid://7ku3pe1c85l8"]
+[gd_scene load_steps=43 format=3 uid="uid://7ku3pe1c85l8"]
 
-[ext_resource type="Texture2D" uid="uid://bon50n52nq6tj" path="res://Assets/Tilesets/OutsideTileMap.png" id="1_u0ns2"]
-[ext_resource type="Texture2D" uid="uid://cnkh5ntxva260" path="res://Assets/Tilesets/interior free.png" id="2_vhi65"]
-[ext_resource type="Texture2D" uid="uid://djyp7hkw0xe34" path="res://Assets/Tilesets/HouseTileMap.png" id="3_8yl2o"]
-[ext_resource type="Texture2D" uid="uid://d8ltjchsauvn" path="res://Assets/Tilesets/furniture pack coloured outline.png" id="4_q0e2h"]
-[ext_resource type="PackedScene" uid="uid://cgj3kj314s52s" path="res://Scenes/Managers/GameManager.tscn" id="5_wkrgv"]
-[ext_resource type="PackedScene" uid="uid://c1cjsqwl3m85g" path="res://Scenes/Characters/PrototypePlayer.tscn" id="6_xgww5"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="7_rhnss"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="8_3bfxe"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="9_g58xr"]
-[ext_resource type="PackedScene" uid="uid://i1gupv31llvp" path="res://Scenes/UI/PlayerUI.tscn" id="10_tjihf"]
-[ext_resource type="Script" path="res://Scripts/UI/PlayerUI.gd" id="11_3fbav"]
-[ext_resource type="PackedScene" uid="uid://cbj88k8k1nf0a" path="res://Scenes/UI/InventoryUI.tscn" id="12_gvh6u"]
-[ext_resource type="PackedScene" uid="uid://4efi72m083dt" path="res://Scenes/UI/SettingsMenu.tscn" id="13_5axac"]
-[ext_resource type="PackedScene" uid="uid://dkb1llqkp41em" path="res://Scenes/UI/PauseMenu.tscn" id="14_nctik"]
-[ext_resource type="PackedScene" uid="uid://nsepeqn0t02t" path="res://Scenes/UI/RoomTransition.tscn" id="15_dwtsm"]
-[ext_resource type="PackedScene" uid="uid://cauq8724wsvjn" path="res://Scenes/UI/DeathMenu.tscn" id="16_7vfba"]
-[ext_resource type="Script" path="res://addons/post_processing/node/post_process.gd" id="17_njexe"]
-[ext_resource type="Resource" uid="uid://5ajcpiaxw8a" path="res://Scenes/Effects/PostProcessInfo.tres" id="18_txvuq"]
-[ext_resource type="AudioStream" uid="uid://cqptup67gyc6k" path="res://Assets/Audio/Music/ScaryAmbience.mp3" id="19_bexxh"]
-[ext_resource type="PackedScene" uid="uid://bkwbco0dobaxw" path="res://Scenes/GenericLight.tscn" id="20_qflre"]
+[ext_resource type="Texture2D" uid="uid://bon50n52nq6tj" path="res://Assets/Tilesets/OutsideTileMap.png" id="1_vb7q6"]
+[ext_resource type="Texture2D" uid="uid://cnkh5ntxva260" path="res://Assets/Tilesets/interior free.png" id="2_p7ce2"]
+[ext_resource type="Texture2D" uid="uid://djyp7hkw0xe34" path="res://Assets/Tilesets/HouseTileMap.png" id="3_5ey0e"]
+[ext_resource type="Texture2D" uid="uid://d8ltjchsauvn" path="res://Assets/Tilesets/furniture pack coloured outline.png" id="4_a8h5f"]
+[ext_resource type="PackedScene" uid="uid://cgj3kj314s52s" path="res://Scenes/Managers/GameManager.tscn" id="5_mygcs"]
+[ext_resource type="PackedScene" uid="uid://c1cjsqwl3m85g" path="res://Scenes/Characters/PrototypePlayer.tscn" id="6_yqmn6"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="7_plepb"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="8_oo065"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="9_564l0"]
+[ext_resource type="PackedScene" uid="uid://i1gupv31llvp" path="res://Scenes/UI/PlayerUI.tscn" id="10_s21fb"]
+[ext_resource type="Script" path="res://Scripts/UI/PlayerUI.gd" id="11_ykyxv"]
+[ext_resource type="PackedScene" uid="uid://cbj88k8k1nf0a" path="res://Scenes/UI/InventoryUI.tscn" id="12_twinn"]
+[ext_resource type="PackedScene" uid="uid://4efi72m083dt" path="res://Scenes/UI/SettingsMenu.tscn" id="13_wc0vp"]
+[ext_resource type="PackedScene" uid="uid://dkb1llqkp41em" path="res://Scenes/UI/PauseMenu.tscn" id="14_cvodl"]
+[ext_resource type="PackedScene" uid="uid://nsepeqn0t02t" path="res://Scenes/UI/RoomTransition.tscn" id="15_1jpq3"]
+[ext_resource type="PackedScene" uid="uid://cauq8724wsvjn" path="res://Scenes/UI/DeathMenu.tscn" id="16_cxm2g"]
+[ext_resource type="Script" path="res://addons/post_processing/node/post_process.gd" id="17_qkxaq"]
+[ext_resource type="Resource" uid="uid://5ajcpiaxw8a" path="res://Scenes/Effects/PostProcessInfo.tres" id="18_3t608"]
+[ext_resource type="AudioStream" uid="uid://cqptup67gyc6k" path="res://Assets/Audio/Music/ScaryAmbience.mp3" id="19_fvyvk"]
+[ext_resource type="PackedScene" uid="uid://dxintreql7la3" path="res://Scenes/Characters/Enemies/Puppet.tscn" id="21_fj87g"]
+[ext_resource type="PackedScene" uid="uid://dtnaxadtf2ofh" path="res://Scenes/Door.tscn" id="22_4m5dj"]
+[ext_resource type="PackedScene" uid="uid://dcua6gojo0h0t" path="res://Scenes/Managers/EyeManager.tscn" id="23_kxksw"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_niy50"]
 polygon = PackedVector2Array(8, -8, 8, 8, -8, 8, -8, -8)
@@ -58,7 +60,7 @@ polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0hpa5"]
-texture = ExtResource("1_u0ns2")
+texture = ExtResource("1_vb7q6")
 1:0/0 = 0
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:0/0/physics_layer_0/angular_velocity = 0.0
@@ -691,7 +693,7 @@ texture = ExtResource("1_u0ns2")
 10:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0.375, 8, 0.5, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xw2aj"]
-texture = ExtResource("2_vhi65")
+texture = ExtResource("2_p7ce2")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -811,7 +813,7 @@ texture = ExtResource("2_vhi65")
 1:4/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jdvsx"]
-texture = ExtResource("3_8yl2o")
+texture = ExtResource("3_5ey0e")
 1:0/0 = 0
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:0/0/physics_layer_0/angular_velocity = 0.0
@@ -1117,7 +1119,7 @@ texture = ExtResource("3_8yl2o")
 12:6/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s4a0g"]
-texture = ExtResource("4_q0e2h")
+texture = ExtResource("4_a8h5f")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -3702,7 +3704,7 @@ sources/2 = SubResource("TileSetAtlasSource_jdvsx")
 sources/3 = SubResource("TileSetAtlasSource_s4a0g")
 
 [sub_resource type="Resource" id="Resource_beiqg"]
-script = ExtResource("9_g58xr")
+script = ExtResource("9_564l0")
 duration = 1.0
 transition = 0
 ease = 2
@@ -3710,6 +3712,9 @@ ease = 2
 [sub_resource type="Environment" id="Environment_mp8nr"]
 background_mode = 3
 glow_enabled = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i1pi2"]
+size = Vector2(576, 332)
 
 [node name="HouseStart" type="Node2D"]
 
@@ -3724,9 +3729,9 @@ layer_1/y_sort_enabled = true
 layer_1/z_index = 1
 layer_1/tile_data = PackedInt32Array()
 
-[node name="GameManager" parent="." instance=ExtResource("5_wkrgv")]
+[node name="GameManager" parent="." instance=ExtResource("5_mygcs")]
 
-[node name="PrototypePlayer" parent="." instance=ExtResource("6_xgww5")]
+[node name="PrototypePlayer" parent="." instance=ExtResource("6_yqmn6")]
 unique_name_in_owner = true
 position = Vector2(-1, -7)
 
@@ -3735,28 +3740,28 @@ position = Vector2(-1, -7)
 zoom = Vector2(3, 3)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
-script = ExtResource("7_rhnss")
+script = ExtResource("7_plepb")
 
 [node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
 position = Vector2(-1, -7)
-script = ExtResource("8_3bfxe")
+script = ExtResource("8_oo065")
 follow_mode = 2
 follow_target = NodePath("../PrototypePlayer")
 zoom = Vector2(3, 3)
 tween_resource = SubResource("Resource_beiqg")
 
-[node name="PlayerUI" parent="." instance=ExtResource("10_tjihf")]
-script = ExtResource("11_3fbav")
+[node name="PlayerUI" parent="." instance=ExtResource("10_s21fb")]
+script = ExtResource("11_ykyxv")
 
-[node name="InventoryUi" parent="PlayerUI" instance=ExtResource("12_gvh6u")]
+[node name="InventoryUi" parent="PlayerUI" instance=ExtResource("12_twinn")]
 
-[node name="SettingsMenu" parent="PlayerUI" instance=ExtResource("13_5axac")]
+[node name="SettingsMenu" parent="PlayerUI" instance=ExtResource("13_wc0vp")]
 
-[node name="PauseMenu" parent="PlayerUI" instance=ExtResource("14_nctik")]
+[node name="PauseMenu" parent="PlayerUI" instance=ExtResource("14_cvodl")]
 
-[node name="RoomTransition" parent="PlayerUI" instance=ExtResource("15_dwtsm")]
+[node name="RoomTransition" parent="PlayerUI" instance=ExtResource("15_1jpq3")]
 
-[node name="DeathMenu" parent="PlayerUI" instance=ExtResource("16_7vfba")]
+[node name="DeathMenu" parent="PlayerUI" instance=ExtResource("16_cxm2g")]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0, 0, 0, 1)
@@ -3765,15 +3770,36 @@ color = Color(0, 0, 0, 1)
 environment = SubResource("Environment_mp8nr")
 
 [node name="PostProcess" type="CanvasLayer" parent="." groups=["PostProcessing"]]
-script = ExtResource("17_njexe")
-configuration = ExtResource("18_txvuq")
+script = ExtResource("17_qkxaq")
+configuration = ExtResource("18_3t608")
 
 [node name="BackgoundMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("19_bexxh")
+stream = ExtResource("19_fvyvk")
 autoplay = true
 bus = &"Music"
 
-[node name="GenericLight" parent="." instance=ExtResource("20_qflre")]
-scale = Vector2(3, 3)
+[node name="Puppet" parent="." instance=ExtResource("21_fj87g")]
+position = Vector2(-349, 0)
+
+[node name="Door" parent="." instance=ExtResource("22_4m5dj")]
+position = Vector2(0, -84)
+PathToNextScene = "res://Scenes/Levels/game.tscn"
+
+[node name="EyeManager" parent="." node_paths=PackedStringArray("LightPosition", "EyeSpawnArea", "RoomArea") instance=ExtResource("23_kxksw")]
+LightPosition = NodePath("LightPosition")
+LightScale = 3
+HasLight = false
+EyeSpawnArea = NodePath("EyeSpawns")
+RoomArea = NodePath("RoomCollision")
+
+[node name="RoomCollision" type="CollisionShape2D" parent="EyeManager"]
+position = Vector2(2, -7)
+shape = SubResource("RectangleShape2D_i1pi2")
+disabled = true
+
+[node name="EyeSpawns" type="CollisionPolygon2D" parent="EyeManager"]
+polygon = PackedVector2Array(-289, -174, -129, -174, -128, -192, 114, -210, 145, -180, 286, -173, 317, 180, -319, 174)
+
+[node name="LightPosition" type="Node2D" parent="EyeManager"]
 
 [connection signal="StaminaChanged" from="PrototypePlayer" to="PrototypePlayer" method="_on_stamina_changed"]

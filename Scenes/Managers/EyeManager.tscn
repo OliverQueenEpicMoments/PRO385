@@ -1,8 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://dcua6gojo0h0t"]
+[gd_scene load_steps=6 format=3 uid="uid://dcua6gojo0h0t"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/EyeManager.gd" id="1_qxopc"]
 [ext_resource type="PackedScene" uid="uid://ce1m58qjueml4" path="res://Scenes/Characters/Enemies/GlaringTerror.tscn" id="2_rpcdp"]
+[ext_resource type="PackedScene" uid="uid://dxintreql7la3" path="res://Scenes/Characters/Enemies/Puppet.tscn" id="3_rdwqs"]
+[ext_resource type="PackedScene" uid="uid://05ta1y5cxfdw" path="res://Scenes/Characters/Enemies/IdolOfChaos.tscn" id="4_cv570"]
+[ext_resource type="PackedScene" uid="uid://bkwbco0dobaxw" path="res://Scenes/GenericLight.tscn" id="5_8nyyw"]
 
 [node name="EyeManager" type="Node2D"]
 script = ExtResource("1_qxopc")
-EnemyScene = ExtResource("2_rpcdp")
+EyeEnemyScene = ExtResource("2_rpcdp")
+PuppetEnemyScene = ExtResource("3_rdwqs")
+IdolEnemyScene = ExtResource("4_cv570")
+
+[node name="RoomArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="GenericLight" parent="." instance=ExtResource("5_8nyyw")]
+
+[connection signal="body_entered" from="RoomArea" to="." method="_on_room_area_body_entered"]
+[connection signal="body_exited" from="RoomArea" to="." method="_on_room_area_body_exited"]
