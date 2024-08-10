@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://7ku3pe1c85l8"]
+[gd_scene load_steps=42 format=3 uid="uid://7ku3pe1c85l8"]
 
 [ext_resource type="Texture2D" uid="uid://bon50n52nq6tj" path="res://Assets/Tilesets/OutsideTileMap.png" id="1_vb7q6"]
 [ext_resource type="Texture2D" uid="uid://cnkh5ntxva260" path="res://Assets/Tilesets/interior free.png" id="2_p7ce2"]
@@ -19,7 +19,6 @@
 [ext_resource type="Script" path="res://addons/post_processing/node/post_process.gd" id="17_qkxaq"]
 [ext_resource type="Resource" uid="uid://5ajcpiaxw8a" path="res://Scenes/Effects/PostProcessInfo.tres" id="18_3t608"]
 [ext_resource type="AudioStream" uid="uid://cqptup67gyc6k" path="res://Assets/Audio/Music/ScaryAmbience.mp3" id="19_fvyvk"]
-[ext_resource type="PackedScene" uid="uid://dxintreql7la3" path="res://Scenes/Characters/Enemies/Puppet.tscn" id="21_fj87g"]
 [ext_resource type="PackedScene" uid="uid://dtnaxadtf2ofh" path="res://Scenes/Door.tscn" id="22_4m5dj"]
 [ext_resource type="PackedScene" uid="uid://dcua6gojo0h0t" path="res://Scenes/Managers/EyeManager.tscn" id="23_kxksw"]
 
@@ -3778,19 +3777,13 @@ stream = ExtResource("19_fvyvk")
 autoplay = true
 bus = &"Music"
 
-[node name="Puppet" parent="." instance=ExtResource("21_fj87g")]
-position = Vector2(-349, 0)
-
-[node name="Door" parent="." instance=ExtResource("22_4m5dj")]
-position = Vector2(0, -84)
-PathToNextScene = "res://Scenes/Levels/game.tscn"
-
-[node name="EyeManager" parent="." node_paths=PackedStringArray("LightPosition", "EyeSpawnArea", "RoomArea") instance=ExtResource("23_kxksw")]
+[node name="EyeManager" parent="." node_paths=PackedStringArray("LightPosition", "EyeSpawnArea", "RoomArea", "PuppetSpawns") instance=ExtResource("23_kxksw")]
 LightPosition = NodePath("LightPosition")
 LightScale = 3
 HasLight = false
 EyeSpawnArea = NodePath("EyeSpawns")
 RoomArea = NodePath("RoomCollision")
+PuppetSpawns = [NodePath("PuppetSpawn"), NodePath("PuppetSpawn2"), NodePath("PuppetSpawn3")]
 
 [node name="RoomCollision" type="CollisionShape2D" parent="EyeManager"]
 position = Vector2(2, -7)
@@ -3801,5 +3794,18 @@ disabled = true
 polygon = PackedVector2Array(-289, -174, -129, -174, -128, -192, 114, -210, 145, -180, 286, -173, 317, 180, -319, 174)
 
 [node name="LightPosition" type="Node2D" parent="EyeManager"]
+
+[node name="PuppetSpawn" type="Node2D" parent="EyeManager"]
+position = Vector2(-234, 0)
+
+[node name="PuppetSpawn2" type="Node2D" parent="EyeManager"]
+position = Vector2(81, 0)
+
+[node name="PuppetSpawn3" type="Node2D" parent="EyeManager"]
+position = Vector2(239, -139)
+
+[node name="Door" parent="." instance=ExtResource("22_4m5dj")]
+position = Vector2(0, -58)
+PathToNextScene = "res://Scenes/Levels/game.tscn"
 
 [connection signal="StaminaChanged" from="PrototypePlayer" to="PrototypePlayer" method="_on_stamina_changed"]

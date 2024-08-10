@@ -1570,8 +1570,7 @@ position = Vector2(-1, -7)
 [node name="Puppet" parent="." instance=ExtResource("5_vum7p")]
 position = Vector2(-170, 0)
 
-[node name="EyeManager" parent="." node_paths=PackedStringArray("SpawnArea") instance=ExtResource("26_qgm5g")]
-SpawnArea = NodePath("Area2D/CollisionPolygon2D")
+[node name="EyeManager" parent="." instance=ExtResource("26_qgm5g")]
 
 [node name="Area2D" type="Area2D" parent="EyeManager"]
 
@@ -1676,5 +1675,8 @@ PathToNextScene = "res://Scenes/Levels/HouseStart.tscn"
 [node name="GenericLight" parent="." instance=ExtResource("27_7vqt4")]
 position = Vector2(165, -119)
 scale = Vector2(2, 2)
+
+[node name="Door2" parent="." instance=ExtResource("25_h8f3y")]
+position = Vector2(1, -81)
 
 [connection signal="StaminaChanged" from="PrototypePlayer" to="PrototypePlayer" method="_on_stamina_changed"]

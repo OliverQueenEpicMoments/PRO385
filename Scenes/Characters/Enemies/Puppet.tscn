@@ -2624,7 +2624,7 @@ blackboard_plan = SubResource("BlackboardPlan_28wm4")
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_afc5m"]
 
-[node name="Puppet" type="CharacterBody2D"]
+[node name="Puppet" type="CharacterBody2D" groups=["Enemy"]]
 z_index = 1
 y_sort_enabled = true
 collision_mask = 19
