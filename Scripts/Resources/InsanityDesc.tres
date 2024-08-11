@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EnemyDesc" load_steps=2 format=3 uid="uid://bbgcovohd2dik"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/EnemyDesc.gd" id="1_0fhu2"]
+
+[resource]
+script = ExtResource("1_0fhu2")
+EnemyName = "Unknown"
+CauseOfDeath = "Self-inflicted"
+EnemyDescription = "The soldier was found laying in a pool of his own blood with severe blunt force tauma in the head which appears to be self-inflicted. "
+ExtraDescription = "The current theory is that due to incredible stress, as presented in the autopsy, the soldier took off his helmet, found the nearest solid surface and bashed his head into it repeatedly till consciousness was lost. With reinforcements unable to make it till the next day the soldier bleed to death where he laid. Further research is needed as to why this soldier took such drastic actions, the body along with further research will be sent to the Hades site immediately."

@@ -17,12 +17,12 @@ extends Node2D
 @export var PuppetSpawns : Array[Node2D] = []
 @export var IdolSpawns : Array[Node2D] = []
 @export var MinimumSpawnDistance: = 100.0 
+@export var PeacefulRoom: = false
+@export var NonLethalSpawned: = false
 
 @export_category("Enemy Logic")
 @export var MinEnemies: = 2
 @export var MaxEnemies: = 5  
-
-var Enemies: = []
 
 func _ready():
 	# Light setup
@@ -57,17 +57,20 @@ func SpawnEyes(amount):
 		var Position = GetRandomBoundsPosition(EyeSpawnArea.polygon)
 		EnemyInstance.position = Position
 		add_child(EnemyInstance)
-		Enemies.append(EnemyInstance)
-		EnemyInstance.connect("tree_exited", Callable(self, "OnEnemyRemoved"))
 
 func SpawnPuppet():
+	var FurthestSpawnPoint = GetFurthestSpawnPoint()
+	if FurthestSpawnPoint:
+		var PuppetInstance = PuppetEnemyScene.instantiate()
+		PuppetInstance.position = FurthestSpawnPoint.global_position
+		add_child(PuppetInstance)
+
+func SpawnIdol():
 	var SafeSpawnPoint = GetSafeSpawnPoint()
 	if SafeSpawnPoint:
-		var PuppetInstance = PuppetEnemyScene.instantiate()
-		PuppetInstance.position = SafeSpawnPoint.global_position
-		add_child(PuppetInstance)
-		Enemies.append(PuppetInstance)
-		PuppetInstance.connect("tree_exited", Callable(self, "OnEnemyRemoved"))
+		var IdolInstance = IdolEnemyScene.instantiate()
+		IdolInstance.position = SafeSpawnPoint.global_position
+		add_child(IdolInstance)
 
 func GetRandomBoundsPosition(polygon):
 	while true:
@@ -101,30 +104,50 @@ func IsPointInPolygon(point, polygon):
 		J = I
 	return Inside
 	
+func GetFurthestSpawnPoint() -> Node2D:
+	var FurthestSpawn: Node2D = null
+	var MaxDistance: float = -INF
+
+	for SpawnPoint in PuppetSpawns:
+		var Distance = Global.Player.global_position.distance_to(SpawnPoint.global_position)
+		if Distance > MaxDistance:
+			MaxDistance = Distance
+			FurthestSpawn = SpawnPoint
+
+	return FurthestSpawn
+	
 func GetSafeSpawnPoint() -> Node2D:
 	var SafeSpawnPoints = []
 	
-	for point in PuppetSpawns:
-		if Global.Player and point:
-			var distance_to_player = Global.Player.global_position.distance_to(point.global_position)
+	for SpawnPoint in IdolSpawns:
+		if Global.Player and SpawnPoint:
+			var distance_to_player = Global.Player.global_position.distance_to(SpawnPoint.global_position)
 			if distance_to_player >= MinimumSpawnDistance:
-				SafeSpawnPoints.append(point)
+				SafeSpawnPoints.append(SpawnPoint)
 	
 	# Randomly select a safe spawn point from the list, if any
 	if SafeSpawnPoints.size() > 0:
 		return SafeSpawnPoints[randi() % SafeSpawnPoints.size()]
 	else:
 		return null  # Return null if no safe spawn point is found
-	
-func OnEnemyRemoved(enemy):
-	Enemies.erase(enemy)
-	print(Enemies)
 
 func _on_room_area_body_entered(body):
-	if !HasLight:
-		SpawnEyes(randi_range(MinEnemies, MaxEnemies))
-		SpawnPuppet()
+	if !HasLight and !PeacefulRoom:
+		var Rand = randf()
+		if (Rand < 0.4):
+			SpawnEyes(randi_range(MinEnemies, MaxEnemies))
+			NonLethalSpawned = true
+		elif Rand >= 0.4 and Rand < 0.8:
+			SpawnIdol()
+			NonLethalSpawned = true
+		
+		Rand = randf()
+		if NonLethalSpawned:
+			if (Rand < 0.33):  # Lower chance if an enemy is already spawned
+				SpawnPuppet()
+		else:
+			if (Rand > 0.33): 
+				SpawnPuppet()
 
 func _on_room_area_body_exited(body):
-	# TODO Logic here for deleting all enemies in the scene, probably with an enemy group assigned to all enemies
-	pass # Replace with function body.
+	Global.DespawnEnemies()

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EnemyDesc" load_steps=2 format=3 uid="uid://cbymdx721s57n"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/EnemyDesc.gd" id="1_xgu3c"]
+
+[resource]
+script = ExtResource("1_xgu3c")
+EnemyName = "Shadowstalkers"
+CauseOfDeath = "Radiation Poisoning"
+EnemyDescription = "Soldier was found hunchde over and completely lifeless. Traces of the subjects vomit were found around the scene and the autopsy confirmed radiation poisoning."
+ExtraDescription = "With subject Chernobog being firmly locked up in the Hades site, the leading theory is that the subject Shadowstalker (temporary name as this subject was recently acquired) took interest in the soldier. Unfortunately for the soldier he wan't aware of the Shadowstalkers hatred of the light and suffered severe radiation poisoning as a result."

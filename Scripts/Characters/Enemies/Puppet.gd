@@ -33,4 +33,5 @@ func _on_hitbox_unstunned():
 	#$AnimatedSprite2D.play()
 
 func GetDamage():
+	Global.CauseOfDeath = "Puppet"
 	return Damage

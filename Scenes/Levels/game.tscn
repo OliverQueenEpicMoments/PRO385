@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://b02cy4adfnyc0"]
+[gd_scene load_steps=38 format=3 uid="uid://b02cy4adfnyc0"]
 
 [ext_resource type="PackedScene" uid="uid://c1cjsqwl3m85g" path="res://Scenes/Characters/PrototypePlayer.tscn" id="1_egmum"]
 [ext_resource type="PackedScene" uid="uid://cgj3kj314s52s" path="res://Scenes/Managers/GameManager.tscn" id="1_kag8r"]
@@ -30,7 +30,6 @@
 [ext_resource type="Texture2D" uid="uid://digbaiy8f0xj5" path="res://Assets/UI/WalterRodent.png" id="24_8btui"]
 [ext_resource type="PackedScene" uid="uid://dtnaxadtf2ofh" path="res://Scenes/Door.tscn" id="25_h8f3y"]
 [ext_resource type="PackedScene" uid="uid://dcua6gojo0h0t" path="res://Scenes/Managers/EyeManager.tscn" id="26_qgm5g"]
-[ext_resource type="PackedScene" uid="uid://bkwbco0dobaxw" path="res://Scenes/GenericLight.tscn" id="27_7vqt4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uo3st"]
 texture = ExtResource("2_ggsr2")
@@ -1570,12 +1569,15 @@ position = Vector2(-1, -7)
 [node name="Puppet" parent="." instance=ExtResource("5_vum7p")]
 position = Vector2(-170, 0)
 
-[node name="EyeManager" parent="." instance=ExtResource("26_qgm5g")]
+[node name="EyeManager" parent="." node_paths=PackedStringArray("LightPosition") instance=ExtResource("26_qgm5g")]
+LightPosition = NodePath("Node2D")
 
 [node name="Area2D" type="Area2D" parent="EyeManager"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="EyeManager/Area2D"]
 polygon = PackedVector2Array(-112, -79, -113, -191, -289, -177, -285, 161, -66, 158, -64, 47, 75.4159, 45.4112, 80, 159, 291, 162, 285, -174, -14, -187, -14, -78)
+
+[node name="Node2D" type="Node2D" parent="EyeManager"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-1, -7)
@@ -1671,10 +1673,6 @@ ItemDescription = "Why he a rodent tho 😭😭😭😭"
 [node name="Door" parent="." instance=ExtResource("25_h8f3y")]
 position = Vector2(-158, 103)
 PathToNextScene = "res://Scenes/Levels/HouseStart.tscn"
-
-[node name="GenericLight" parent="." instance=ExtResource("27_7vqt4")]
-position = Vector2(165, -119)
-scale = Vector2(2, 2)
 
 [node name="Door2" parent="." instance=ExtResource("25_h8f3y")]
 position = Vector2(1, -81)

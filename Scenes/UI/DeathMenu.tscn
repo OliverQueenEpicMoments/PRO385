@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cauq8724wsvjn"]
+[gd_scene load_steps=9 format=3 uid="uid://cauq8724wsvjn"]
 
 [ext_resource type="FontFile" uid="uid://cdh4f8j6uv54l" path="res://Assets/Fonts/HelpMe.ttf" id="1_aid58"]
 [ext_resource type="Script" path="res://Scripts/UI/DeathMenu.gd" id="1_kf7fb"]
 [ext_resource type="Texture2D" uid="uid://w4qdlupoyjpj" path="res://Assets/Items/Battery.png" id="2_2ytl2"]
+[ext_resource type="Resource" uid="uid://dbx3dib42tndc" path="res://Scripts/Resources/PuppetDesc.tres" id="2_qfpor"]
+[ext_resource type="Resource" uid="uid://bbgcovohd2dik" path="res://Scripts/Resources/InsanityDesc.tres" id="3_l4xh0"]
 
 [sub_resource type="Animation" id="Animation_vu277"]
 resource_name = "Fade"
@@ -75,6 +77,8 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_kf7fb")
+PuppetDesc = ExtResource("2_qfpor")
+InsanitytDesc = ExtResource("3_l4xh0")
 
 [node name="DescriptionPanel" type="Panel" parent="."]
 custom_minimum_size = Vector2(400, 800)
@@ -174,14 +178,21 @@ Subject description"
 
 [node name="EffectTextLabel" type="Label" parent="DescriptionPanel/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
-text = "Effect description goes here"
+text = "Effect description goes here "
+autowrap_mode = 3
+
+[node name="EmptySpace" type="Label" parent="DescriptionPanel/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "
+"
+autowrap_mode = 3
 
 [node name="DescriptionLabel" type="Label" parent="DescriptionPanel/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
-text = "
-Overall enemy description/lore goes here
+text = "Overall enemy description/lore goes here
 
 "
+autowrap_mode = 3
 
 [node name="RespawnButton" type="Button" parent="DescriptionPanel/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2

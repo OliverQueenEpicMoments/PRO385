@@ -19,6 +19,10 @@ var Borderless: = false
 @onready var PostProcess
 @onready var DeathReport
 
+var CauseOfDeath : String 
+
+var Enemies: = []
+
 func _ready():
 	Player = get_tree().get_first_node_in_group("Player")
 	PostProcess = get_tree().get_first_node_in_group("PostProcessing")
@@ -92,3 +96,14 @@ func NewGame():
 	PlayerDead = false
 	MaxInsanity = false
 	PlayerSanity = 0
+
+func GetEnemies():
+	Enemies = get_tree().get_nodes_in_group("Enemy")
+	#print("Accquired enemy array - ", Enemies)
+	
+func DespawnEnemies():
+	GetEnemies()
+	#print("Enemy array - ", Enemies)
+	for Enemy in Enemies:
+		Enemy.queue_free()
+	#print("Enemy array - ", Enemies)

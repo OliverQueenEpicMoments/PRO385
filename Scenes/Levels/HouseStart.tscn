@@ -3777,13 +3777,14 @@ stream = ExtResource("19_fvyvk")
 autoplay = true
 bus = &"Music"
 
-[node name="EyeManager" parent="." node_paths=PackedStringArray("LightPosition", "EyeSpawnArea", "RoomArea", "PuppetSpawns") instance=ExtResource("23_kxksw")]
+[node name="EyeManager" parent="." node_paths=PackedStringArray("LightPosition", "EyeSpawnArea", "RoomArea", "PuppetSpawns", "IdolSpawns") instance=ExtResource("23_kxksw")]
 LightPosition = NodePath("LightPosition")
 LightScale = 3
 HasLight = false
 EyeSpawnArea = NodePath("EyeSpawns")
 RoomArea = NodePath("RoomCollision")
-PuppetSpawns = [NodePath("PuppetSpawn"), NodePath("PuppetSpawn2"), NodePath("PuppetSpawn3")]
+PuppetSpawns = [NodePath("PuppetSpawns/PuppetSpawn"), NodePath("PuppetSpawns/PuppetSpawn2"), NodePath("PuppetSpawns/PuppetSpawn3")]
+IdolSpawns = [NodePath("IdolSpawns/IdolSpawn"), NodePath("IdolSpawns/IdolSpawn2"), NodePath("IdolSpawns/IdolSpawn3"), NodePath("IdolSpawns/IdolSpawn4")]
 
 [node name="RoomCollision" type="CollisionShape2D" parent="EyeManager"]
 position = Vector2(2, -7)
@@ -3795,17 +3796,40 @@ polygon = PackedVector2Array(-289, -174, -129, -174, -128, -192, 114, -210, 145,
 
 [node name="LightPosition" type="Node2D" parent="EyeManager"]
 
-[node name="PuppetSpawn" type="Node2D" parent="EyeManager"]
-position = Vector2(-234, 0)
+[node name="PuppetSpawns" type="Node" parent="EyeManager"]
 
-[node name="PuppetSpawn2" type="Node2D" parent="EyeManager"]
+[node name="PuppetSpawn" type="Node2D" parent="EyeManager/PuppetSpawns"]
+position = Vector2(-280, 149)
+
+[node name="PuppetSpawn2" type="Node2D" parent="EyeManager/PuppetSpawns"]
 position = Vector2(81, 0)
 
-[node name="PuppetSpawn3" type="Node2D" parent="EyeManager"]
-position = Vector2(239, -139)
+[node name="PuppetSpawn3" type="Node2D" parent="EyeManager/PuppetSpawns"]
+position = Vector2(-138, -97)
+
+[node name="IdolSpawns" type="Node" parent="EyeManager"]
+
+[node name="IdolSpawn" type="Node2D" parent="EyeManager/IdolSpawns"]
+position = Vector2(0, -122)
+
+[node name="IdolSpawn2" type="Node2D" parent="EyeManager/IdolSpawns"]
+position = Vector2(0, 82)
+
+[node name="IdolSpawn3" type="Node2D" parent="EyeManager/IdolSpawns"]
+position = Vector2(-191, 0)
+
+[node name="IdolSpawn4" type="Node2D" parent="EyeManager/IdolSpawns"]
+position = Vector2(186, 0)
 
 [node name="Door" parent="." instance=ExtResource("22_4m5dj")]
-position = Vector2(0, -58)
+position = Vector2(-39, -58)
 PathToNextScene = "res://Scenes/Levels/game.tscn"
+
+[node name="Door2" parent="." node_paths=PackedStringArray("TeleportLocation") instance=ExtResource("22_4m5dj")]
+position = Vector2(33, -59)
+TeleportLocation = NodePath("TeleportLocation")
+
+[node name="TeleportLocation" type="Node2D" parent="Door2"]
+position = Vector2(0, -156)
 
 [connection signal="StaminaChanged" from="PrototypePlayer" to="PrototypePlayer" method="_on_stamina_changed"]

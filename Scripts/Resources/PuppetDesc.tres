@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EnemyDesc" load_steps=2 format=3 uid="uid://dbx3dib42tndc"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/EnemyDesc.gd" id="1_cjkr1"]
+
+[resource]
+script = ExtResource("1_cjkr1")
+EnemyName = "The Mannequin"
+CauseOfDeath = "Severe Lacerations"
+EnemyDescription = "The soldiers corpse was found on the floor in a pool of his own blood, deeper investigation showed various rough and brutal stabs on the soldiers chest region. Some cuts are superficial whereas others go all the way through."
+ExtraDescription = "Our theory currently is that a strong subject, most likely the mannequin snuck up on the soldier since he was unaware that he had to keep constant eye on it. The mannequin then punched straight through him multiple times with its bare hands due to its unnatural strength, the soldier then died shortly."
