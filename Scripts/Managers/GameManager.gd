@@ -6,7 +6,7 @@ var InsanityEnemy: = preload("res://Scenes/Characters/Enemies/Mind'sBane.tscn")
 var InsanityEnemySpawned: = false
 
 func _ready():
-	pass
+	Player = Global.GetPlayer()
 
 func _process(_delta):
 	if (Global.MaxInsanity):

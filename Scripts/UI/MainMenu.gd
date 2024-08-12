@@ -39,7 +39,7 @@ func _on_quit_button_pressed():
 
 func _on_timer_timeout():
 	if (NewGame):
-		get_tree().change_scene_to_file("res://Scenes/Levels/game.tscn")
+		get_tree().change_scene_to_file("res://Scenes/Levels/HouseStart.tscn")
 	else:
 		pass # TODO Add functionality for loading a saved run
 
