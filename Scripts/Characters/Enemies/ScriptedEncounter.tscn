@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2jybimk20tsy"]
+
+[ext_resource type="Texture2D" uid="uid://b4ckspmwwv0g8" path="res://Assets/Characters/Enemies/Puppet/Dance.png" id="1_137n2"]
+[ext_resource type="Script" path="res://Scripts/Characters/Enemies/ScriptedEncounter.gd" id="1_yiy2d"]
+
+[node name="ScriptedEncounter" type="Node2D"]
+z_index = 1
+y_sort_enabled = true
+script = ExtResource("1_yiy2d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -41)
+texture = ExtResource("1_137n2")
+region_enabled = true
+region_rect = Rect2(303.807, 163.867, 41.3502, 82.2939)

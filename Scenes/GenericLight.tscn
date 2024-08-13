@@ -1,10 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://bkwbco0dobaxw"]
+[gd_scene load_steps=6 format=3 uid="uid://bkwbco0dobaxw"]
 
 [ext_resource type="Script" path="res://Scripts/GenericLight.gd" id="1_3iahl"]
 [ext_resource type="Texture2D" uid="uid://7raffwhs8sua" path="res://Assets/Lights/Light2.png" id="1_mbfcq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dvc5k"]
 radius = 75.0
+
+[sub_resource type="Animation" id="Animation_p0dtl"]
+resource_name = "Flicker"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_66b7j"]
+_data = {
+"Flicker": SubResource("Animation_p0dtl")
+}
 
 [node name="GenericLight" type="Node2D"]
 script = ExtResource("1_3iahl")
@@ -42,3 +50,8 @@ collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("CircleShape2D_dvc5k")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_66b7j")
+}

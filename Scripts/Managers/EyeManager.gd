@@ -8,7 +8,7 @@ extends Node2D
 @export_category("Lights")
 @onready var RoomLight = $GenericLight
 @export var LightPosition: Node2D
-@export var LightScale: int
+@export var LightScale: int = 1
 @export var HasLight: = true
 
 @export_category("Spawn Logic")
@@ -19,12 +19,15 @@ extends Node2D
 @export var MinimumSpawnDistance: = 100.0 
 @export var PeacefulRoom: = false
 @export var NonLethalSpawned: = false
+@export var SpawnDelay: = 1.0 
 
 @export_category("Enemy Logic")
 @export var MinEnemies: = 2
 @export var MaxEnemies: = 5  
 
 func _ready():
+	$SpawnTimer.wait_time = SpawnDelay
+	
 	# Light setup
 	if is_instance_valid(RoomLight):
 		RoomLight.global_position = LightPosition.global_position
@@ -132,6 +135,12 @@ func GetSafeSpawnPoint() -> Node2D:
 		return null  # Return null if no safe spawn point is found
 
 func _on_room_area_body_entered(body):
+	$SpawnTimer.start()
+
+func _on_room_area_body_exited(body):
+	Global.DespawnEnemies()
+
+func _on_spawn_timer_timeout():
 	if !HasLight and !PeacefulRoom:
 		var Rand = randf()
 		if (Rand < 0.4):
@@ -148,6 +157,3 @@ func _on_room_area_body_entered(body):
 		else:
 			if (Rand > 0.33): 
 				SpawnPuppet()
-
-func _on_room_area_body_exited(body):
-	Global.DespawnEnemies()
