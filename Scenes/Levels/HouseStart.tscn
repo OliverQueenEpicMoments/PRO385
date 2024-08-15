@@ -3882,11 +3882,11 @@ ShowSprite = false
 [node name="EyeManager" parent="." node_paths=PackedStringArray("LightPosition", "EyeSpawnArea", "RoomArea", "PuppetSpawns", "IdolSpawns") instance=ExtResource("23_kxksw")]
 LightPosition = NodePath("LightPosition")
 LightScale = 3
+HasLight = false
 EyeSpawnArea = NodePath("EyeSpawns")
 RoomArea = NodePath("RoomCollision")
 PuppetSpawns = [NodePath("PuppetSpawns/PuppetSpawn"), NodePath("PuppetSpawns/PuppetSpawn2"), NodePath("PuppetSpawns/PuppetSpawn3")]
 IdolSpawns = [NodePath("IdolSpawns/IdolSpawn"), NodePath("IdolSpawns/IdolSpawn2"), NodePath("IdolSpawns/IdolSpawn3"), NodePath("IdolSpawns/IdolSpawn4")]
-PeacefulRoom = true
 
 [node name="RoomCollision" type="CollisionShape2D" parent="EyeManager"]
 position = Vector2(2, -7)

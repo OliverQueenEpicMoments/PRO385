@@ -24,13 +24,14 @@ func _physics_process(delta):
 		move_and_slide()
 
 func _on_hitbox_stunned():
-	$AnimatedSprite2D.stop()
-	$AnimationPlayer.stop()
+	# TODO Make sure the animation stops here
+	$AnimationPlayer.stop(false)
 	Stuns += 1
 
 func _on_hitbox_unstunned():
 	Stuns -= 1
-	#$AnimatedSprite2D.play()
+	# TODO Make sure the animation continues here
+	$AnimationPlayer.play()
 
 func GetDamage():
 	Global.CauseOfDeath = "Puppet"

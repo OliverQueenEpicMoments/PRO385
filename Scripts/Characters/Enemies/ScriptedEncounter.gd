@@ -6,7 +6,6 @@ extends Node2D
 func _ready():
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	match ScriptedEnemyType:
@@ -18,4 +17,3 @@ func _process(delta):
 			print("Cue Shadowstalker scripted cutscene")
 		"Blind Enemy":
 			print("Cue unnamed blind enemy scripted cutscene")
-			
