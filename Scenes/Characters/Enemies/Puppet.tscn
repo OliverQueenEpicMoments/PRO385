@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://dxintreql7la3"]
+[gd_scene load_steps=71 format=3 uid="uid://dxintreql7la3"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/Enemies/Puppet.gd" id="1_2upr0"]
 [ext_resource type="PackedScene" uid="uid://ci3mu02ygiaai" path="res://Scenes/Hitbox.tscn" id="2_q4d10"]
@@ -35,6 +35,10 @@
 [ext_resource type="Texture2D" uid="uid://bvlvsiyua6s1n" path="res://Assets/Characters/Enemies/Puppet/ReachingOut/Normals/ReachingUpLeftNormalMap.png" id="32_icyj1"]
 [ext_resource type="Texture2D" uid="uid://d2m2qhco84a7g" path="res://Assets/Characters/Enemies/Puppet/ReachingOut/Sprites/ReachingUpRight.png" id="33_2vatl"]
 [ext_resource type="Texture2D" uid="uid://c6mna0osstcjk" path="res://Assets/Characters/Enemies/Puppet/ReachingOut/Normals/ReachingUpRightNormalMap.png" id="34_h1xqy"]
+[ext_resource type="Texture2D" uid="uid://dmd2xepuhyphs" path="res://Assets/Characters/Enemies/Puppet/InjuredWalk/Sprites/InjuredWalkDown.png" id="35_vqtyx"]
+[ext_resource type="Texture2D" uid="uid://cfwxroni7f6ct" path="res://Assets/Characters/Enemies/Puppet/InjuredWalk/Normals/InjuredWalkDownNormalMap.png" id="36_0h4lh"]
+[ext_resource type="Texture2D" uid="uid://bsthdb7orh813" path="res://Assets/Characters/Enemies/Puppet/InjuredWalk/Sprites/InjuredWalkDownLeft.png" id="37_5ahw6"]
+[ext_resource type="Texture2D" uid="uid://wed1445q73i6" path="res://Assets/Characters/Enemies/Puppet/InjuredWalk/Normals/InjuredWalkDownLeftNormalMap.png" id="38_gxykp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x4ixc"]
 
@@ -54,69 +58,6 @@ normal_texture = ExtResource("4_dttia")
 blackboard_plan = SubResource("BlackboardPlan_28wm4")
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_afc5m"]
-
-[sub_resource type="Animation" id="Animation_uktj8"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture:normal_texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [ExtResource("4_dttia")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:texture:diffuse_texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [ExtResource("3_r0t66")]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D:hframes")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [6]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Sprite2D:vframes")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [6]
-}
 
 [sub_resource type="Animation" id="Animation_won3r"]
 resource_name = "InjuredWalk2D"
@@ -637,6 +578,69 @@ tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/path = NodePath("Sprite2D:hframes")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
+[sub_resource type="Animation" id="Animation_uktj8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture:normal_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("4_dttia")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture:diffuse_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("3_r0t66")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:hframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:vframes")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -1174,6 +1178,138 @@ tracks/4/keys = {
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 119]
 }
 
+[sub_resource type="Animation" id="Animation_d1leu"]
+resource_name = "InjuredWalkD"
+length = 1.6
+loop_mode = 1
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture:diffuse_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.66667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [ExtResource("35_vqtyx"), ExtResource("35_vqtyx")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture:normal_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.66667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [ExtResource("36_0h4lh"), ExtResource("36_0h4lh")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:vframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666666, 0.0999999, 0.133333, 0.166667, 0.2, 0.233333, 0.266666, 0.3, 0.333333, 0.366666, 0.4, 0.433333, 0.466666, 0.5, 0.533333, 0.566666, 0.599999, 0.633333, 0.666666, 0.699999, 0.733333, 0.766666, 0.799999, 0.833333, 0.866666, 0.899999, 0.933332, 0.966666, 0.999999, 1.03333, 1.06667, 1.1, 1.13333, 1.16667, 1.2, 1.23333, 1.26667, 1.3, 1.33333, 1.36667, 1.4, 1.43333, 1.46667, 1.5, 1.53333, 1.56667, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48]
+}
+
+[sub_resource type="Animation" id="Animation_06umv"]
+resource_name = "InjuredWalkDL"
+length = 1.6
+loop_mode = 1
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture:diffuse_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("37_5ahw6")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture:normal_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("38_gxykp")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:vframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666666, 0.0999999, 0.133333, 0.166667, 0.2, 0.233333, 0.266666, 0.3, 0.333333, 0.366666, 0.4, 0.433333, 0.466666, 0.5, 0.533333, 0.566666, 0.599999, 0.633333, 0.666666, 0.699999, 0.733333, 0.766666, 0.799999, 0.833333, 0.866666, 0.899999, 0.933332, 0.966666, 0.999999, 1.03333, 1.06667, 1.1, 1.13333, 1.16667, 1.2, 1.23333, 1.26667, 1.3, 1.33333, 1.36667, 1.4, 1.43333, 1.46667, 1.5, 1.53333, 1.56667, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p7oyw"]
 _data = {
 "InjuredWalk2D": SubResource("Animation_won3r"),
@@ -1184,6 +1320,8 @@ _data = {
 "InjuredWalk2U": SubResource("Animation_k1fj6"),
 "InjuredWalk2UL": SubResource("Animation_hyc06"),
 "InjuredWalk2UR": SubResource("Animation_r4g25"),
+"InjuredWalkD": SubResource("Animation_d1leu"),
+"InjuredWalkDL": SubResource("Animation_06umv"),
 "RESET": SubResource("Animation_uktj8"),
 "ReachingOutD": SubResource("Animation_dgaro"),
 "ReachingOutDL": SubResource("Animation_s2v1k"),
@@ -1195,6 +1333,8 @@ _data = {
 "ReachingOutUR": SubResource("Animation_cc0lu")
 }
 
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_2djg2"]
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lffda"]
 animation = &"InjuredWalk2D"
 
@@ -1202,6 +1342,8 @@ animation = &"InjuredWalk2D"
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_66msr"]
+states/BlendSpace2D/node = SubResource("AnimationNodeBlendSpace2D_2djg2")
+states/BlendSpace2D/position = Vector2(582, 175)
 states/InjuredWalk2D/node = SubResource("AnimationNodeAnimation_lffda")
 states/InjuredWalk2D/position = Vector2(407, 100)
 states/Start/position = Vector2(218, 100)
@@ -1249,9 +1391,10 @@ autoplay = "InjuredWalk2D"
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_66msr")
 anim_player = NodePath("../AnimationPlayer")
+parameters/BlendSpace2D/blend_position = Vector2(-0.379922, -0.853403)
 
 [node name="GenericLight" parent="." instance=ExtResource("9_3p68k")]
-position = Vector2(-13, 16)
+position = Vector2(-24, 17)
 scale = Vector2(3, 3)
 StopsPuppet = false
 
