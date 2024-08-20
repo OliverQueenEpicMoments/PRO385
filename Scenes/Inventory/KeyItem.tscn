@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpd5v5pod5xro"]
+[gd_scene load_steps=5 format=3 uid="uid://cpd5v5pod5xro"]
 
 [ext_resource type="Script" path="res://Scripts/Inventory/KeyItem.gd" id="1_eqtag"]
 [ext_resource type="PackedScene" uid="uid://deo66nfs8pl5n" path="res://Scenes/Interaction/InteractionArea/InteractionArea.tscn" id="2_ug8xe"]
+[ext_resource type="PackedScene" uid="uid://bkwbco0dobaxw" path="res://Scenes/GenericLight.tscn" id="3_xk2up"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_egy8b"]
 size = Vector2(40, 40)
@@ -17,3 +18,6 @@ script = ExtResource("1_eqtag")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 shape = SubResource("RectangleShape2D_egy8b")
+
+[node name="GenericLight" parent="." instance=ExtResource("3_xk2up")]
+StopsPuppet = false
