@@ -1394,7 +1394,7 @@ background_mode = 3
 glow_enabled = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i1pi2"]
-size = Vector2(576, 332)
+size = Vector2(605, 370)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kwho6"]
 size = Vector2(414, 242)
@@ -1496,7 +1496,7 @@ PuppetSpawns = [NodePath("PuppetSpawns/PuppetSpawn"), NodePath("PuppetSpawns/Pup
 IdolSpawns = [NodePath("IdolSpawns/IdolSpawn"), NodePath("IdolSpawns/IdolSpawn2"), NodePath("IdolSpawns/IdolSpawn3"), NodePath("IdolSpawns/IdolSpawn4")]
 
 [node name="RoomCollision" type="CollisionShape2D" parent="EyeManager"]
-position = Vector2(2, -7)
+position = Vector2(0.5, -10)
 shape = SubResource("RectangleShape2D_i1pi2")
 disabled = true
 
@@ -1514,7 +1514,7 @@ position = Vector2(-280, 149)
 position = Vector2(261, 43)
 
 [node name="PuppetSpawn3" type="Node2D" parent="EyeManager/PuppetSpawns"]
-position = Vector2(-223, -30)
+position = Vector2(-211, -10)
 
 [node name="IdolSpawns" type="Node" parent="EyeManager"]
 

@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
+@onready var AnimTree: AnimationTree = $AnimationTree
+
 @export var Damage: = 10
+var Direction : Vector2
 
 var Rooted: = false
 const Speed: = 135.0
@@ -15,9 +18,11 @@ func _physics_process(delta):
 		Damage = 10
 		
 	if (is_instance_valid(Global.Player) and not Rooted):
-		var direction = (Global.Player.global_position - global_position).normalized()
-		velocity = direction * Speed
+		Direction = (Global.Player.global_position - global_position).normalized()
+		velocity = Direction * Speed
+		UpdateAnimations()
 	else:
+		Direction = (Global.Player.global_position - global_position).normalized()
 		Global.GetPlayer()
 	
 	if not Rooted:
@@ -36,3 +41,11 @@ func _on_hitbox_unstunned():
 func GetDamage():
 	Global.CauseOfDeath = "Puppet"
 	return Damage
+
+func UpdateAnimations():
+	var CorrectedDirection = Direction
+	CorrectedDirection.y = -CorrectedDirection.y
+	#print("Direction vector - ", CorrectedDirection)
+	
+	AnimTree["parameters/InjuredWalk2/blend_position"] = CorrectedDirection
+	AnimTree["parameters/InjuredWalk/blend_position"] = CorrectedDirection
