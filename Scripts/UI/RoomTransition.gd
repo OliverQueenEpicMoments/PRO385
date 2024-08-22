@@ -1,5 +1,7 @@
 extends Control
 
+func _ready() -> void:
+	$AnimationPlayer.play_backwards("Fade")
 
 func StartTransition():
 	$AnimationPlayer.play("Fade")

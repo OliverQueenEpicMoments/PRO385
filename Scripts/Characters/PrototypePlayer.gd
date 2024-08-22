@@ -155,5 +155,5 @@ func Death():
 	Global.PlayerDeath()
 
 func _on_damage_body_entered(body):
-	#dprint("Hit by ", body)
+	#print("Hit by ", body)
 	ApplyDamage(body.GetDamage())

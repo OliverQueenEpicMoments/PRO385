@@ -41,6 +41,7 @@ func _on_resume_button_pressed():
 
 func _on_restart_button_pressed():
 	Resume()
+	
 	get_tree().reload_current_scene() 
 
 func _on_settings_button_pressed():

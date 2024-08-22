@@ -25,6 +25,10 @@ extends Node2D
 @export var MinEnemies: = 2
 @export var MaxEnemies: = 5  
 
+@export_category("Camera")
+@export var RoomPhantomCam : PhantomCamera2D
+@export var CameraZoom : float = 3.5 
+
 func _ready():
 	$SpawnTimer.wait_time = SpawnDelay
 	
@@ -43,6 +47,8 @@ func _ready():
 	Shape.extents = BoxSize
 	RoomArea.shape = Shape
 	$RoomArea.add_child(RoomArea)
+	
+	RoomPhantomCam.set_zoom(Vector2(CameraZoom, CameraZoom))
 	
 	set_process(true)
 
@@ -135,9 +141,14 @@ func GetSafeSpawnPoint() -> Node2D:
 		return null  # Return null if no safe spawn point is found
 
 func _on_room_area_body_entered(body):
+	RoomPhantomCam.set_priority(1)
+	#print("Entered room cam priority - ", RoomPhantomCam.get_priority())
 	$SpawnTimer.start()
 
 func _on_room_area_body_exited(body):
+	RoomPhantomCam.set_priority(0)
+	RoomPhantomCam.set_zoom(Vector2(3.5, 3.5))
+	#print("Exited room cam priority - ", RoomPhantomCam.get_priority())
 	Global.DespawnEnemies()
 
 func _on_spawn_timer_timeout():

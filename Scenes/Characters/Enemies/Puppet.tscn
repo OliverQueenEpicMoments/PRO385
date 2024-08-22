@@ -1,4 +1,4 @@
-[gd_scene load_steps=181 format=3 uid="uid://dxintreql7la3"]
+[gd_scene load_steps=223 format=3 uid="uid://dxintreql7la3"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/Enemies/Puppet.gd" id="1_2upr0"]
 [ext_resource type="PackedScene" uid="uid://ci3mu02ygiaai" path="res://Scenes/Hitbox.tscn" id="2_q4d10"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://bieamx3jurnrn" path="res://Assets/Characters/Enemies/Puppet/InjuredWalk2/Normals/InjuredWalk2DownLeftNormalMap.png" id="6_1y3wc"]
 [ext_resource type="Texture2D" uid="uid://byx8ypdg2o6wx" path="res://Assets/Characters/Enemies/Puppet/InjuredWalk2/Sprites/InjuredWalk2DownRight.png" id="7_0vkwt"]
 [ext_resource type="Texture2D" uid="uid://bfrtvmb21yhpd" path="res://Assets/Characters/Enemies/Puppet/InjuredWalk2/Normals/InjuredWalk2DownRightNormalMap.png" id="8_fqbke"]
-[ext_resource type="PackedScene" uid="uid://bkwbco0dobaxw" path="res://Scenes/GenericLight.tscn" id="9_3p68k"]
 [ext_resource type="Texture2D" uid="uid://bt1ivtp5h8e1g" path="res://Assets/Characters/Enemies/Puppet/InjuredWalk2/Sprites/InjuredWalk2Left.png" id="9_34phv"]
 [ext_resource type="Texture2D" uid="uid://c113ohac4se7t" path="res://Assets/Characters/Enemies/Puppet/InjuredWalk2/Normals/InjuredWalk2LeftNormalMap.png" id="10_0q0yj"]
 [ext_resource type="Texture2D" uid="uid://dhkr1ewhgtht6" path="res://Assets/Characters/Enemies/Puppet/InjuredWalk2/Sprites/InjuredWalk2Right.png" id="11_8u2y7"]
@@ -112,17 +111,9 @@ light_mode = 2
 diffuse_texture = ExtResource("3_r0t66")
 normal_texture = ExtResource("4_dttia")
 
-[sub_resource type="BlackboardPlan" id="BlackboardPlan_28wm4"]
-
-[sub_resource type="BehaviorTree" id="BehaviorTree_pekf1"]
-blackboard_plan = SubResource("BlackboardPlan_28wm4")
-
-[sub_resource type="BlackboardPlan" id="BlackboardPlan_afc5m"]
-
 [sub_resource type="Animation" id="Animation_won3r"]
 resource_name = "InjuredWalk2D"
 length = 1.13334
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -188,7 +179,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_80ot7"]
 resource_name = "InjuredWalk2DL"
 length = 1.16667
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -254,7 +244,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_e40hj"]
 resource_name = "InjuredWalk2DR"
 length = 1.16667
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -320,7 +309,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_yy6qb"]
 resource_name = "InjuredWalk2L"
 length = 1.16667
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -386,7 +374,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_rgl23"]
 resource_name = "InjuredWalk2R"
 length = 1.16667
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -452,7 +439,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_k1fj6"]
 resource_name = "InjuredWalk2U"
 length = 1.16667
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -518,7 +504,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_hyc06"]
 resource_name = "InjuredWalk2UL"
 length = 1.16667
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -584,7 +569,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_r4g25"]
 resource_name = "InjuredWalk2UR"
 length = 1.16667
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -650,7 +634,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_d1leu"]
 resource_name = "InjuredWalkD"
 length = 1.6
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -716,7 +699,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_06umv"]
 resource_name = "InjuredWalkDL"
 length = 1.6
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -782,7 +764,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_sq7fk"]
 resource_name = "InjuredWalkDR"
 length = 1.6
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -848,7 +829,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_kiso3"]
 resource_name = "InjuredWalkL"
 length = 1.6
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -914,7 +894,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_pigbt"]
 resource_name = "InjuredWalkR"
 length = 1.6
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -980,7 +959,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_p7dmk"]
 resource_name = "InjuredWalkU"
 length = 1.6
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1046,7 +1024,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_crxcs"]
 resource_name = "InjuredWalkUL"
 length = 1.6
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1112,7 +1089,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_fyrcj"]
 resource_name = "InjuredWalkUR"
 length = 1.6
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1241,7 +1217,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_dgaro"]
 resource_name = "ReachingOutD"
 length = 4.0
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1307,7 +1282,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_s2v1k"]
 resource_name = "ReachingOutDL"
 length = 4.0
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1373,7 +1347,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_12sdj"]
 resource_name = "ReachingOutDR"
 length = 4.0
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1439,7 +1412,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_qn735"]
 resource_name = "ReachingOutL"
 length = 4.0
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1505,7 +1477,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_803ih"]
 resource_name = "ReachingOutR"
 length = 4.0
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1571,7 +1542,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_h1261"]
 resource_name = "ReachingOutU"
 length = 4.0
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1637,7 +1607,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_727yx"]
 resource_name = "ReachingOutUL"
 length = 4.0
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1646,10 +1615,10 @@ tracks/0/path = NodePath("Sprite2D:texture:diffuse_texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ExtResource("31_ih2n1")]
+"values": [ExtResource("31_ih2n1"), ExtResource("31_ih2n1")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1658,10 +1627,10 @@ tracks/1/path = NodePath("Sprite2D:texture:normal_texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ExtResource("32_icyj1")]
+"values": [ExtResource("32_icyj1"), ExtResource("32_icyj1")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -1670,10 +1639,10 @@ tracks/2/path = NodePath("Sprite2D:hframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [11]
+"values": [11, 11]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -1682,10 +1651,10 @@ tracks/3/path = NodePath("Sprite2D:vframes")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [11]
+"values": [11, 11]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -1703,7 +1672,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_cc0lu"]
 resource_name = "ReachingOutUR"
 length = 4.0
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1712,10 +1680,10 @@ tracks/0/path = NodePath("Sprite2D:texture:diffuse_texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ExtResource("33_2vatl")]
+"values": [ExtResource("33_2vatl"), ExtResource("33_2vatl")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1724,10 +1692,10 @@ tracks/1/path = NodePath("Sprite2D:texture:normal_texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ExtResource("34_h1xqy")]
+"values": [ExtResource("34_h1xqy"), ExtResource("34_h1xqy")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -1736,10 +1704,10 @@ tracks/2/path = NodePath("Sprite2D:hframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [11]
+"values": [11, 11]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -1748,10 +1716,10 @@ tracks/3/path = NodePath("Sprite2D:vframes")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [11]
+"values": [11, 11]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -1769,7 +1737,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_snirc"]
 resource_name = "SadWalkD"
 length = 1.43334
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1778,10 +1745,10 @@ tracks/0/path = NodePath("Sprite2D:texture:diffuse_texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.43333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ExtResource("51_r7ndr")]
+"values": [ExtResource("51_r7ndr"), ExtResource("51_r7ndr")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1790,10 +1757,10 @@ tracks/1/path = NodePath("Sprite2D:texture:normal_texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.43333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ExtResource("52_1j1dw")]
+"values": [ExtResource("52_1j1dw"), ExtResource("52_1j1dw")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -1802,10 +1769,10 @@ tracks/2/path = NodePath("Sprite2D:vframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.43333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [7]
+"values": [7, 7]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -1814,10 +1781,10 @@ tracks/3/path = NodePath("Sprite2D:hframes")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.43333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [7]
+"values": [7, 7]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -1835,7 +1802,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_cprlt"]
 resource_name = "SadWalkDL"
 length = 1.4
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1844,10 +1810,10 @@ tracks/0/path = NodePath("Sprite2D:texture:diffuse_texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ExtResource("53_50kcg")]
+"values": [ExtResource("53_50kcg"), ExtResource("53_50kcg")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1856,10 +1822,10 @@ tracks/1/path = NodePath("Sprite2D:texture:normal_texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ExtResource("54_883mm")]
+"values": [ExtResource("54_883mm"), ExtResource("54_883mm")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -1868,10 +1834,10 @@ tracks/2/path = NodePath("Sprite2D:hframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [7]
+"values": [7, 7]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -1880,10 +1846,10 @@ tracks/3/path = NodePath("Sprite2D:vframes")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [7]
+"values": [7, 7]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -1901,7 +1867,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_bt1us"]
 resource_name = "SadWalkDR"
 length = 1.4
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1910,10 +1875,10 @@ tracks/0/path = NodePath("Sprite2D:texture:diffuse_texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ExtResource("55_u3lqc")]
+"values": [ExtResource("55_u3lqc"), ExtResource("55_u3lqc")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1922,10 +1887,10 @@ tracks/1/path = NodePath("Sprite2D:texture:normal_texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ExtResource("56_jj2ps")]
+"values": [ExtResource("56_jj2ps"), ExtResource("56_jj2ps")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -1934,10 +1899,10 @@ tracks/2/path = NodePath("Sprite2D:hframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [7]
+"values": [7, 7]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -1946,10 +1911,10 @@ tracks/3/path = NodePath("Sprite2D:vframes")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [7]
+"values": [7, 7]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -1967,7 +1932,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_d32lp"]
 resource_name = "SadWalkL"
 length = 1.4
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1976,10 +1940,10 @@ tracks/0/path = NodePath("Sprite2D:texture:diffuse_texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ExtResource("57_tq2m3")]
+"values": [ExtResource("57_tq2m3"), ExtResource("57_tq2m3")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1988,10 +1952,10 @@ tracks/1/path = NodePath("Sprite2D:texture:normal_texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ExtResource("58_3naf5")]
+"values": [ExtResource("58_3naf5"), ExtResource("58_3naf5")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -2000,10 +1964,10 @@ tracks/2/path = NodePath("Sprite2D:hframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [7]
+"values": [7, 7]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -2012,10 +1976,10 @@ tracks/3/path = NodePath("Sprite2D:vframes")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [7]
+"values": [7, 7]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -2033,7 +1997,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_7rw5o"]
 resource_name = "SadWalkR"
 length = 1.43334
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -2042,10 +2005,10 @@ tracks/0/path = NodePath("Sprite2D:texture:diffuse_texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.43333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ExtResource("59_yqgcc")]
+"values": [ExtResource("59_yqgcc"), ExtResource("59_yqgcc")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -2054,10 +2017,10 @@ tracks/1/path = NodePath("Sprite2D:texture:normal_texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.43333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ExtResource("60_hl0h8")]
+"values": [ExtResource("60_hl0h8"), ExtResource("60_hl0h8")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -2066,10 +2029,10 @@ tracks/2/path = NodePath("Sprite2D:hframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.43333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [7]
+"values": [7, 7]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -2078,10 +2041,10 @@ tracks/3/path = NodePath("Sprite2D:vframes")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.43333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [7]
+"values": [7, 7]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -2099,7 +2062,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_st8b5"]
 resource_name = "SadWalkU"
 length = 1.4
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -2108,10 +2070,10 @@ tracks/0/path = NodePath("Sprite2D:texture:diffuse_texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ExtResource("61_bvlew")]
+"values": [ExtResource("61_bvlew"), ExtResource("61_bvlew")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -2120,10 +2082,10 @@ tracks/1/path = NodePath("Sprite2D:texture:normal_texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ExtResource("62_vb05q")]
+"values": [ExtResource("62_vb05q"), ExtResource("62_vb05q")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -2132,10 +2094,10 @@ tracks/2/path = NodePath("Sprite2D:hframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [7]
+"values": [7, 7]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -2144,10 +2106,10 @@ tracks/3/path = NodePath("Sprite2D:vframes")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [7]
+"values": [7, 7]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -2165,7 +2127,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_k88j5"]
 resource_name = "SadWalkUL"
 length = 1.43334
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -2174,10 +2135,10 @@ tracks/0/path = NodePath("Sprite2D:texture:diffuse_texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.43333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ExtResource("63_lvf8i")]
+"values": [ExtResource("63_lvf8i"), ExtResource("63_lvf8i")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -2186,10 +2147,10 @@ tracks/1/path = NodePath("Sprite2D:texture:normal_texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.43333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ExtResource("64_q32wa")]
+"values": [ExtResource("64_q32wa"), ExtResource("64_q32wa")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -2198,10 +2159,10 @@ tracks/2/path = NodePath("Sprite2D:hframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.43333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [7]
+"values": [7, 7]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -2210,10 +2171,10 @@ tracks/3/path = NodePath("Sprite2D:vframes")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.43333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [7]
+"values": [7, 7]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -2231,7 +2192,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_vrgc6"]
 resource_name = "SadWalkUR"
 length = 1.43334
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -2240,10 +2200,10 @@ tracks/0/path = NodePath("Sprite2D:texture:diffuse_texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.43333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ExtResource("65_j1jm5")]
+"values": [ExtResource("65_j1jm5"), ExtResource("65_j1jm5")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -2252,10 +2212,10 @@ tracks/1/path = NodePath("Sprite2D:texture:normal_texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.43333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ExtResource("66_2ltdy")]
+"values": [ExtResource("66_2ltdy"), ExtResource("66_2ltdy")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -2264,10 +2224,10 @@ tracks/2/path = NodePath("Sprite2D:hframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.43333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [7]
+"values": [7, 7]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -2276,10 +2236,10 @@ tracks/3/path = NodePath("Sprite2D:vframes")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.43333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [7]
+"values": [7, 7]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -2297,7 +2257,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_3ahf7"]
 resource_name = "ScarierWalkD"
 length = 1.46667
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -2363,7 +2322,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_rudg1"]
 resource_name = "ScarierWalkDL"
 length = 1.46667
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -2429,7 +2387,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_h3ey8"]
 resource_name = "ScarierWalkDR"
 length = 1.46667
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -2495,7 +2452,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_n65wj"]
 resource_name = "ScarierWalkL"
 length = 1.46667
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -2561,7 +2517,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_avrnl"]
 resource_name = "ScarierWalkR"
 length = 1.43334
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -2627,7 +2582,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_vrbm6"]
 resource_name = "ScarierWalkU"
 length = 1.43334
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -2693,7 +2647,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_d6a21"]
 resource_name = "ScarierWalkUL"
 length = 1.46667
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -2759,7 +2712,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_1m0x0"]
 resource_name = "ScarierWalkUR"
 length = 1.46667
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -2825,7 +2777,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_wwnqs"]
 resource_name = "ScaryWalkD"
 length = 0.933336
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -2891,7 +2842,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_jqfyn"]
 resource_name = "ScaryWalkDL"
 length = 0.933336
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -2957,7 +2907,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_vdm0r"]
 resource_name = "ScaryWalkDR"
 length = 0.933336
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -3023,7 +2972,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_o1822"]
 resource_name = "ScaryWalkL"
 length = 0.933336
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -3089,7 +3037,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_5x1wq"]
 resource_name = "ScaryWalkR"
 length = 0.933336
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -3155,7 +3102,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_qjy8a"]
 resource_name = "ScaryWalkU"
 length = 0.933336
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -3221,7 +3167,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_mi4d7"]
 resource_name = "ScaryWalkUL"
 length = 0.933336
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -3287,7 +3232,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_n24f1"]
 resource_name = "ScaryWalkUR"
 length = 0.933336
-loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -3403,8 +3347,6 @@ _data = {
 "ScaryWalkUR": SubResource("Animation_n24f1")
 }
 
-[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_fiv8w"]
-
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ctuds"]
 animation = &"InjuredWalkU"
 
@@ -3446,6 +3388,7 @@ blend_point_6/node = SubResource("AnimationNodeAnimation_ma3d6")
 blend_point_6/pos = Vector2(1, -1)
 blend_point_7/node = SubResource("AnimationNodeAnimation_bumxx")
 blend_point_7/pos = Vector2(-1, -1)
+blend_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ytw0b"]
 animation = &"InjuredWalk2L"
@@ -3505,19 +3448,243 @@ blend_point_10/node = SubResource("AnimationNodeAnimation_3l1p5")
 blend_point_10/pos = Vector2(0, -1)
 blend_mode = 1
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tb40m"]
+animation = &"ReachingOutU"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ikvkw"]
+animation = &"ReachingOutUL"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xl5m3"]
+animation = &"ReachingOutDR"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_a3slg"]
+animation = &"ReachingOutDL"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4ka4t"]
+animation = &"ReachingOutUR"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ke0f1"]
+animation = &"ReachingOutD"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7873h"]
+animation = &"ReachingOutL"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lkfnv"]
+animation = &"ReachingOutR"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_fiv8w"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_tb40m")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_ikvkw")
+blend_point_1/pos = Vector2(-1, 1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_xl5m3")
+blend_point_2/pos = Vector2(1, -1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_a3slg")
+blend_point_3/pos = Vector2(-1, -1)
+blend_point_4/node = SubResource("AnimationNodeAnimation_4ka4t")
+blend_point_4/pos = Vector2(1, 1)
+blend_point_5/node = SubResource("AnimationNodeAnimation_ke0f1")
+blend_point_5/pos = Vector2(0, -1)
+blend_point_6/node = SubResource("AnimationNodeAnimation_7873h")
+blend_point_6/pos = Vector2(-1, 0)
+blend_point_7/node = SubResource("AnimationNodeAnimation_lkfnv")
+blend_point_7/pos = Vector2(1, 0)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vw0t8"]
+animation = &"SadWalkU"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ybetf"]
+animation = &"SadWalkD"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_h0pwo"]
+animation = &"SadWalkDL"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_38vs4"]
+animation = &"SadWalkDR"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_n674o"]
+animation = &"SadWalkL"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_q3mcb"]
+animation = &"SadWalkR"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_s0ajk"]
+animation = &"SadWalkUL"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ieckm"]
+animation = &"SadWalkUR"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_v648u"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_vw0t8")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_ybetf")
+blend_point_1/pos = Vector2(0, -1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_h0pwo")
+blend_point_2/pos = Vector2(-1, -1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_38vs4")
+blend_point_3/pos = Vector2(1, -1)
+blend_point_4/node = SubResource("AnimationNodeAnimation_n674o")
+blend_point_4/pos = Vector2(-1, 0)
+blend_point_5/node = SubResource("AnimationNodeAnimation_q3mcb")
+blend_point_5/pos = Vector2(1, 0)
+blend_point_6/node = SubResource("AnimationNodeAnimation_s0ajk")
+blend_point_6/pos = Vector2(-1, 1)
+blend_point_7/node = SubResource("AnimationNodeAnimation_ieckm")
+blend_point_7/pos = Vector2(1, 1)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hcfo3"]
+animation = &"ScarierWalkD"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hp6ck"]
+animation = &"ScarierWalkDL"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8e2i6"]
+animation = &"ScarierWalkDR"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jf0nj"]
+animation = &"ScarierWalkL"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_x3nmb"]
+animation = &"ScarierWalkR"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_043lr"]
+animation = &"ScarierWalkU"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5p2qd"]
+animation = &"ScarierWalkUL"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mddh3"]
+animation = &"ScarierWalkUR"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_kq4h3"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_hcfo3")
+blend_point_0/pos = Vector2(0, -1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_hp6ck")
+blend_point_1/pos = Vector2(-1, -1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_8e2i6")
+blend_point_2/pos = Vector2(1, -0.9)
+blend_point_3/node = SubResource("AnimationNodeAnimation_jf0nj")
+blend_point_3/pos = Vector2(-1, 0)
+blend_point_4/node = SubResource("AnimationNodeAnimation_x3nmb")
+blend_point_4/pos = Vector2(1, 0)
+blend_point_5/node = SubResource("AnimationNodeAnimation_043lr")
+blend_point_5/pos = Vector2(0, 1)
+blend_point_6/node = SubResource("AnimationNodeAnimation_5p2qd")
+blend_point_6/pos = Vector2(-1, 1)
+blend_point_7/node = SubResource("AnimationNodeAnimation_mddh3")
+blend_point_7/pos = Vector2(1, 1)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vkflr"]
+animation = &"ScaryWalkD"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_m67s4"]
+animation = &"ScaryWalkDL"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_a7kp5"]
+animation = &"ScaryWalkDR"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cutmd"]
+animation = &"ScaryWalkL"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8pmvh"]
+animation = &"ScaryWalkR"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6a7uv"]
+animation = &"ScaryWalkU"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4hwhj"]
+animation = &"ScaryWalkUL"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_t8v8j"]
+animation = &"ScaryWalkUR"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_r370t"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_vkflr")
+blend_point_0/pos = Vector2(0, -1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_m67s4")
+blend_point_1/pos = Vector2(-1, -1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_a7kp5")
+blend_point_2/pos = Vector2(1, -1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_cutmd")
+blend_point_3/pos = Vector2(-1, 0)
+blend_point_4/node = SubResource("AnimationNodeAnimation_8pmvh")
+blend_point_4/pos = Vector2(1, 0)
+blend_point_5/node = SubResource("AnimationNodeAnimation_6a7uv")
+blend_point_5/pos = Vector2(0, 1)
+blend_point_6/node = SubResource("AnimationNodeAnimation_4hwhj")
+blend_point_6/pos = Vector2(-1, 1)
+blend_point_7/node = SubResource("AnimationNodeAnimation_t8v8j")
+blend_point_7/pos = Vector2(1, 1)
+blend_mode = 1
+
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hghbx"]
 advance_mode = 2
+advance_condition = &"InjuredWalk2"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_q2brm"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4ixd0"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pf20e"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_820qn"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_o1m4e"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5akoc"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2r5rn"]
+advance_mode = 2
+advance_condition = &"InjuredWalk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_w0q5r"]
+advance_mode = 2
+advance_condition = &"ReachingOut"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xtjxo"]
+advance_mode = 2
+advance_condition = &"SadWalk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_13vpf"]
+advance_mode = 2
+advance_condition = &"ScaryWalk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_g1tgc"]
+advance_mode = 2
+advance_condition = &"ScarierWalk"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_66msr"]
-states/BlendSpace2D/node = SubResource("AnimationNodeBlendSpace2D_fiv8w")
-states/BlendSpace2D/position = Vector2(951, 175)
+states/End/position = Vector2(757, 97)
 states/InjuredWalk/node = SubResource("AnimationNodeBlendSpace2D_ouie3")
-states/InjuredWalk/position = Vector2(761, 175)
+states/InjuredWalk/position = Vector2(218, 97)
 states/InjuredWalk2/node = SubResource("AnimationNodeBlendSpace2D_2djg2")
-states/InjuredWalk2/position = Vector2(378, 100)
-states/Start/position = Vector2(218, 100)
-transitions = ["Start", "InjuredWalk2", SubResource("AnimationNodeStateMachineTransition_hghbx")]
-graph_offset = Vector2(-151, 28)
+states/InjuredWalk2/position = Vector2(218, 185)
+states/ReachingOut/node = SubResource("AnimationNodeBlendSpace2D_fiv8w")
+states/ReachingOut/position = Vector2(218, 9)
+states/SadWalk/node = SubResource("AnimationNodeBlendSpace2D_v648u")
+states/SadWalk/position = Vector2(564, 9)
+states/ScarierWalk/node = SubResource("AnimationNodeBlendSpace2D_kq4h3")
+states/ScarierWalk/position = Vector2(564, 185)
+states/ScaryWalk/node = SubResource("AnimationNodeBlendSpace2D_r370t")
+states/ScaryWalk/position = Vector2(564, 95)
+states/Start/position = Vector2(391, 97)
+transitions = ["Start", "InjuredWalk2", SubResource("AnimationNodeStateMachineTransition_hghbx"), "InjuredWalk2", "InjuredWalk", SubResource("AnimationNodeStateMachineTransition_q2brm"), "InjuredWalk", "ReachingOut", SubResource("AnimationNodeStateMachineTransition_4ixd0"), "ReachingOut", "SadWalk", SubResource("AnimationNodeStateMachineTransition_pf20e"), "ScaryWalk", "ScarierWalk", SubResource("AnimationNodeStateMachineTransition_820qn"), "SadWalk", "ScaryWalk", SubResource("AnimationNodeStateMachineTransition_o1m4e"), "ScarierWalk", "InjuredWalk2", SubResource("AnimationNodeStateMachineTransition_5akoc"), "Start", "InjuredWalk", SubResource("AnimationNodeStateMachineTransition_2r5rn"), "Start", "ReachingOut", SubResource("AnimationNodeStateMachineTransition_w0q5r"), "Start", "SadWalk", SubResource("AnimationNodeStateMachineTransition_xtjxo"), "Start", "ScaryWalk", SubResource("AnimationNodeStateMachineTransition_13vpf"), "Start", "ScarierWalk", SubResource("AnimationNodeStateMachineTransition_g1tgc")]
+graph_offset = Vector2(-277, -34)
 
 [node name="Puppet" type="CharacterBody2D" groups=["Enemy"]]
 z_index = 1
@@ -3547,11 +3714,6 @@ texture = SubResource("CanvasTexture_4e0bb")
 hframes = 6
 vframes = 6
 
-[node name="BTPlayer" type="BTPlayer" parent="."]
-behavior_tree = SubResource("BehaviorTree_pekf1")
-active = false
-blackboard_plan = SubResource("BlackboardPlan_afc5m")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_p7oyw")
@@ -3561,14 +3723,23 @@ autoplay = "InjuredWalk2D"
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_66msr")
 anim_player = NodePath("../AnimationPlayer")
-parameters/BlendSpace2D/blend_position = Vector2(0, 0)
-parameters/InjuredWalk/blend_position = Vector2(0, 0)
+parameters/conditions/InjuredWalk = false
+parameters/conditions/InjuredWalk2 = false
+parameters/conditions/ReachingOut = false
+parameters/conditions/SadWalk = false
+parameters/conditions/ScarierWalk = false
+parameters/conditions/ScaryWalk = false
+parameters/InjuredWalk/blend_position = Vector2(-0.00499171, 0.235602)
 parameters/InjuredWalk2/blend_position = Vector2(-0.00166392, -0.764192)
+parameters/ReachingOut/blend_position = Vector2(-0.00388241, -0.00436676)
+parameters/SadWalk/blend_position = Vector2(0.00277317, -0.0575917)
+parameters/ScarierWalk/blend_position = Vector2(-0.0072102, 0.0655022)
+parameters/ScaryWalk/blend_position = Vector2(-0.00277317, -0.0393013)
 
-[node name="GenericLight" parent="." instance=ExtResource("9_3p68k")]
-position = Vector2(-18, 12)
-scale = Vector2(3, 3)
-StopsPuppet = false
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
 
 [connection signal="Stunned" from="Hitbox" to="." method="_on_hitbox_stunned"]
 [connection signal="Unstunned" from="Hitbox" to="." method="_on_hitbox_unstunned"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

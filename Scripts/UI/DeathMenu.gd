@@ -32,6 +32,7 @@ func _on_respawn_button_pressed():
 	# TODO Implement respawn mechanic with checkpoints in mind
 	Global.NewGame()
 	get_tree().paused = false
+
 	get_tree().reload_current_scene() 
 
 func _on_menu_button_pressed():

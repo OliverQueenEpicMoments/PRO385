@@ -32,9 +32,11 @@ position = Vector2(0, 34.5)
 shape = SubResource("RectangleShape2D_gi2lg")
 
 [node name="TransitionTimer" type="Timer" parent="."]
+wait_time = 1.25
 one_shot = true
 
 [node name="TeleportTimer" type="Timer" parent="."]
+wait_time = 1.25
 one_shot = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

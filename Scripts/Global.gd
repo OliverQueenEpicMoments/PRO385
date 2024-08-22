@@ -5,6 +5,8 @@ extends Node
 var PlayerSanity: = 0.0
 var MaxInsanity: = false
 var PlayerDead = false
+var PlayerPhantomCamera
+var PlayerCamera
 
 # Inventory
 var PlayerInventory: = []
@@ -26,6 +28,7 @@ var Enemies: = []
 func _ready():
 	Player = get_tree().get_first_node_in_group("Player")
 	PostProcess = get_tree().get_first_node_in_group("PostProcessing")
+	#PlayerPhantomCamera  = get_tree().get_first_node_in_group("PlayerPhantomCam")
 	PlayerInventory.resize(16)
 
 func SetSanity(sanity):
