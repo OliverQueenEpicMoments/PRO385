@@ -11,12 +11,12 @@ config_version=5
 [application]
 
 config/name="SigmaGame"
-config/version="0.45"
+config/version="0.5"
 run/main_scene="res://Scenes/Levels/HouseStart.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
-boot_splash/image="res://Assets/UI/PlaceholderUpscaled.png"
-config/icon="res://icon.svg"
+boot_splash/image="res://Assets/UI/Icons/Meta/EclipseProtocolSplash.png"
+config/icon="res://Assets/UI/Icons/Meta/EclipseProtocolIcon.png"
 
 [autoload]
 
@@ -220,6 +220,7 @@ Swap={
 [physics]
 
 2d/physics_engine="Box2D"
+common/physics_interpolation=true
 
 [rendering]
 

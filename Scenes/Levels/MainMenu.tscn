@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://cdyv73wtnpr2p"]
+[gd_scene load_steps=13 format=3 uid="uid://cdyv73wtnpr2p"]
 
-[ext_resource type="Script" path="res://Scripts/UI/MainMenu.gd" id="1_4hove"]
-[ext_resource type="FontFile" uid="uid://cdh4f8j6uv54l" path="res://Assets/Fonts/HelpMe.ttf" id="2_bbvfp"]
-[ext_resource type="Texture2D" uid="uid://bwg4qqtg3583f" path="res://Assets/UI/Society.jpg" id="2_r22ik"]
-[ext_resource type="PackedScene" uid="uid://4efi72m083dt" path="res://Scenes/UI/SettingsMenu.tscn" id="4_ieydk"]
-[ext_resource type="AudioStream" uid="uid://cqptup67gyc6k" path="res://Assets/Audio/Music/ScaryAmbience.mp3" id="5_w6fwr"]
+[ext_resource type="Script" path="res://Scripts/UI/MainMenu.gd" id="1_ivmjn"]
+[ext_resource type="Texture2D" uid="uid://bwg4qqtg3583f" path="res://Assets/UI/Society.jpg" id="2_j1fqx"]
+[ext_resource type="FontFile" uid="uid://cdh4f8j6uv54l" path="res://Assets/Fonts/HelpMe.ttf" id="3_fnpus"]
+[ext_resource type="PackedScene" uid="uid://4efi72m083dt" path="res://Scenes/UI/SettingsMenu.tscn" id="4_ve6qf"]
+[ext_resource type="Texture2D" uid="uid://cratovgllos6u" path="res://Assets/UI/Icons/Meta/MainMenuBackground.jpg" id="5_s42hw"]
+[ext_resource type="AudioStream" uid="uid://cqptup67gyc6k" path="res://Assets/Audio/Music/ScaryAmbience.mp3" id="6_3qboe"]
 
 [sub_resource type="Animation" id="Animation_7axf5"]
 resource_name = "Fade"
@@ -80,11 +81,12 @@ _data = {
 }
 
 [node name="MainMenu" type="Node2D" groups=["MainMenu"]]
-script = ExtResource("1_4hove")
+script = ExtResource("1_ivmjn")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Background" type="TextureRect" parent="CanvasLayer"]
+[node name="PlaceholderBackground" type="TextureRect" parent="CanvasLayer"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -93,7 +95,17 @@ offset_bottom = 836.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.565, 0.565)
-texture = ExtResource("2_r22ik")
+texture = ExtResource("2_j1fqx")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_right = 1.00267
+anchor_bottom = 1.00267
+offset_right = -901.12
+offset_bottom = -506.88
+scale = Vector2(1.88, 1.88)
+texture = ExtResource("5_s42hw")
+metadata/_edit_use_anchors_ = true
 
 [node name="ButtonManager" type="Control" parent="CanvasLayer"]
 modulate = Color(1, 1, 1, 0)
@@ -105,19 +117,30 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
+[node name="Label" type="Label" parent="CanvasLayer/ButtonManager"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.131771
+anchor_top = 0.125
+anchor_right = 0.868229
+anchor_bottom = 0.193519
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_fnpus")
+theme_override_font_sizes/font_size = 64
+text = "Eclipse Protocol: Prelude to Insanity
+"
+metadata/_edit_use_anchors_ = true
+
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/ButtonManager"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -293.0
-offset_top = -373.0
-offset_right = 374.0
-offset_bottom = 294.0
+anchors_preset = -1
+anchor_left = 0.326302
+anchor_top = 0.277778
+anchor_right = 0.673698
+anchor_bottom = 0.89537
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ButtonManager/PanelContainer"]
 layout_mode = 2
@@ -126,7 +149,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
-theme_override_fonts/font = ExtResource("2_bbvfp")
+theme_override_fonts/font = ExtResource("3_fnpus")
 theme_override_font_sizes/font_size = 64
 text = "New Game
 "
@@ -135,7 +158,7 @@ text = "New Game
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
-theme_override_fonts/font = ExtResource("2_bbvfp")
+theme_override_fonts/font = ExtResource("3_fnpus")
 theme_override_font_sizes/font_size = 64
 text = "Continue"
 
@@ -143,7 +166,7 @@ text = "Continue"
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
-theme_override_fonts/font = ExtResource("2_bbvfp")
+theme_override_fonts/font = ExtResource("3_fnpus")
 theme_override_font_sizes/font_size = 64
 text = "Settings"
 
@@ -152,7 +175,7 @@ visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
-theme_override_fonts/font = ExtResource("2_bbvfp")
+theme_override_fonts/font = ExtResource("3_fnpus")
 theme_override_font_sizes/font_size = 64
 text = "How to Play"
 
@@ -160,7 +183,7 @@ text = "How to Play"
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
-theme_override_fonts/font = ExtResource("2_bbvfp")
+theme_override_fonts/font = ExtResource("3_fnpus")
 theme_override_font_sizes/font_size = 64
 text = "Quit
 "
@@ -174,7 +197,7 @@ libraries = {
 wait_time = 0.5
 one_shot = true
 
-[node name="SettingsMenu" parent="CanvasLayer" instance=ExtResource("4_ieydk")]
+[node name="SettingsMenu" parent="CanvasLayer" instance=ExtResource("4_ve6qf")]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 visible = false
@@ -199,7 +222,7 @@ wait_time = 1.25
 one_shot = true
 
 [node name="MainMenuMusic" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_w6fwr")
+stream = ExtResource("6_3qboe")
 autoplay = true
 bus = &"Music"
 

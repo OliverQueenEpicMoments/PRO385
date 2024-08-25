@@ -19,6 +19,7 @@ collision_mask = 2
 [node name="GenericLight" parent="." instance=ExtResource("5_8nyyw")]
 
 [node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 1.25
 one_shot = true
 
 [connection signal="body_entered" from="RoomArea" to="." method="_on_room_area_body_entered"]

@@ -6,7 +6,7 @@ extends CanvasLayer
 @onready var FlashlightBar = $PlayerInfoBox/FlashlightBar
 
 func _ready():
-	player.StaminaChanged.connect(Update)
+	Global.Player.StaminaChanged.connect(Update)
 	Flashlight.BatteryChanged.connect(Update)
 	Update()
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://7ku3pe1c85l8"]
+[gd_scene load_steps=67 format=3 uid="uid://7ku3pe1c85l8"]
 
 [ext_resource type="Texture2D" uid="uid://cnkh5ntxva260" path="res://Assets/Tilesets/interior free.png" id="2_p7ce2"]
 [ext_resource type="Texture2D" uid="uid://djyp7hkw0xe34" path="res://Assets/Tilesets/HouseTileMap.png" id="3_5ey0e"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://i1gupv31llvp" path="res://Scenes/UI/PlayerUI.tscn" id="10_s21fb"]
 [ext_resource type="Script" path="res://Scripts/UI/PlayerUI.gd" id="11_ykyxv"]
 [ext_resource type="PackedScene" uid="uid://cbj88k8k1nf0a" path="res://Scenes/UI/InventoryUI.tscn" id="12_twinn"]
+[ext_resource type="Texture2D" uid="uid://w4qdlupoyjpj" path="res://Assets/Items/Battery.png" id="13_4pywd"]
 [ext_resource type="PackedScene" uid="uid://4efi72m083dt" path="res://Scenes/UI/SettingsMenu.tscn" id="13_wc0vp"]
 [ext_resource type="PackedScene" uid="uid://dkb1llqkp41em" path="res://Scenes/UI/PauseMenu.tscn" id="14_cvodl"]
 [ext_resource type="PackedScene" uid="uid://nsepeqn0t02t" path="res://Scenes/UI/RoomTransition.tscn" id="15_1jpq3"]
@@ -22,7 +23,9 @@
 [ext_resource type="AudioStream" uid="uid://cqptup67gyc6k" path="res://Assets/Audio/Music/ScaryAmbience.mp3" id="19_fvyvk"]
 [ext_resource type="Texture2D" uid="uid://cw73jkg55u4gm" path="res://Assets/Tilesets/HouseFurniture.png" id="20_psd8p"]
 [ext_resource type="PackedScene" uid="uid://dtnaxadtf2ofh" path="res://Scenes/Door.tscn" id="22_4m5dj"]
+[ext_resource type="PackedScene" uid="uid://bq1cmqhvaak2o" path="res://Scenes/Inventory/InventoryItem.tscn" id="23_04xau"]
 [ext_resource type="PackedScene" uid="uid://dcua6gojo0h0t" path="res://Scenes/Managers/EyeManager.tscn" id="23_kxksw"]
+[ext_resource type="Texture2D" uid="uid://bq8wrea3nywm0" path="res://Assets/Items/InsanitySpriteSheet5x.png" id="24_8ac08"]
 [ext_resource type="PackedScene" uid="uid://cpd5v5pod5xro" path="res://Scenes/Inventory/KeyItem.tscn" id="24_vw8v3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d3olw"]
@@ -1383,9 +1386,13 @@ sources/2 = SubResource("TileSetAtlasSource_p1kjw")
 sources/3 = SubResource("TileSetAtlasSource_w5qqd")
 sources/4 = SubResource("TileSetAtlasSource_etgbd")
 
-[sub_resource type="Environment" id="Environment_mp8nr"]
-background_mode = 3
-glow_enabled = true
+[sub_resource type="AtlasTexture" id="AtlasTexture_0c8iu"]
+atlas = ExtResource("24_8ac08")
+region = Rect2(39.5237, 489.705, 80.9226, 145.782)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtcv1"]
+atlas = ExtResource("24_8ac08")
+region = Rect2(334.5, 494.882, 130.298, 136.083)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ff7tk"]
 size = Vector2(605, 415)
@@ -1399,11 +1406,22 @@ ease = 2
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kwho6"]
 size = Vector2(415, 317)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_6c3c2"]
+atlas = ExtResource("24_8ac08")
+region = Rect2(164.775, 484.352, 150.872, 151.275)
+
 [sub_resource type="Resource" id="Resource_82akv"]
 script = ExtResource("9_564l0")
 duration = 0.0
 transition = 0
 ease = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jceer"]
+size = Vector2(176, 224)
+
+[sub_resource type="Environment" id="Environment_mp8nr"]
+background_mode = 3
+glow_enabled = true
 
 [node name="HouseStart" type="Node2D"]
 
@@ -1440,31 +1458,85 @@ layer_3/name = "Decoration"
 layer_3/z_index = 2
 layer_3/tile_data = PackedInt32Array(-1310746, 655361, 5, -1245235, 786433, 6, -1245210, 589825, 6, -1376307, 720897, 6, -1310771, 786433, 5, -1376282, 655361, 6, -1310738, 786433, 5, -1245202, 786433, 6, -1376274, 720897, 6, -131091, 786433, 6, -196590, 589825, 6, -327662, 655361, 6, -262163, 720897, 6, -262126, 655361, 5, -196627, 786433, 5, 655360, 589825, 6, 720895, 786433, 6, 262125, 720897, 6, 393197, 786433, 6, 327661, 786433, 5, 262162, 655361, 5, 327698, 589825, 6, 196626, 655361, 6)
 
-[node name="PrototypePlayer" parent="TileMap" instance=ExtResource("6_yqmn6")]
-unique_name_in_owner = true
-position = Vector2(0, 126)
+[node name="Doors" type="Node" parent="TileMap"]
 
-[node name="Door" parent="TileMap" node_paths=PackedStringArray("TeleportLocation") instance=ExtResource("22_4m5dj")]
+[node name="Door" parent="TileMap/Doors" node_paths=PackedStringArray("TeleportLocation") instance=ExtResource("22_4m5dj")]
 position = Vector2(-815, -328)
 rotation = -1.5708
 scale = Vector2(1.5, 1.5)
 TeleportLocation = NodePath("Node2D")
 ShowSprite = false
 
-[node name="Node2D" type="Node2D" parent="TileMap/Door"]
+[node name="Node2D" type="Node2D" parent="TileMap/Doors/Door"]
 position = Vector2(-274.667, 356.667)
 
-[node name="Door2" parent="TileMap" node_paths=PackedStringArray("TeleportLocation") instance=ExtResource("22_4m5dj")]
+[node name="Door2" parent="TileMap/Doors" node_paths=PackedStringArray("TeleportLocation") instance=ExtResource("22_4m5dj")]
 position = Vector2(0, -175)
 TeleportLocation = NodePath("TeleportLocation")
 
-[node name="TeleportLocation" type="Node2D" parent="TileMap/Door2"]
+[node name="TeleportLocation" type="Node2D" parent="TileMap/Doors/Door2"]
 position = Vector2(-791, -145)
+
+[node name="OusideDoor" parent="TileMap/Doors" instance=ExtResource("22_4m5dj")]
+position = Vector2(0, 156)
+PathToNextScene = "res://Scenes/Levels/ForestScene.tscn"
+ShowSprite = false
+
+[node name="Items" type="Node" parent="TileMap"]
+
+[node name="InventoryItem" parent="TileMap/Items" instance=ExtResource("23_04xau")]
+position = Vector2(-190, 28)
+scale = Vector2(0.75, 0.75)
+ItemType = "Battery"
+ItemName = "Full Battery"
+ItemTexture = SubResource("AtlasTexture_0c8iu")
+ItemEffect = "Full Charge"
+ItemDescription = "Fully replanishes the flashlights battery."
+SpriteScale = 0.1
+HitboxScale = 0.025
+
+[node name="InventoryItem2" parent="TileMap/Items" instance=ExtResource("23_04xau")]
+position = Vector2(-189, -18)
+scale = Vector2(0.75, 0.75)
+ItemType = "Battery"
+ItemName = "Dull Battery"
+ItemTexture = ExtResource("13_4pywd")
+ItemEffect = "Charge"
+ItemDescription = "Partially replenishes the flashlights battery."
+SpriteScale = 0.05
+HitboxScale = 0.025
+
+[node name="InventoryItem3" parent="TileMap/Items" instance=ExtResource("23_04xau")]
+position = Vector2(-190, 75)
+scale = Vector2(0.75, 0.75)
+ItemType = "Medicine"
+ItemName = "Unknown Pill"
+ItemTexture = SubResource("AtlasTexture_qtcv1")
+ItemEffect = "Sanity"
+ItemDescription = "Helps calm the nerves."
+SpriteScale = 0.1
+HitboxScale = 0.025
+
+[node name="InventoryItem4" parent="TileMap/Items" instance=ExtResource("23_04xau")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(-190, 120)
+scale = Vector2(0.75, 0.75)
+ItemType = "Medicine"
+ItemName = "Experimental Antipsychotics"
+ItemTexture = SubResource("AtlasTexture_qtcv1")
+ItemEffect = "Full Sanity"
+ItemDescription = "Expermiental drug often used by tier 1 scientists in the Hades site."
+SpriteScale = 0.1
+HitboxScale = 0.025
 
 [node name="ScriptedEncounter" parent="TileMap" instance=ExtResource("9_brv4m")]
 position = Vector2(-605, -305)
 scale = Vector2(0.75, 0.75)
 ScriptedEnemyType = "Puppet"
+
+[node name="PrototypePlayer" parent="TileMap" instance=ExtResource("6_yqmn6")]
+unique_name_in_owner = true
+position = Vector2(0, 134)
 
 [node name="PlayerUI" parent="." instance=ExtResource("10_s21fb")]
 script = ExtResource("11_ykyxv")
@@ -1479,27 +1551,14 @@ script = ExtResource("11_ykyxv")
 
 [node name="DeathMenu" parent="PlayerUI" instance=ExtResource("16_cxm2g")]
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.133196, 0.133196, 0.133196, 1)
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_mp8nr")
-
-[node name="PostProcess" type="CanvasLayer" parent="." groups=["PostProcessing"]]
-script = ExtResource("17_qkxaq")
-configuration = ExtResource("18_3t608")
-
 [node name="BackgoundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("19_fvyvk")
 autoplay = true
 bus = &"Music"
 
-[node name="Door" parent="." instance=ExtResource("22_4m5dj")]
-position = Vector2(0, 156)
-PathToNextScene = "res://Scenes/Levels/ForestScene.tscn"
-ShowSprite = false
+[node name="Rooms" type="Node" parent="."]
 
-[node name="EyeManager" parent="." node_paths=PackedStringArray("LightPosition", "EyeSpawnArea", "RoomArea", "PuppetSpawns", "IdolSpawns", "RoomPhantomCam") instance=ExtResource("23_kxksw")]
+[node name="EyeManager" parent="Rooms" node_paths=PackedStringArray("LightPosition", "EyeSpawnArea", "RoomArea", "PuppetSpawns", "IdolSpawns", "RoomPhantomCam") instance=ExtResource("23_kxksw")]
 LightPosition = NodePath("Collisions/LightPosition")
 LightScale = 3
 HasLight = false
@@ -1509,88 +1568,126 @@ PuppetSpawns = [NodePath("PuppetSpawns/PuppetSpawn"), NodePath("PuppetSpawns/Pup
 IdolSpawns = [NodePath("IdolSpawns/IdolSpawn"), NodePath("IdolSpawns/IdolSpawn2"), NodePath("IdolSpawns/IdolSpawn3"), NodePath("IdolSpawns/IdolSpawn4")]
 RoomPhantomCam = NodePath("Camera/PhantomCamera2D")
 
-[node name="PuppetSpawns" type="Node" parent="EyeManager"]
+[node name="PuppetSpawns" type="Node" parent="Rooms/EyeManager"]
 
-[node name="PuppetSpawn" type="Node2D" parent="EyeManager/PuppetSpawns"]
+[node name="PuppetSpawn" type="Node2D" parent="Rooms/EyeManager/PuppetSpawns"]
 position = Vector2(-280, 149)
 
-[node name="PuppetSpawn2" type="Node2D" parent="EyeManager/PuppetSpawns"]
+[node name="PuppetSpawn2" type="Node2D" parent="Rooms/EyeManager/PuppetSpawns"]
 position = Vector2(261, 43)
 
-[node name="PuppetSpawn3" type="Node2D" parent="EyeManager/PuppetSpawns"]
+[node name="PuppetSpawn3" type="Node2D" parent="Rooms/EyeManager/PuppetSpawns"]
 position = Vector2(-211, -10)
 
-[node name="IdolSpawns" type="Node" parent="EyeManager"]
+[node name="IdolSpawns" type="Node" parent="Rooms/EyeManager"]
 
-[node name="IdolSpawn" type="Node2D" parent="EyeManager/IdolSpawns"]
+[node name="IdolSpawn" type="Node2D" parent="Rooms/EyeManager/IdolSpawns"]
 position = Vector2(0, -132)
 
-[node name="IdolSpawn2" type="Node2D" parent="EyeManager/IdolSpawns"]
+[node name="IdolSpawn2" type="Node2D" parent="Rooms/EyeManager/IdolSpawns"]
 
-[node name="IdolSpawn3" type="Node2D" parent="EyeManager/IdolSpawns"]
+[node name="IdolSpawn3" type="Node2D" parent="Rooms/EyeManager/IdolSpawns"]
 position = Vector2(-160, 0)
 
-[node name="IdolSpawn4" type="Node2D" parent="EyeManager/IdolSpawns"]
+[node name="IdolSpawn4" type="Node2D" parent="Rooms/EyeManager/IdolSpawns"]
 position = Vector2(171, 0)
 
-[node name="Collisions" type="Node" parent="EyeManager"]
+[node name="Collisions" type="Node" parent="Rooms/EyeManager"]
 
-[node name="RoomCollision" type="CollisionShape2D" parent="EyeManager/Collisions"]
+[node name="RoomCollision" type="CollisionShape2D" parent="Rooms/EyeManager/Collisions"]
 position = Vector2(0.5, -32.5)
 shape = SubResource("RectangleShape2D_ff7tk")
 disabled = true
 
-[node name="EyeSpawns" type="CollisionPolygon2D" parent="EyeManager/Collisions"]
+[node name="EyeSpawns" type="CollisionPolygon2D" parent="Rooms/EyeManager/Collisions"]
 polygon = PackedVector2Array(-271, -161, -124, -162, -122, -186, 114, -200, 140, -167, 281, -163, 280, 153, -271, 146)
 
-[node name="LightPosition" type="Node2D" parent="EyeManager/Collisions"]
+[node name="LightPosition" type="Node2D" parent="Rooms/EyeManager/Collisions"]
 
-[node name="Camera" type="Node" parent="EyeManager"]
+[node name="Camera" type="Node" parent="Rooms/EyeManager"]
 
-[node name="PhantomCamera2D" type="Node2D" parent="EyeManager/Camera" node_paths=PackedStringArray("follow_target")]
+[node name="PhantomCamera2D" type="Node2D" parent="Rooms/EyeManager/Camera" node_paths=PackedStringArray("follow_target")]
 position = Vector2(0, 20.7143)
 script = ExtResource("8_oo065")
 follow_mode = 2
-follow_target = NodePath("../../../TileMap/PrototypePlayer")
+follow_target = NodePath("../../../../TileMap/PrototypePlayer")
 zoom = Vector2(3.5, 3.5)
 tween_resource = SubResource("Resource_4m2lv")
 tween_on_load = false
 draw_limits = true
 limit_target = NodePath("../../Collisions/RoomCollision")
 
-[node name="EyeManager2" parent="." node_paths=PackedStringArray("LightPosition", "RoomArea", "RoomPhantomCam") instance=ExtResource("23_kxksw")]
+[node name="EyeManager2" parent="Rooms" node_paths=PackedStringArray("LightPosition", "RoomArea", "RoomPhantomCam") instance=ExtResource("23_kxksw")]
 position = Vector2(-607, -327)
 LightPosition = NodePath(".")
 LightScale = 2
-RoomArea = NodePath("Collisions/CollisionShape2D")
+HasLight = false
+RoomArea = NodePath("Collisions/CameraConfiner")
 PeacefulRoom = true
 RoomPhantomCam = NodePath("PhantomCamera2D")
 CameraZoom = 4.75
 
-[node name="Collisions" type="Node" parent="EyeManager2"]
+[node name="Collisions" type="Node" parent="Rooms/EyeManager2"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EyeManager2/Collisions"]
+[node name="CameraConfiner" type="CollisionShape2D" parent="Rooms/EyeManager2/Collisions"]
 position = Vector2(-607.5, -351.5)
 shape = SubResource("RectangleShape2D_kwho6")
 disabled = true
 
-[node name="KeyItem" parent="EyeManager2/Collisions" instance=ExtResource("24_vw8v3")]
+[node name="KeyItem" parent="Rooms/EyeManager2/Collisions" node_paths=PackedStringArray("LightPosition") instance=ExtResource("24_vw8v3")]
 position = Vector2(-198, -327)
+LightPosition = NodePath("LightPosition")
+ItemTexture = SubResource("AtlasTexture_6c3c2")
 GameFlag = "Basement Key"
 
-[node name="LightPosition" type="Node2D" parent="EyeManager2/Collisions"]
+[node name="LightPosition" type="Node2D" parent="Rooms/EyeManager2/Collisions/KeyItem"]
+position = Vector2(-409, -44)
+
+[node name="LightPosition" type="Node2D" parent="Rooms/EyeManager2/Collisions"]
 position = Vector2(-607, -372)
 
-[node name="PhantomCamera2D" type="Node2D" parent="EyeManager2" node_paths=PackedStringArray("follow_target")]
+[node name="PhantomCamera2D" type="Node2D" parent="Rooms/EyeManager2" node_paths=PackedStringArray("follow_target")]
 position = Vector2(-67.2857, -20.2857)
 script = ExtResource("8_oo065")
 priority = 1
 follow_mode = 2
-follow_target = NodePath("../../TileMap/PrototypePlayer")
+follow_target = NodePath("../../../TileMap/PrototypePlayer")
 zoom = Vector2(3.5, 3.5)
 tween_resource = SubResource("Resource_82akv")
 tween_on_load = false
 draw_limits = true
-limit_target = NodePath("../Collisions/CollisionShape2D")
+limit_target = NodePath("../Collisions/CameraConfiner")
 
-[connection signal="StaminaChanged" from="TileMap/PrototypePlayer" to="TileMap/PrototypePlayer" method="_on_stamina_changed"]
+[node name="EyeManager3" parent="Rooms" node_paths=PackedStringArray("LightPosition", "RoomArea", "RoomPhantomCam") instance=ExtResource("23_kxksw")]
+position = Vector2(-198, -327)
+LightPosition = NodePath(".")
+RoomArea = NodePath("CameraConfiner")
+PeacefulRoom = true
+RoomPhantomCam = NodePath("PhantomCamera2D")
+
+[node name="PhantomCamera2D" type="Node2D" parent="Rooms/EyeManager3" node_paths=PackedStringArray("follow_target")]
+position = Vector2(-188.286, -67.2857)
+script = ExtResource("8_oo065")
+follow_mode = 2
+follow_target = NodePath("../../../TileMap/PrototypePlayer")
+zoom = Vector2(3.5, 3.5)
+tween_resource = SubResource("Resource_82akv")
+tween_on_load = false
+draw_limits = true
+limit_target = NodePath("../CameraConfiner")
+
+[node name="CameraConfiner" type="CollisionShape2D" parent="Rooms/EyeManager3"]
+position = Vector2(-2, -25)
+shape = SubResource("RectangleShape2D_jceer")
+
+[node name="VFX" type="Node" parent="."]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="VFX"]
+color = Color(0.133196, 0.133196, 0.133196, 1)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="VFX"]
+environment = SubResource("Environment_mp8nr")
+
+[node name="PostProcess" type="CanvasLayer" parent="VFX" groups=["PostProcessing"]]
+script = ExtResource("17_qkxaq")
+configuration = ExtResource("18_3t608")

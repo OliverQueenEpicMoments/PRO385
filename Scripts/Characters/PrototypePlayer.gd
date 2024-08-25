@@ -103,6 +103,9 @@ func LoseSanity(time):
 		
 		print("Player Sanity - ", CurrentSanity)
 		
+func GainSanity(amount):
+	CurrentSanity = clamp(CurrentSanity - amount, 0, 100)
+		
 func EyeInsanity(insanity):
 	CurrentSanity = clamp(CurrentSanity + insanity, 0, MaxSanity)
 	Global.SetSanity(CurrentSanity)
@@ -138,8 +141,18 @@ func ApplyItemEffect(item):
 			$Flashlight.AddCharge(25)
 		"Full Charge":
 			$Flashlight.AddCharge(100)
+		"Sanity":
+			GainSanity(25)
+		"Full Sanity":
+			GainSanity(100)
+		"Insanity":
+			GainSanity(-100)
 		"Inventory Small":
 			Global.IncreaseInventorySize(2)
+		"Inventory Medium":
+			Global.IncreaseInventorySize(3)
+		"Inventory Large":
+			Global.IncreaseInventorySize(4)
 		_:
 			print("No item effect")
 
