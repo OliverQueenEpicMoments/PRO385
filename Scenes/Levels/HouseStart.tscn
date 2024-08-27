@@ -1429,12 +1429,8 @@ glow_enabled = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 physics_interpolation_mode = 1
-position = Vector2(-674.286, -347.286)
+position = Vector2(0, 134)
 zoom = Vector2(3.5, 3.5)
-limit_left = -815
-limit_top = -510
-limit_right = -400
-limit_bottom = -193
 editor_draw_limits = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
@@ -1476,6 +1472,16 @@ TeleportLocation = NodePath("TeleportLocation")
 
 [node name="TeleportLocation" type="Node2D" parent="TileMap/Doors/Door2"]
 position = Vector2(-791, -145)
+
+[node name="Door3" parent="TileMap/Doors" node_paths=PackedStringArray("TeleportLocation") instance=ExtResource("22_4m5dj")]
+position = Vector2(-430, -328)
+rotation = -1.5708
+scale = Vector2(1.5, 1.5)
+TeleportLocation = NodePath("Node2D")
+ShowSprite = false
+
+[node name="Node2D" type="Node2D" parent="TileMap/Doors/Door3"]
+position = Vector2(-7.33373, 110)
 
 [node name="OusideDoor" parent="TileMap/Doors" instance=ExtResource("22_4m5dj")]
 position = Vector2(0, 156)
@@ -1647,7 +1653,7 @@ position = Vector2(-409, -44)
 position = Vector2(-607, -372)
 
 [node name="PhantomCamera2D" type="Node2D" parent="Rooms/EyeManager2" node_paths=PackedStringArray("follow_target")]
-position = Vector2(-67.2857, -20.2857)
+position = Vector2(607, 461)
 script = ExtResource("8_oo065")
 priority = 1
 follow_mode = 2
@@ -1656,7 +1662,6 @@ zoom = Vector2(3.5, 3.5)
 tween_resource = SubResource("Resource_82akv")
 tween_on_load = false
 draw_limits = true
-limit_target = NodePath("../Collisions/CameraConfiner")
 
 [node name="EyeManager3" parent="Rooms" node_paths=PackedStringArray("LightPosition", "RoomArea", "RoomPhantomCam") instance=ExtResource("23_kxksw")]
 position = Vector2(-198, -327)

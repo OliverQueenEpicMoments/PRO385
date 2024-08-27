@@ -38,7 +38,7 @@ func _on_respawn_button_pressed():
 func _on_menu_button_pressed():
 	Global.NewGame()
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://Scenes/UI/MainMenu.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Levels/MainMenu.tscn")
 
 func _on_quit_button_pressed():
 	Global.NewGame()

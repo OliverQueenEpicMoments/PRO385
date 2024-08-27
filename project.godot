@@ -10,13 +10,15 @@ config_version=5
 
 [application]
 
-config/name="SigmaGame"
+config/name="Eclipse Protocol"
 config/version="0.5"
 run/main_scene="res://Scenes/Levels/HouseStart.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="res://Assets/UI/Icons/Meta/EclipseProtocolSplash.png"
 config/icon="res://Assets/UI/Icons/Meta/EclipseProtocolIcon.png"
+config/macos_native_icon="res://Assets/UI/Icons/Meta/EclipseProtocolIcon.png"
+config/windows_native_icon="res://Assets/UI/Icons/Meta/EclipseProtocolIcon.png"
 
 [autoload]
 
@@ -34,9 +36,12 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
+"Phantom-6": "res://DialogicStuff/Characters/Phantom-6.dch",
+"RadioGuy": "res://DialogicStuff/Characters/RadioGuy.dch",
 "character": "res://DialogicStuff/Characters/character.dch"
 }
 directories/dtl_directory={
+"IntroChatter": "res://DialogicStuff/Timelines/IntroChatter.dtl",
 "Prototype": "res://DialogicStuff/Timelines/Prototype.dtl"
 }
 layout/style_list=["res://DialogicStuff/Styles/PrototypeStyle.tres"]
@@ -45,6 +50,7 @@ variables={
 "DialogueDone": false,
 "PlayerSanity": 0.0
 }
+glossary/default_case_sensitive=true
 
 [display]
 

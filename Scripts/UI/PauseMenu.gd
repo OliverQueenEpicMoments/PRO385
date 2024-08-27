@@ -65,4 +65,4 @@ func _on_settings_timer_timeout():
 func _on_main_menu_button_pressed():
 	Global.NewGame()
 	Resume()
-	get_tree().change_scene_to_file("res://Scenes/UI/MainMenu.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Levels/MainMenu.tscn")

@@ -17,8 +17,6 @@ shader_parameter/highlight_width = 15.0
 z_index = 1
 y_sort_enabled = true
 script = ExtResource("1_4sbgy")
-SpriteScale = null
-HitboxScale = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 light_mask = 2
@@ -26,12 +24,10 @@ visibility_layer = 2
 z_index = 1
 material = SubResource("ShaderMaterial_awqtp")
 position = Vector2(0, -5)
-scale = Vector2(1e-05, 1e-05)
 
 [node name="InteractionArea" parent="." instance=ExtResource("2_a7ir3")]
 position = Vector2(0, -5)
-scale = Vector2(1e-05, 1e-05)
-ActionName = "Rizz"
+ActionName = "pick up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 position = Vector2(0, -10)

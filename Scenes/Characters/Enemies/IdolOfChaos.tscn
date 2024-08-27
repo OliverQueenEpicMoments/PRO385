@@ -1,12 +1,11 @@
 [gd_scene load_steps=6 format=3 uid="uid://05ta1y5cxfdw"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/Enemies/IdolOfChaos.gd" id="1_777jt"]
+[ext_resource type="Texture2D" uid="uid://bapvgvtttu7j" path="res://Assets/UI/Jonkler2.jpeg" id="2_eec34"]
 [ext_resource type="AudioStream" uid="uid://cox12fqma7uhm" path="res://Assets/Audio/Enemies/TVGlitch.mp3" id="2_u3u1p"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_cjq31"]
 light_mode = 2
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_720p6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oeelv"]
 
@@ -22,8 +21,8 @@ visibility_layer = 2
 z_index = 1
 material = SubResource("CanvasItemMaterial_cjq31")
 position = Vector2(4.76837e-07, -18.75)
-scale = Vector2(18, 38.5)
-texture = SubResource("PlaceholderTexture2D_720p6")
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_eec34")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -9)

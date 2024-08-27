@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgnmqhurfpwjp"
-path="res://.godot/imported/IdleU.png-81d50a808b63746c8d09a309ac0e3ae3.ctex"
+uid="uid://pg7obpsw3lam"
+path="res://.godot/imported/InjuredPortrait.png-d31b2336223a97ccbc8270e422a3fcca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/Friendly/Phantom-6/Idle/Sprites/IdleU.png"
-dest_files=["res://.godot/imported/IdleU.png-81d50a808b63746c8d09a309ac0e3ae3.ctex"]
+source_file="res://Assets/Characters/Friendly/Phantom-6/InjuredPortrait.png"
+dest_files=["res://.godot/imported/InjuredPortrait.png-d31b2336223a97ccbc8270e422a3fcca.ctex"]
 
 [params]
 

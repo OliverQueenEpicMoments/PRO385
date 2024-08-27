@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgnmqhurfpwjp"
-path="res://.godot/imported/IdleU.png-81d50a808b63746c8d09a309ac0e3ae3.ctex"
+uid="uid://bmbscuigljm04"
+path="res://.godot/imported/DeathNormalMap.png-83eba9bb11214ea07071ad0f54138e16.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/Friendly/Phantom-6/Idle/Sprites/IdleU.png"
-dest_files=["res://.godot/imported/IdleU.png-81d50a808b63746c8d09a309ac0e3ae3.ctex"]
+source_file="res://Assets/Characters/Friendly/Phantom-6/Death/Normals/DeathNormalMap.png"
+dest_files=["res://.godot/imported/DeathNormalMap.png-83eba9bb11214ea07071ad0f54138e16.ctex"]
 
 [params]
 

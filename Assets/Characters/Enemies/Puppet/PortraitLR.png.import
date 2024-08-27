@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgnmqhurfpwjp"
-path="res://.godot/imported/IdleU.png-81d50a808b63746c8d09a309ac0e3ae3.ctex"
+uid="uid://b8omwr6j7kdob"
+path="res://.godot/imported/PortraitLR.png-544f825941205e8b0d71e1655600cbe1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/Friendly/Phantom-6/Idle/Sprites/IdleU.png"
-dest_files=["res://.godot/imported/IdleU.png-81d50a808b63746c8d09a309ac0e3ae3.ctex"]
+source_file="res://Assets/Characters/Enemies/Puppet/PortraitLR.png"
+dest_files=["res://.godot/imported/PortraitLR.png-544f825941205e8b0d71e1655600cbe1.ctex"]
 
 [params]
 

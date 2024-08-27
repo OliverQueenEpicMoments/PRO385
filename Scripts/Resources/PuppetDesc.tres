@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="EnemyDesc" load_steps=2 format=3 uid="uid://dbx3dib42tndc"]
+[gd_resource type="Resource" script_class="EnemyDesc" load_steps=3 format=3 uid="uid://dbx3dib42tndc"]
 
+[ext_resource type="Texture2D" uid="uid://b8omwr6j7kdob" path="res://Assets/Characters/Enemies/Puppet/PortraitLR.png" id="1_0njhd"]
 [ext_resource type="Script" path="res://Scripts/Resources/EnemyDesc.gd" id="1_cjkr1"]
 
 [resource]
 script = ExtResource("1_cjkr1")
 EnemyName = "The Mannequin"
+EnemyIcon = ExtResource("1_0njhd")
 CauseOfDeath = "Severe Lacerations"
 EnemyDescription = "The victim was discovered lying in a pool of blood, with extensive trauma to the thoracic region. Autopsy results reveal a series of deep, brutal puncture wounds, some superficial, while others penetrate entirely through the body."
 ExtraDescription = "Preliminary analysis suggests the injuries were inflicted by an exceptionally strong entity, with the Mannequin, a newly contained subject, being the primary suspect. It is believed that the soldier, unaware of the necessity to maintain constant visual contact with the entity, was ambushed. The Mannequin, utilizing its considerable strength, appears to have repeatedly driven its hands through the soldier’s torso, resulting in fatal injuries.The nature of the Mannequin’s movements—restricted when observed but exceedingly swift and lethal when unobserved—aligns with the circumstances of the soldier's death. This incident underscores the critical need for continuous observation protocols when dealing with this subject. Further containment measures are being evaluated."

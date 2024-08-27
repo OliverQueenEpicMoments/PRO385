@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="EnemyDesc" load_steps=2 format=3 uid="uid://bbgcovohd2dik"]
+[gd_resource type="Resource" script_class="EnemyDesc" load_steps=3 format=3 uid="uid://bbgcovohd2dik"]
 
 [ext_resource type="Script" path="res://Scripts/Resources/EnemyDesc.gd" id="1_0fhu2"]
+[ext_resource type="Texture2D" uid="uid://pg7obpsw3lam" path="res://Assets/Characters/Friendly/Phantom-6/InjuredPortrait.png" id="1_522xk"]
 
 [resource]
 script = ExtResource("1_0fhu2")
 EnemyName = "Unknown"
+EnemyIcon = ExtResource("1_522xk")
 CauseOfDeath = "Self-inflicted"
 EnemyDescription = "The victim was found lying in a pool of his own blood, with severe cranial trauma consistent with repeated blunt force impact. Autopsy results indicate the injuries were self-inflicted, likely due to extreme psychological stress"
 ExtraDescription = "The exact cause of the soldier's drastic actions remains unclear. It is hypothesized that the soldier, overwhelmed by intense mental duress, removed his helmet and repeatedly struck his head against a nearby solid surface. The soldier bled to death before reinforcements could arrive.There is speculation among a select few within the research team that an unidentified influence may have driven the soldier to this extreme behavior. This influence, potentially taking on different forms and known to induce severe cognitive dissonance, is not widely understood or acknowledged in current research. The body and all related findings will be sent to Hades Site for further examination by authorized personnel."
